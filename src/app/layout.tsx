@@ -9,15 +9,29 @@ export const metadata: Metadata = {
     "SAFE AI-AFRICA leverages advanced AI solutions to transform education, healthcare, and agriculture in Africa. Discover our no-code AI tools, virtual chemistry labs, and clinical systems.",
   keywords:
     "AI Africa, SAFESeq, SAFEKemia, SAFElytics, SafeFood Manager, AMR Lens, Artificial Intelligence Africa, No-code ML Africa, Chemistry Tutor AI",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", type: "image/png" },
+      { url: "/SAFEAI_ASSETS/safeaiafrica-logo.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [
+      { url: "/SAFEAI_ASSETS/safeaiafrica-logo.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+  },
   openGraph: {
     type: "website",
     url: "https://safeaiafrica.com/",
+    siteName: "SAFE AI-AFRICA",
     title: "SAFE AI-AFRICA | Empowering Africa Through Artificial Intelligence",
     description:
       "SAFE AI-AFRICA leverages advanced AI solutions to transform education, healthcare, and agriculture in Africa.",
     images: [
       {
-        url: "/SAFEAI_ASSETS/safeaiafrica-logo.png",
+        url: "https://safeaiafrica.com/SAFEAI_ASSETS/safeaiafrica-logo.png",
+        width: 512,
+        height: 512,
+        alt: "SAFE AI-AFRICA Logo",
       },
     ],
   },
@@ -26,7 +40,7 @@ export const metadata: Metadata = {
     title: "SAFE AI-AFRICA | Empowering Africa Through Artificial Intelligence",
     description:
       "SAFE AI-AFRICA leverages advanced AI solutions to transform education, healthcare, and agriculture in Africa.",
-    images: ["/SAFEAI_ASSETS/safeaiafrica-logo.png"],
+    images: ["https://safeaiafrica.com/SAFEAI_ASSETS/safeaiafrica-logo.png"],
   },
   robots: {
     index: true,
