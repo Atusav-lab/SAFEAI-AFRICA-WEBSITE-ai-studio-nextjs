@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import {
   ExternalLink, ArrowRight, Dna, FlaskConical, BarChart3, ShieldCheck,
-  Heart, Leaf, Smartphone, CheckSquare, Sparkles, Cpu, GraduationCap, Scale
+  Heart, Leaf, Smartphone, CheckSquare, Settings, Cpu, GraduationCap, Scale
 } from 'lucide-react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -138,7 +138,7 @@ const serviceCategories = [
         desc: 'End-to-end design and deployment of tailored computer vision, natural language processing, and tabular prediction models matching your company workflows.',
       },
       {
-        icon: Sparkles,
+        icon: Settings,
         title: 'AI Integration & Consulting',
         desc: 'Full audit of existing technological layers to seamlessly integrate API proxies, large language models, and cloud database storage without downtime.',
       },

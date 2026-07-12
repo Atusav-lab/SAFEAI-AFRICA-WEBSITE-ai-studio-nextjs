@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Sparkles, ArrowRight, CheckCircle2, Award, Briefcase, GraduationCap } from 'lucide-react'
+import { Rocket, ArrowRight, CheckCircle2, Award, Briefcase, GraduationCap } from 'lucide-react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
@@ -28,7 +28,7 @@ export default function ComingSoon() {
             {/* Text details */}
             <div className="space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-cyan-500/10 border border-cyan-400/20 text-cyan-400 rounded-full text-xs font-semibold uppercase tracking-wider">
-                <Sparkles size={14} />
+                <Rocket size={14} />
                 Launching Soon
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-none">
