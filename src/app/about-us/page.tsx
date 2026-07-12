@@ -53,11 +53,11 @@ export default function AboutUs() {
             <div className="relative">
               <div className="absolute inset-0 bg-blue-100 rounded-3xl transform rotate-3" />
               <Image
-                src="/SAFEAI_ASSETS/safeaiafrica-logo.webp"
-                alt="SAFE AI Logo"
-                width={400}
+                src="/SAFEAI_ASSETS/safeaiafricateam.jpg"
+                alt="SAFE AI Africa Team"
+                width={600}
                 height={400}
-                className="relative z-10 w-full max-w-md mx-auto h-auto rounded-3xl shadow-lg border bg-white p-6 object-contain"
+                className="relative z-10 w-full max-w-md mx-auto h-auto rounded-3xl shadow-lg border border-slate-100 object-cover aspect-[4/3]"
               />
             </div>
           </div>
