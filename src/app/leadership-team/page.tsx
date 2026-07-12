@@ -36,6 +36,7 @@ const team = [
     role: 'Co-Founder & Director of Operations',
     image: '/SAFEAI_ASSETS/anthony-kamukama.jpg' as string | null,
     bio: 'As a Software and Network Engineer, Anthony serves as Co-Founder and Director of Operations, ensuring our strategic vision translates into impactful, scalable AI solutions across Africa.',
+    link: 'https://anthonykamukama.safeaiafrica.com',
     objectPosition: 'object-top',
   },
   {
@@ -57,6 +58,7 @@ const team = [
     role: 'Director of Advisory Services',
     image: '/SAFEAI_ASSETS/duncan%20twesigye.jpg' as string | null,
     bio: 'Duncan is an IT and Emerging Technologies Consultant serving as our Director of Advisory Services. He specializes in digital transformation across Africa and provides strategic mentorship, guidance, and expertise to help shape our initiatives.',
+    link: 'https://coachtdee.safeaiafrica.com',
     objectPosition: 'object-[center_15%]',
   },
 ]
