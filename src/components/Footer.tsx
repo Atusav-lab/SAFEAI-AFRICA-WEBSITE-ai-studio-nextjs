@@ -47,7 +47,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <a href="/" className="flex items-center gap-3 mb-5">
               <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0 border-2 border-[#00E5FF]/40">
-                <Image src="/SAFEAI_ASSETS/safeaiafrica-logo.webp" alt="SAFE AI-AFRICA" fill sizes="48px" className="object-contain" />
+                <Image src="/SAFEAI_ASSETS/safeaiafrica-logo.png" alt="SAFE AI-AFRICA" fill sizes="48px" className="object-contain" />
               </div>
               <span className="font-bold text-lg">SAFE AI-AFRICA</span>
             </a>

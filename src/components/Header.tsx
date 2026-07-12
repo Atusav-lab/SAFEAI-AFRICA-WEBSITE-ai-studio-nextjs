@@ -113,7 +113,7 @@ export default function Header({ forceScrolled = false }: HeaderProps) {
             <a href="/" className="flex items-center gap-3 group">
               <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden flex-shrink-0 border border-white/20">
                 <Image
-                  src="/SAFEAI_ASSETS/safeaiafrica-logo.webp"
+                  src="/SAFEAI_ASSETS/safeaiafrica-logo.png"
                   alt="SAFE AI-AFRICA"
                   fill
                   sizes="40px"
@@ -217,7 +217,7 @@ export default function Header({ forceScrolled = false }: HeaderProps) {
                 <a href="/" onClick={() => setMobileOpen(false)} className="flex items-center gap-3">
                   <div className="relative w-9 h-9 rounded-full overflow-hidden flex-shrink-0 border border-[#00499E]/15">
                     <Image
-                      src="/SAFEAI_ASSETS/safeaiafrica-logo.webp"
+                      src="/SAFEAI_ASSETS/safeaiafrica-logo.png"
                       alt="SAFE AI-AFRICA"
                       fill
                       sizes="36px"

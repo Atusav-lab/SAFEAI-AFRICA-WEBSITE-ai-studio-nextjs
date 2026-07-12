@@ -27,7 +27,7 @@ const products = [
     category: 'Education',
     subtitle: 'Next-Gen Chemistry Education',
     desc: 'The most advanced chemistry virtual lab designed for African secondary schools. Interactive simulations, high-fidelity visualizations, and an AI tutor available 24/7. Dive deep into the elements with an interactive periodic table and perform safe, simulated experiments in the virtual reaction lab. Built following international standards.',
-    image: '/SAFEAI_ASSETS/safekemia.webp',
+    image: '/SAFEAI_ASSETS/safekemia.png',
     link: 'https://safekemia.safeaiafrica.com',
     external: true,
   },
