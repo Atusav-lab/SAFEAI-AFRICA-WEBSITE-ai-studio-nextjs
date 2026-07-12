@@ -12,13 +12,13 @@ const items = [
     title: 'Ideathon Success',
     desc: 'Uplifting regional innovation and collaborative design challenges centered on localized African challenges.',
     src: '/SAFEAI_ASSETS/img-20260203-144857.webp',
-    date: 'February 2026',
+    date: '19th December 2023',
   },
   {
     title: 'Mental Health AI',
     desc: 'Empowering communities through innovative mental wellness conversational assistants with localized context.',
     src: '/SAFEAI_ASSETS/img-20260203-144921.webp',
-    date: 'January 2026',
+    date: '14th November 2024',
   },
 ]
 
