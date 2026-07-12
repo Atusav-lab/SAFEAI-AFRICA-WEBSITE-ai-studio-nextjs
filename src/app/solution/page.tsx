@@ -115,6 +115,7 @@ const products = [
 
 const serviceCategories = [
   {
+    id: 'ai-training',
     title: 'AI Training & Advocacy',
     services: [
       {
@@ -130,6 +131,7 @@ const serviceCategories = [
     ],
   },
   {
+    id: 'bespoke',
     title: 'Bespoke AI Solutions',
     services: [
       {
@@ -248,7 +250,7 @@ export default function Solution() {
 
         {/* Services & Consulting Sections */}
         {serviceCategories.map((cat, idx) => (
-          <section key={idx} className={`py-20 ${idx % 2 === 0 ? 'bg-white' : 'bg-slate-50'} border-t border-slate-100`}>
+          <section key={idx} id={cat.id} className={`py-20 ${idx % 2 === 0 ? 'bg-white' : 'bg-slate-50'} border-t border-slate-100`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center max-w-3xl mx-auto mb-16">
                 <span className="text-xs font-semibold uppercase tracking-widest text-[#0061B2] block mb-2">Capabilities</span>
