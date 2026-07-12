@@ -49,6 +49,80 @@ export const metadata: Metadata = {
   },
 };
 
+function SchemaOrg() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://safeaiafrica.com/#organization",
+        name: "SAFE AI-AFRICA",
+        url: "https://safeaiafrica.com",
+        logo: {
+          "@type": "ImageObject",
+          "@id": "https://safeaiafrica.com/#logo",
+          url: "https://safeaiafrica.com/SAFEAI_ASSETS/safeaiafrica-logo.png",
+          contentUrl: "https://safeaiafrica.com/SAFEAI_ASSETS/safeaiafrica-logo.png",
+          width: 512,
+          height: 512,
+          caption: "SAFE AI-AFRICA",
+        },
+        image: { "@id": "https://safeaiafrica.com/#logo" },
+        description:
+          "SAFE AI-AFRICA leverages responsible artificial intelligence to transform education, healthcare, and agriculture in Africa.",
+        foundingDate: "2023",
+        foundingLocation: {
+          "@type": "Place",
+          name: "Kampala, Uganda",
+        },
+        areaServed: {
+          "@type": "Continent",
+          name: "Africa",
+        },
+        sameAs: [
+          "https://safeseq.safeaiafrica.com",
+          "https://safekemia.safeaiafrica.com",
+          "https://invoicemasterpro.safeaiafrica.com",
+          "https://safelytics.safeaiafrica.com",
+          "https://safefoodmanager.safeaiafrica.com",
+          "https://safeuzazi.safeaiafrica.com",
+        ],
+        contactPoint: {
+          "@type": "ContactPoint",
+          telephone: "+256775323200",
+          contactType: "customer service",
+          availableLanguage: "English",
+        },
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://safeaiafrica.com/#website",
+        url: "https://safeaiafrica.com",
+        name: "SAFE AI-AFRICA",
+        description:
+          "Empowering Africa Through Responsible Artificial Intelligence",
+        publisher: { "@id": "https://safeaiafrica.com/#organization" },
+        potentialAction: {
+          "@type": "SearchAction",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: "https://safeaiafrica.com/search?q={search_term_string}",
+          },
+          "query-input": "required name=search_term_string",
+        },
+        inLanguage: "en-US",
+      },
+    ],
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
 function FloatingWhatsApp() {
   return (
     <a
@@ -72,6 +146,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-US">
+      <head>
+        <SchemaOrg />
+      </head>
       <body style={{ fontFamily: "'Poppins', sans-serif" }}>
         {children}
         <FloatingWhatsApp />
