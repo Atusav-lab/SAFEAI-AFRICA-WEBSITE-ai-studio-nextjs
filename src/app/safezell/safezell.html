@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SafeZell — FMCG Field Sales Management</title>
+  <!-- SEO Optimization -->
+  <meta name="description" content="SafeZell — FMCG Field Sales Management platform. Optimize your field sales operations.">
+  <link rel="canonical" href="https://safeaiafrica.com/safezell/">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://safeaiafrica.com/safezell/">
+  <meta property="og:title" content="SafeZell — FMCG Field Sales Management">
+  <meta property="og:description" content="SafeZell — FMCG Field Sales Management platform. Optimize your field sales operations.">
+  <meta property="og:image" content="https://safeaiafrica.com/SAFEAI_ASSETS/safeaiafrica_logo.png">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://safeaiafrica.com/safezell/">
+  <meta property="twitter:title" content="SafeZell — FMCG Field Sales Management">
+  <meta property="twitter:description" content="SafeZell — FMCG Field Sales Management platform. Optimize your field sales operations.">
+  <meta property="twitter:image" content="https://safeaiafrica.com/SAFEAI_ASSETS/safeaiafrica_logo.png">
+  <!-- /SEO Optimization -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,600&display=swap" rel="stylesheet"/>
+<style>
+/* ═══════════════════════════════════════════════════
+   SAFEZELL — Design tokens aligned with provided system
+═══════════════════════════════════════════════════ */
+:root {
+  --font:      'DM Sans', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+  --font-disp: 'Fraunces', serif;
+
+  --brand-50:  #e3f2fd;
+  --brand-100: #bbdefb;
+  --brand-200: #90caf9;
+  --brand-400: #42a5f5;
+  --brand-600: #1e88e5;
+  --brand-800: #1565c0;
+  --brand-900: #0d47a1;
+
+  --text-primary:   #1a1a1a;
+  --text-secondary: #5a5a5a;
+  --text-muted:     #9a9a9a;
+  --text-inv:       #ffffff;
+
+  --surface:   #ffffff;
+  --surface-2: #f7f8f6;
+  --surface-3: #efefec;
+  --ink:       #0f1a10;
+  --ink-soft:  #1c2e1e;
+
+  --border:        rgba(0,0,0,.08);
+  --border-medium: rgba(0,0,0,.14);
+
+  --amber:     #d97b1a;
+  --amber-lt:  #fdefd9;
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.04);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,.10), 0 4px 8px rgba(0,0,0,.05);
+
+  --r-sm:   8px;
+  --r-md:   12px;
+  --r-lg:   16px;
+  --r-xl:   24px;
+  --r-pill: 999px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background: var(--surface-2);
+  overflow-x: hidden;
+}
+
+/* ── subtle paper grain ── */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 9999;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23g)' opacity='0.018'/%3E%3C/svg%3E");
+}
+
+a { color: var(--brand-800); text-decoration: none; }
+img, svg { display: block; max-width: 100%; }
+
+/* ══════════════ NAV ══════════════ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  padding: 0 48px;
+  height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(247,248,246,.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 0.5px solid var(--border);
+  transition: box-shadow .25s;
+}
+nav.scrolled { box-shadow: var(--shadow-md); }
+
+.nav-logo {
+  font-family: var(--font-disp);
+  font-weight: 700; font-size: 1.3rem;
+  color: var(--ink); letter-spacing: -.01em;
+  display: flex; align-items: center; gap: 10px;
+  text-decoration: none;
+}
+.nav-logo-mark {
+  width: 32px; height: 32px; border-radius: 8px;
+  background: var(--brand-400);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.nav-logo-mark svg { width: 16px; height: 16px; }
+
+.nav-links { display: flex; align-items: center; gap: 8px; list-style: none; }
+.nav-links a {
+  font-size: .875rem; font-weight: 400;
+  color: var(--text-secondary);
+  padding: 6px 14px; border-radius: var(--r-pill);
+  transition: background .15s, color .15s;
+}
+.nav-links a:hover { background: var(--surface-3); color: var(--text-primary); }
+
+.nav-demo {
+  background: var(--brand-400) !important;
+  color: var(--text-inv) !important;
+  font-weight: 500 !important;
+  transition: background .15s, transform .15s !important;
+}
+.nav-demo:hover { background: var(--brand-600) !important; transform: translateY(-1px); }
+
+/* ══════════════ HERO ══════════════ */
+.hero {
+  min-height: 100vh;
+  padding: 100px 48px 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* dot-grid pattern, fades right */
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(66,165,245,.18) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 65% 80% at 85% 45%, black 5%, transparent 75%);
+  pointer-events: none;
+}
+
+.hero-left { position: relative; z-index: 1; }
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--brand-50);
+  color: var(--brand-800);
+  font-family: var(--font-mono);
+  font-size: .72rem; font-weight: 500;
+  padding: 5px 14px; border-radius: var(--r-pill);
+  letter-spacing: .05em; text-transform: uppercase;
+  margin-bottom: 24px;
+  opacity: 0; animation: fade-up .5s .05s forwards;
+}
+.hero-badge::before {
+  content: '';
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--brand-400); flex-shrink: 0;
+  animation: blink 2s ease-in-out infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+.hero-h1 {
+  font-family: var(--font-disp);
+  font-size: clamp(2.6rem, 4.8vw, 4.4rem);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -.02em;
+  color: var(--ink);
+  opacity: 0; animation: fade-up .65s .15s forwards;
+}
+.hero-h1 em {
+  font-style: italic;
+  color: var(--brand-800);
+}
+
+.hero-sub {
+  margin-top: 22px;
+  font-size: 1rem; line-height: 1.75;
+  color: var(--text-secondary); max-width: 460px;
+  font-weight: 300;
+  opacity: 0; animation: fade-up .65s .28s forwards;
+}
+
+.hero-actions {
+  margin-top: 36px;
+  display: flex; gap: 12px; flex-wrap: wrap;
+  opacity: 0; animation: fade-up .65s .4s forwards;
+}
+
+.btn-primary {
+  background: var(--brand-400);
+  color: #fff;
+  padding: 13px 28px;
+  border-radius: var(--r-pill);
+  font-family: var(--font);
+  font-size: .9375rem; font-weight: 500;
+  text-decoration: none; border: none; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 9px;
+  transition: background .15s, transform .15s, box-shadow .15s;
+  box-shadow: 0 4px 16px rgba(66,165,245,.3);
+}
+.btn-primary:hover { background: var(--brand-600); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(66,165,245,.38); }
+
+.btn-outline {
+  background: var(--surface);
+  color: var(--text-primary);
+  padding: 12px 24px;
+  border-radius: var(--r-pill);
+  font-family: var(--font);
+  font-size: .9375rem; font-weight: 400;
+  text-decoration: none;
+  border: 0.5px solid var(--border-medium);
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: border-color .15s, background .15s, transform .15s;
+  box-shadow: var(--shadow-sm);
+}
+.btn-outline:hover { border-color: var(--brand-400); background: var(--brand-50); transform: translateY(-1px); }
+
+.hero-stats {
+  margin-top: 48px;
+  display: flex; gap: 0;
+  border: 0.5px solid var(--border);
+  border-radius: var(--r-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  opacity: 0; animation: fade-up .65s .55s forwards;
+}
+.stat-item {
+  flex: 1; padding: 18px 20px;
+  border-right: 0.5px solid var(--border);
+}
+.stat-item:last-child { border-right: none; }
+.stat-num {
+  font-family: var(--font-disp);
+  font-size: 1.75rem; font-weight: 700;
+  color: var(--ink); line-height: 1;
+}
+.stat-num span { color: var(--brand-600); }
+.stat-label { font-size: .75rem; color: var(--text-muted); margin-top: 3px; font-weight: 400; }
+
+/* ── hero right: dashboard mockup ── */
+.hero-right {
+  position: relative; z-index: 1;
+  opacity: 0; animation: fade-right .85s .35s forwards;
+}
+@keyframes fade-right {
+  from { opacity: 0; transform: translateX(36px) }
+  to   { opacity: 1; transform: translateX(0) }
+}
+
+.mockup-wrap {
+  border-radius: 18px; overflow: hidden;
+  box-shadow: 0 32px 80px rgba(15,26,16,.16), 0 0 0 0.5px var(--border);
+  background: #0f1a10;
+  position: relative;
+}
+
+.mockup-topbar {
+  background: #111d12;
+  padding: 12px 18px;
+  display: flex; align-items: center; gap: 10px;
+  border-bottom: 0.5px solid rgba(255,255,255,.06);
+}
+.mock-dots { display: flex; gap: 5px; }
+.mock-dots i { width: 9px; height: 9px; border-radius: 50%; display: block; }
+.mock-dots i:nth-child(1){background:#FF5F57}
+.mock-dots i:nth-child(2){background:#FEBC2E}
+.mock-dots i:nth-child(3){background:#28C840}
+.mock-url {
+  flex:1; background: rgba(255,255,255,.06); border-radius: 5px;
+  padding: 4px 12px; font-family: var(--font-mono);
+  font-size: .68rem; color: rgba(255,255,255,.35);
+}
+
+.mockup-body {
+  background: #141f15;
+  padding: 16px;
+  display: grid; grid-template-columns: 130px 1fr;
+  gap: 12px; min-height: 390px;
+}
+
+.mock-sidebar {
+  background: #1a2b1b; border-radius: 9px;
+  padding: 12px; display: flex; flex-direction: column; gap: 3px;
+}
+.mock-logo {
+  font-family: var(--font-disp); font-size: .72rem; font-weight: 700;
+  color: #fff; padding: 2px 0 10px;
+  border-bottom: 0.5px solid rgba(255,255,255,.08); margin-bottom: 5px;
+}
+.mock-nav-item {
+  padding: 6px 9px; border-radius: 6px;
+  font-size: .64rem; color: rgba(255,255,255,.4);
+  display: flex; align-items: center; gap: 7px; cursor: pointer;
+  transition: all .15s;
+}
+.mock-nav-item.active { background: var(--brand-400); color: #fff; }
+.mock-nav-item:not(.active):hover { background: rgba(255,255,255,.06); color: rgba(255,255,255,.65); }
+.m-icon { width: 12px; height: 12px; border-radius: 3px; background: currentColor; opacity: .65; flex-shrink: 0; }
+
+.mock-main { display: flex; flex-direction: column; gap: 10px; }
+
+.mock-kpi-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; }
+.mock-kpi {
+  background: #1a2b1b; border-radius: 9px; padding: 10px;
+  position: relative; overflow: hidden;
+}
+.mock-kpi::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:2px;
+}
+.mock-kpi:nth-child(1)::before{background:var(--brand-400)}
+.mock-kpi:nth-child(2)::before{background:var(--amber)}
+.mock-kpi:nth-child(3)::before{background:#6366f1}
+.mock-kpi-label{font-size:.56rem;color:rgba(255,255,255,.38);text-transform:uppercase;letter-spacing:.04em}
+.mock-kpi-val{font-family:var(--font-disp);font-size:1.1rem;font-weight:700;color:#fff;margin-top:3px}
+.mock-kpi-sub{font-size:.54rem;color:rgba(255,255,255,.3);margin-top:2px}
+
+.mock-chart {
+  background: #1a2b1b; border-radius: 9px; padding: 12px;
+  flex:1; display: flex; flex-direction: column; gap: 8px;
+}
+.mock-chart-label{font-size:.58rem;color:rgba(255,255,255,.38);text-transform:uppercase;letter-spacing:.04em}
+.chart-bars {
+  display: flex; align-items: flex-end; gap: 5px; height: 72px;
+}
+.chart-bar {
+  flex:1; border-radius: 3px 3px 0 0;
+  position: relative; overflow: hidden;
+  background: rgba(255,255,255,.06);
+}
+.chart-bar::after {
+  content:''; position:absolute; inset:0;
+  background: linear-gradient(to top, var(--brand-400), rgba(66,165,245,.25));
+  border-radius: inherit;
+}
+.chart-bar.dim::after { background: rgba(255,255,255,.06); }
+
+.mock-table { background: #1a2b1b; border-radius: 9px; padding: 10px; }
+.mock-table-head {
+  display: grid; grid-template-columns: 2fr 1fr 1fr;
+  font-size: .54rem; color: rgba(255,255,255,.28);
+  text-transform: uppercase; letter-spacing: .04em;
+  padding-bottom: 7px; border-bottom: 0.5px solid rgba(255,255,255,.06);
+}
+.mock-table-row {
+  display: grid; grid-template-columns: 2fr 1fr 1fr;
+  padding: 6px 0; border-bottom: 0.5px solid rgba(255,255,255,.04);
+  font-size: .62rem; color: rgba(255,255,255,.55); align-items: center;
+}
+.mock-table-row:last-child{border-bottom:none}
+.spill { display:inline-block; padding:2px 7px; border-radius:100px; font-size:.54rem; font-weight:500; }
+.s-blue{ background:rgba(66,165,245,.2); color:#64b5f6; }
+.s-amber{ background:rgba(217,123,26,.2); color:#FFB74D; }
+
+.hero-float {
+  position: absolute; bottom: -16px; left: 16px; z-index: 2;
+  background: var(--surface); border-radius: 12px;
+  padding: 12px 16px;
+  box-shadow: var(--shadow-lg);
+  display: flex; align-items: center; gap: 10px;
+  animation: bob 3.2s ease-in-out infinite;
+  border: 0.5px solid var(--border);
+}
+@keyframes bob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+.float-icon {
+  width: 32px; height: 32px; border-radius: 9px;
+  background: var(--brand-50);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.float-icon svg{width:16px;height:16px}
+.float-title{font-weight:600;font-size:.78rem;color:var(--ink)}
+.float-sub{font-size:.68rem;color:var(--text-muted);margin-top:1px}
+
+@keyframes fade-up {
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* ══════════════ MARQUEE ══════════════ */
+.trust-strip {
+  background: var(--ink); padding: 16px 0; overflow: hidden;
+}
+.marquee-track {
+  display: flex; gap: 52px;
+  animation: marquee 24s linear infinite;
+  width: max-content;
+}
+.marquee-item {
+  display: flex; align-items: center; gap: 9px;
+  font-family: var(--font-mono);
+  font-size: .72rem; font-weight: 500;
+  color: rgba(255,255,255,.3);
+  letter-spacing: .06em; text-transform: uppercase; white-space: nowrap;
+}
+.marquee-item b { color: rgba(255,255,255,.1); font-weight: 400; font-size: 1rem; }
+@keyframes marquee { to{transform:translateX(-50%)} }
+
+/* ══════════════ SHARED SECTION STYLES ══════════════ */
+.section-wrap { padding: 100px 48px; }
+.inner { max-width: 1200px; margin: 0 auto; }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-family: var(--font-mono);
+  font-size: .72rem; color: var(--brand-800);
+  letter-spacing: .08em; text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.eyebrow::before {
+  content:''; width: 20px; height: 1.5px;
+  background: var(--brand-400); border-radius: 2px;
+}
+
+.section-title {
+  font-family: var(--font-disp);
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  font-weight: 600; letter-spacing: -.015em;
+  line-height: 1.12; color: var(--ink); max-width: 540px;
+}
+.section-title em { font-style: italic; color: var(--brand-800); }
+
+/* scroll reveal */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
+.reveal.vis { opacity: 1; transform: translateY(0); }
+
+/* ══════════════ FEATURES ══════════════ */
+.feat-grid {
+  margin-top: 56px;
+  display: grid; grid-template-columns: repeat(3,1fr);
+  background: var(--border); gap: 0.5px;
+  border-radius: var(--r-lg); overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.feat-card {
+  background: var(--surface);
+  padding: 36px 30px;
+  transition: background .15s;
+  cursor: default;
+}
+.feat-card:hover { background: #fff; }
+
+.feat-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  background: var(--brand-50);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px;
+  transition: background .15s, transform .15s;
+}
+.feat-card:hover .feat-icon { background: var(--brand-400); transform: scale(1.07); }
+.feat-icon svg { width: 22px; height: 22px; }
+.feat-card:hover .feat-icon svg { filter: brightness(0) invert(1); }
+
+.feat-title {
+  font-family: var(--font);
+  font-size: 1rem; font-weight: 600;
+  color: var(--ink); margin-bottom: 10px;
+}
+
+.feat-desc { font-size: .875rem; line-height: 1.7; color: var(--text-secondary); font-weight: 300; }
+
+.feat-tag {
+  display: inline-block; margin-top: 16px;
+  font-family: var(--font-mono); font-size: .65rem;
+  color: var(--brand-800); background: var(--brand-50);
+  padding: 3px 9px; border-radius: var(--r-sm);
+  letter-spacing: .04em;
+}
+
+/* ══════════════ HOW IT WORKS ══════════════ */
+.how-section { background: var(--ink); }
+.how-section .eyebrow { color: rgba(255,255,255,.45); }
+.how-section .eyebrow::before { background: rgba(255,255,255,.2); }
+.how-section .section-title { color: #fff; }
+
+.steps {
+  margin-top: 64px;
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 0; position: relative;
+}
+.steps::before {
+  content:''; position:absolute; top: 24px; left: 24px; right: 24px;
+  height: 0.5px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.1), rgba(255,255,255,.1), transparent);
+}
+
+.step { padding: 0 24px; position: relative; z-index: 1; }
+.step-num {
+  width: 48px; height: 48px; border-radius: 50%;
+  border: 0.5px solid rgba(255,255,255,.15);
+  background: #1a2b1b;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-mono); font-size: .75rem;
+  color: var(--brand-200); margin-bottom: 24px;
+}
+.step-title {
+  font-family: var(--font); font-size: .9375rem; font-weight: 600;
+  color: #fff; margin-bottom: 10px;
+}
+.step-desc { font-size: .85rem; line-height: 1.7; color: rgba(255,255,255,.42); font-weight: 300; }
+
+/* ══════════════ ROLES ══════════════ */
+.roles-layout {
+  margin-top: 56px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 56px; align-items: start;
+}
+
+.roles-list { display: flex; flex-direction: column; gap: 4px; }
+.role-item {
+  display: flex; align-items: flex-start; gap: 16px;
+  padding: 18px 20px; border-radius: var(--r-md);
+  cursor: pointer;
+  border: 0.5px solid transparent;
+  transition: border-color .15s, background .15s, box-shadow .15s;
+}
+.role-item.active, .role-item:hover {
+  background: var(--surface);
+  border-color: var(--border-medium);
+  box-shadow: var(--shadow-md);
+}
+.role-av {
+  width: 38px; height: 38px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 600; font-size: .875rem; flex-shrink: 0;
+}
+.role-name { font-weight: 600; font-size: .9375rem; color: var(--ink); }
+.role-perms { margin-top: 5px; font-size: .8125rem; color: var(--text-secondary); line-height: 1.6; font-weight: 300; }
+
+.access-card {
+  background: var(--ink); border-radius: var(--r-xl);
+  overflow: hidden; box-shadow: var(--shadow-lg);
+  position: sticky; top: 80px;
+}
+.access-header {
+  padding: 18px 22px 14px;
+  border-bottom: 0.5px solid rgba(255,255,255,.06);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.access-title { font-family:var(--font); font-size:.875rem; font-weight:600; color:#fff; }
+.access-badge {
+  font-family: var(--font-mono); font-size: .62rem;
+  color: var(--brand-200); background: rgba(66,165,245,.18);
+  padding: 3px 10px; border-radius: var(--r-pill); letter-spacing:.04em;
+}
+.access-rows { padding: 6px 0; }
+.access-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 22px;
+  border-bottom: 0.5px solid rgba(255,255,255,.04);
+  font-size: .8rem; color: rgba(255,255,255,.52);
+}
+.access-row:last-child{border-bottom:none}
+.access-row strong{color:rgba(255,255,255,.78);font-weight:500}
+.perm-yes, .perm-no {
+  width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.perm-yes{background:rgba(66,165,245,.22)}
+.perm-yes::after{content:'';width:6px;height:6px;border-radius:50%;background:var(--brand-200)}
+.perm-no{background:rgba(255,255,255,.06)}
+.perm-no::after{content:'';width:7px;height:1.5px;background:rgba(255,255,255,.18);border-radius:1px}
+
+/* ══════════════ MODULES BENTO ══════════════ */
+.modules-section { background: var(--surface-2); }
+
+.bento {
+  margin-top: 56px;
+  display: grid; grid-template-columns: repeat(6,1fr);
+  gap: 14px;
+}
+.bc-1{grid-column:span 2}
+.bc-2{grid-column:span 2}
+.bc-3{grid-column:span 2}
+.bc-4{grid-column:span 3}
+.bc-5{grid-column:span 3}
+
+.bento-card {
+  background: var(--surface);
+  border-radius: var(--r-lg); padding: 28px 26px;
+  border: 0.5px solid var(--border);
+  transition: transform .2s, box-shadow .2s;
+}
+.bento-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+
+.bento-num {
+  font-family: var(--font-mono); font-size: .65rem;
+  color: var(--text-muted); letter-spacing: .06em; margin-bottom: 16px;
+}
+.bento-icon {
+  width: 44px; height: 44px; border-radius: 11px;
+  display: flex; align-items: center; justify-content: center; margin-bottom: 16px;
+}
+.bento-icon svg{width:20px;height:20px}
+.bento-title { font-weight: 600; font-size: .9375rem; color: var(--ink); margin-bottom: 8px; }
+.bento-desc { font-size: .8125rem; line-height: 1.65; color: var(--text-secondary); font-weight: 300; }
+.bento-pills { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 14px; }
+.bento-pill {
+  font-family: var(--font-mono); font-size: .6rem;
+  padding: 3px 9px; border-radius: var(--r-sm);
+  border: 0.5px solid var(--border-medium); color: var(--text-muted);
+}
+
+/* ══════════════ CONTACT / REQUEST DEMO ══════════════ */
+.contact-section { background: var(--surface); }
+.contact-layout {
+  margin-top: 56px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 64px; align-items: start;
+}
+
+.contact-info { display: flex; flex-direction: column; gap: 32px; }
+.contact-block { display: flex; flex-direction: column; gap: 6px; }
+
+.contact-label {
+  font-family: var(--font-mono); font-size: .68rem;
+  color: var(--text-muted); letter-spacing: .08em; text-transform: uppercase;
+}
+.contact-value {
+  font-size: 1rem; font-weight: 500; color: var(--ink);
+  display: flex; align-items: center; gap: 10px;
+}
+.contact-value a { color: var(--ink); transition: color .15s; }
+.contact-value a:hover { color: var(--brand-600); }
+
+.contact-channel {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 20px; border-radius: var(--r-lg);
+  border: 0.5px solid var(--border);
+  background: var(--surface-2);
+  text-decoration: none;
+  transition: border-color .15s, background .15s, transform .15s, box-shadow .15s;
+}
+.contact-channel:hover {
+  border-color: var(--brand-400);
+  background: var(--brand-50);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+.contact-channel-icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.contact-channel-icon svg { width: 20px; height: 20px; }
+.contact-channel-body {}
+.contact-channel-name { font-weight: 600; font-size: .9375rem; color: var(--ink); }
+.contact-channel-detail { font-size: .8125rem; color: var(--text-secondary); margin-top: 2px; font-weight: 300; }
+
+/* ── form ── */
+.demo-form {
+  background: var(--surface-2);
+  border: 0.5px solid var(--border);
+  border-radius: var(--r-xl);
+  padding: 36px;
+}
+.form-title {
+  font-family: var(--font-disp); font-size: 1.375rem; font-weight: 600;
+  color: var(--ink); letter-spacing: -.01em; margin-bottom: 6px;
+}
+.form-sub { font-size: .875rem; color: var(--text-secondary); margin-bottom: 28px; font-weight: 300; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.form-field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+.form-label {
+  font-size: .75rem; font-weight: 500; color: var(--text-secondary);
+  letter-spacing: .01em;
+}
+.form-input, .form-select, .form-textarea {
+  font-family: var(--font); font-size: .875rem;
+  width: 100%; padding: 10px 14px;
+  background: var(--surface);
+  border: 0.5px solid var(--border-medium);
+  border-radius: var(--r-md);
+  color: var(--text-primary); outline: none;
+  transition: border-color .15s, box-shadow .15s;
+  appearance: none;
+}
+.form-input::placeholder, .form-textarea::placeholder { color: var(--text-muted); }
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--brand-400);
+  box-shadow: 0 0 0 3px rgba(66,165,245,.12);
+}
+.form-textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
+.form-select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239a9a9a' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; background-size: 16px; padding-right: 36px; cursor: pointer; }
+
+.form-submit {
+  width: 100%; margin-top: 6px;
+  background: var(--brand-400); color: #fff;
+  padding: 13px 24px; border-radius: var(--r-pill);
+  font-family: var(--font); font-size: .9375rem; font-weight: 500;
+  border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 9px;
+  transition: background .15s, transform .15s, box-shadow .15s;
+  box-shadow: 0 4px 16px rgba(66,165,245,.28);
+}
+.form-submit:hover { background: var(--brand-600); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(66,165,245,.35); }
+
+.form-success {
+  display: none; flex-direction: column; align-items: center;
+  text-align: center; padding: 32px 0; gap: 12px;
+}
+.form-success-icon {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--brand-50);
+  display: flex; align-items: center; justify-content: center;
+}
+.form-success-icon svg{width:28px;height:28px}
+.form-success-title { font-family: var(--font-disp); font-size: 1.25rem; font-weight: 600; color: var(--ink); }
+.form-success-sub { font-size: .875rem; color: var(--text-secondary); font-weight: 300; max-width: 280px; }
+
+/* ══════════════ CTA BAND ══════════════ */
+.cta-band {
+  background: var(--brand-900); padding: 80px 48px; text-align: center;
+  position: relative; overflow: hidden;
+}
+.cta-band::before {
+  content:''; position:absolute; top:-80px; left:50%; transform:translateX(-50%);
+  width:500px; height:280px;
+  background: radial-gradient(ellipse, rgba(66,165,245,.22), transparent 70%);
+  pointer-events: none;
+}
+.cta-band-eyebrow {
+  font-family: var(--font-mono); font-size: .7rem;
+  color: var(--brand-200); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 16px;
+}
+.cta-band-title {
+  font-family: var(--font-disp);
+  font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 600;
+  color: #fff; letter-spacing: -.015em; max-width: 520px; margin: 0 auto 14px;
+}
+.cta-band-sub {
+  font-size: .9375rem; color: rgba(255,255,255,.45); max-width: 400px;
+  margin: 0 auto 36px; font-weight: 300; line-height: 1.7;
+}
+.cta-band-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+.btn-white {
+  background: #fff; color: var(--ink);
+  padding: 13px 28px; border-radius: var(--r-pill);
+  font-family: var(--font); font-size: .9375rem; font-weight: 500;
+  text-decoration: none;
+  display: inline-flex; align-items: center; gap: 9px;
+  transition: background .15s, transform .15s;
+}
+.btn-white:hover { background: var(--brand-50); transform: translateY(-1px); }
+
+.btn-ghost {
+  background: rgba(255,255,255,.08); color: rgba(255,255,255,.8);
+  padding: 13px 28px; border-radius: var(--r-pill);
+  font-family: var(--font); font-size: .9375rem; font-weight: 400;
+  text-decoration: none;
+  display: inline-flex; align-items: center; gap: 9px;
+  border: 0.5px solid rgba(255,255,255,.15);
+  transition: background .15s, transform .15s;
+}
+.btn-ghost:hover { background: rgba(255,255,255,.14); transform: translateY(-1px); }
+
+/* ══════════════ FOOTER ══════════════ */
+footer {
+  background: var(--ink); color: rgba(255,255,255,.4);
+  padding: 52px 48px 36px;
+}
+.footer-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px;
+}
+.footer-brand-name {
+  font-family: var(--font-disp); font-size: 1.2rem; font-weight: 700;
+  color: #fff; margin-bottom: 12px;
+  display: flex; align-items: center; gap: 8px;
+}
+.footer-brand-mark {
+  width: 24px; height: 24px; border-radius: 6px;
+  background: var(--brand-400);
+  display: flex; align-items: center; justify-content: center;
+}
+.footer-brand-mark svg{width:12px;height:12px}
+.footer-brand p { font-size: .8125rem; color: rgba(255,255,255,.32); line-height: 1.7; max-width: 240px; font-weight: 300; }
+.footer-col h4 {
+  font-family: var(--font); font-size: .75rem; font-weight: 600;
+  color: rgba(255,255,255,.55); letter-spacing: .06em; text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.footer-col ul li a { font-size: .8125rem; color: rgba(255,255,255,.32); transition: color .15s; font-weight: 300; }
+.footer-col ul li a:hover { color: rgba(255,255,255,.65); }
+.footer-bottom {
+  max-width: 1200px; margin: 44px auto 0;
+  padding-top: 22px; border-top: 0.5px solid rgba(255,255,255,.07);
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: .75rem; font-weight: 300;
+}
+.footer-legal { display: flex; gap: 20px; }
+.footer-legal a { color: rgba(255,255,255,.28); }
+.footer-legal a:hover { color: rgba(255,255,255,.55); }
+
+/* ══════════════ RESPONSIVE ══════════════ */
+@media (max-width: 1024px) {
+  .hero { grid-template-columns: 1fr; padding-top: 96px; }
+  .hero-right { display: none; }
+  .feat-grid { grid-template-columns: repeat(2,1fr); }
+  .steps { grid-template-columns: repeat(2,1fr); }
+  .steps::before { display: none; }
+  .roles-layout { grid-template-columns: 1fr; }
+  .access-card { position: static; }
+  .bento { grid-template-columns: 1fr 1fr; }
+  .bc-1,.bc-2,.bc-3,.bc-4,.bc-5 { grid-column: span 1; }
+  .contact-layout { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+@media (max-width: 680px) {
+  nav { padding: 0 20px; }
+  .nav-links li:not(:last-child) { display: none; }
+  .hero { padding: 88px 20px 60px; }
+  .section-wrap { padding: 72px 20px; }
+  .feat-grid { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .bento { grid-template-columns: 1fr; }
+  .cta-band { padding: 64px 20px; }
+  footer { padding: 44px 20px 28px; }
+  .footer-inner { grid-template-columns: 1fr; gap: 28px; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  .hero-stats { flex-direction: column; gap: 0; border-radius: var(--r-md); }
+  .stat-item { border-right: none !important; border-bottom: 0.5px solid var(--border); }
+  .stat-item:last-child { border-bottom: none; }
+}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ═══ NAV ═══════════════════════════════════════════ -->
+<nav id="mainNav">
+  <a href="#" class="nav-logo">
+    SafeZell
+  </a>
+  <ul class="nav-links">
+    <li><a href="#features">Features</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#modules">Modules</a></li>
+    <li><a href="#roles">Roles</a></li>
+    <li><a href="#contact" class="nav-demo">Request Demo</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ HERO ═══════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-badge">Field Sales Management System</div>
+    <h1 class="hero-h1">
+      Field Sales.<br>
+      <em>Fully Visible.</em><br>
+      Always Accountable.
+    </h1>
+    <p class="hero-sub">
+      SafeZell connects field representatives, supervisors, and warehouse teams in one closed-loop operations platform — built for FMCG companies running field sales teams anywhere in the world.
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">
+        <svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.86 9.86 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+        </svg>
+        Request a Demo
+      </a>
+      <a href="#how" class="btn-outline">
+        <svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/><path stroke-linecap="round" d="M10 8l6 4-6 4V8z"/>
+        </svg>
+        See How It Works
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">360<span>°</span></div>
+        <div class="stat-label">Field visibility</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">5</div>
+        <div class="stat-label">User roles</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">6</div>
+        <div class="stat-label">Core modules</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="mockup-wrap">
+      <div class="mockup-topbar">
+        <div class="mock-dots"><i></i><i></i><i></i></div>
+        <div class="mock-url">app.safezell.co · Dashboard</div>
+      </div>
+      <div class="mockup-body">
+        <div class="mock-sidebar">
+          <div class="mock-logo">SafeZell</div>
+          <div class="mock-nav-item active"><span class="m-icon" style="border-radius:50%"></span>Dashboard</div>
+          <div class="mock-nav-item"><span class="m-icon"></span>Store Visits</div>
+          <div class="mock-nav-item"><span class="m-icon" style="border-radius:2px"></span>Inventory</div>
+          <div class="mock-nav-item"><span class="m-icon" style="border-radius:0 6px 6px 0"></span>Variance</div>
+          <div class="mock-nav-item"><span class="m-icon" style="border-radius:6px 0 0 6px"></span>Reports</div>
+          <div class="mock-nav-item"><span class="m-icon" style="border-radius:50% 0 50% 50%"></span>Admin</div>
+        </div>
+        <div class="mock-main">
+          <div class="mock-kpi-row">
+            <div class="mock-kpi">
+              <div class="mock-kpi-label">Sales (local)</div>
+              <div class="mock-kpi-val">14.8M</div>
+              <div class="mock-kpi-sub">↑ 12% vs last week</div>
+            </div>
+            <div class="mock-kpi">
+              <div class="mock-kpi-label">Store Visits</div>
+              <div class="mock-kpi-val">247</div>
+              <div class="mock-kpi-sub">↑ 8% vs last week</div>
+            </div>
+            <div class="mock-kpi">
+              <div class="mock-kpi-label">Compliance</div>
+              <div class="mock-kpi-val">94%</div>
+              <div class="mock-kpi-sub">3 items flagged</div>
+            </div>
+          </div>
+          <div class="mock-chart">
+            <div class="mock-chart-label">Sales Trend — This Week</div>
+            <div class="chart-bars">
+              <div class="chart-bar dim"  style="height:30%"></div>
+              <div class="chart-bar"      style="height:55%"></div>
+              <div class="chart-bar dim"  style="height:42%"></div>
+              <div class="chart-bar"      style="height:70%"></div>
+              <div class="chart-bar"      style="height:60%"></div>
+              <div class="chart-bar dim"  style="height:38%"></div>
+              <div class="chart-bar"      style="height:90%"></div>
+            </div>
+          </div>
+          <div class="mock-table">
+            <div class="mock-table-head">
+              <span>Store</span><span>Status</span><span>Rep</span>
+            </div>
+            <div class="mock-table-row">
+              <span>Central Branch</span>
+              <span><span class="spill s-blue">Visited</span></span>
+              <span>A. Kato</span>
+            </div>
+            <div class="mock-table-row">
+              <span>West Outlet</span>
+              <span><span class="spill s-blue">Visited</span></span>
+              <span>B. Namuli</span>
+            </div>
+            <div class="mock-table-row">
+              <span>North Point</span>
+              <span><span class="spill s-amber">Pending</span></span>
+              <span>C. Obua</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-float">
+      <div class="float-icon">
+        <svg fill="none" viewBox="0 0 24 24" stroke="#1565c0" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
+      </div>
+      <div>
+        <div class="float-title">GPS Check-In Confirmed</div>
+        <div class="float-sub">Verified at store location · just now</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MARQUEE ════════════════════════════════════════ -->
+<div class="trust-strip">
+  <div class="marquee-track">
+    <div class="marquee-item"><b>•</b>GPS Real-Time Check-In</div>
+    <div class="marquee-item"><b>•</b>Local Currency Sales Tracking</div>
+    <div class="marquee-item"><b>•</b>Multi-Country Operations</div>
+    <div class="marquee-item"><b>•</b>Warehouse Variance Reconciliation</div>
+    <div class="marquee-item"><b>•</b>Supervisor Route Control</div>
+    <div class="marquee-item"><b>•</b>Offline-Safe Architecture</div>
+    <div class="marquee-item"><b>•</b>PDF &amp; CSV Export</div>
+    <div class="marquee-item"><b>•</b>5-Role Access Control</div>
+    <div class="marquee-item"><b>•</b>Compliance Audit Trails</div>
+    <div class="marquee-item"><b>•</b>GPS Real-Time Check-In</div>
+    <div class="marquee-item"><b>•</b>Local Currency Sales Tracking</div>
+    <div class="marquee-item"><b>•</b>Multi-Country Operations</div>
+    <div class="marquee-item"><b>•</b>Warehouse Variance Reconciliation</div>
+    <div class="marquee-item"><b>•</b>Supervisor Route Control</div>
+    <div class="marquee-item"><b>•</b>Offline-Safe Architecture</div>
+    <div class="marquee-item"><b>•</b>PDF &amp; CSV Export</div>
+    <div class="marquee-item"><b>•</b>5-Role Access Control</div>
+    <div class="marquee-item"><b>•</b>Compliance Audit Trails</div>
+  </div>
+</div>
+
+<!-- ═══ FEATURES ═══════════════════════════════════════ -->
+<section class="section-wrap" id="features" style="background:var(--surface)">
+  <div class="inner">
+    <div class="reveal">
+      <div class="eyebrow">Core capabilities</div>
+      <h2 class="section-title">Everything your field team needs, <em>nothing they don't.</em></h2>
+    </div>
+    <div class="feat-grid reveal">
+
+      <div class="feat-card">
+        <div class="feat-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="#1565c0" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="3"/>
+          </svg>
+        </div>
+        <h3 class="feat-title">GPS Store Check-In</h3>
+        <p class="feat-desc">Real browser geolocation captures exact coordinates at check-in. Distance validation confirms the representative is physically at the store before the audit form unlocks.</p>
+        <span class="feat-tag">Live geolocation</span>
+      </div>
+
+      <div class="feat-card">
+        <div class="feat-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="#1565c0" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+          </svg>
+        </div>
+        <h3 class="feat-title">Live Sales Tracking</h3>
+        <p class="feat-desc">Every sale is recorded against the live product catalogue in your local currency. Cascaded filters let supervisors drill from representative to store to product in seconds.</p>
+        <span class="feat-tag">Local currency · Real-time</span>
+      </div>
+
+      <div class="feat-card">
+        <div class="feat-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="#1565c0" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+        </div>
+        <h3 class="feat-title">Variance Reconciliation</h3>
+        <p class="feat-desc">Orders enter the warehouse queue as Pending. Representatives or supervisors record deliveries and the system computes the exact delta — partial, over, or under — with no manual work.</p>
+        <span class="feat-tag">Orders · Deliveries · Delta</span>
+      </div>
+
+      <div class="feat-card">
+        <div class="feat-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="#1565c0" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><circle cx="12" cy="13" r="3"/>
+          </svg>
+        </div>
+        <h3 class="feat-title">Shelf Photo Uploads</h3>
+        <p class="feat-desc">Field representatives attach live shelf photographs directly from the browser. Images upload to cloud storage and appear as thumbnails inside the supervisor review panel.</p>
+        <span class="feat-tag">Cloud storage</span>
+      </div>
+
+      <div class="feat-card">
+        <div class="feat-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="#1565c0" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+          </svg>
+        </div>
+        <h3 class="feat-title">Compliance Audits</h3>
+        <p class="feat-desc">Planogram checks, expiry verification, FIFO adherence, pricing compliance, and OOS flagging — all captured in a single structured form per visit, reviewable by supervisors.</p>
+        <span class="feat-tag">FIFO · OOS · Planogram</span>
+      </div>
+
+      <div class="feat-card">
+        <div class="feat-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="#1565c0" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+        </div>
+        <h3 class="feat-title">PDF &amp; CSV Exports</h3>
+        <p class="feat-desc">Generate formatted activity reports as PDF or export filtered data as CSV in one click. Date range, store, and representative filters apply across every export.</p>
+        <span class="feat-tag">Reports · PDF · CSV</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOW IT WORKS ═══════════════════════════════════ -->
+<section class="section-wrap how-section" id="how">
+  <div class="inner">
+    <div class="reveal">
+      <div class="eyebrow">The workflow</div>
+      <h2 class="section-title">A closed loop from field to boardroom.</h2>
+    </div>
+    <div class="steps reveal">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3 class="step-title">Route Assignment</h3>
+        <p class="step-desc">Supervisors schedule weekday routes — assigning each representative an ordered list of stores. The system filters to only the outlets that representative manages.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3 class="step-title">GPS Check-In &amp; Audit</h3>
+        <p class="step-desc">The representative arrives, the browser confirms their position, and the compliance form unlocks. SOH, OOS items, shelf share, and photos are all captured in one flow.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3 class="step-title">Sales &amp; Orders</h3>
+        <p class="step-desc">Daily sales are entered with automatic currency computation. If stock is low, the representative raises a warehouse order — logged as Pending and queued for dispatch.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h3 class="step-title">Supervisor Review</h3>
+        <p class="step-desc">Every submission surfaces in the supervisor dashboard. Reports are approved or flagged. Variance is reconciled. Audit logs capture every action with impact severity levels.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ROLES ═══════════════════════════════════════════ -->
+<section class="section-wrap" id="roles" style="background:var(--surface)">
+  <div class="inner">
+    <div class="reveal">
+      <div class="eyebrow">Access control</div>
+      <h2 class="section-title">The right tools for <em>every role.</em></h2>
+    </div>
+    <div class="roles-layout">
+      <div class="roles-list reveal">
+        <div class="role-item active" data-role="0">
+          <div class="role-av" style="background:#e3f2fd;color:#1565c0">M</div>
+          <div>
+            <div class="role-name">Merchandiser / Sales Rep / Exec</div>
+            <div class="role-perms">GPS check-in · Visit audit · Sales entry · Stock recording · Order logging · Photo upload · Record deliveries · Create stores in field</div>
+          </div>
+        </div>
+        <div class="role-item" data-role="1">
+          <div class="role-av" style="background:#fdefd9;color:#b45309">S</div>
+          <div>
+            <div class="role-name">Supervisor</div>
+            <div class="role-perms">Route scheduling · Team monitoring · Report review · Delivery recording · Variance reports · Audit logs</div>
+          </div>
+        </div>
+        <div class="role-item" data-role="2">
+          <div class="role-av" style="background:#e0e7ff;color:#4338ca">A</div>
+          <div>
+            <div class="role-name">Administrator</div>
+            <div class="role-perms">Full platform access · User management · Store catalog · Product catalog · All Supervisor privileges</div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="access-card">
+          <div class="access-header">
+            <span class="access-title">Field Representative Permissions</span>
+            <span class="access-badge">Field Role</span>
+          </div>
+          <div class="access-rows" id="accessRows">
+            <div class="access-row"><strong>GPS Store Check-In</strong><div class="perm-yes"></div></div>
+            <div class="access-row"><strong>Submit Visit Report</strong><div class="perm-yes"></div></div>
+            <div class="access-row"><strong>Upload Shelf Photos</strong><div class="perm-yes"></div></div>
+            <div class="access-row"><strong>Record Daily Sales</strong><div class="perm-yes"></div></div>
+            <div class="access-row"><strong>Log Supply Orders</strong><div class="perm-yes"></div></div>
+            <div class="access-row"><strong>View Stock Levels</strong><div class="perm-yes"></div></div>
+            <div class="access-row"><strong>Review Team Reports</strong><div class="perm-no"></div></div>
+            <div class="access-row"><strong>Manage Users</strong><div class="perm-no"></div></div>
+            <div class="access-row"><strong>Record Deliveries</strong><div class="perm-yes"></div></div>
+            <div class="access-row"><strong>Create New Stores (field)</strong><div class="perm-yes"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MODULES BENTO ══════════════════════════════════ -->
+<section class="section-wrap modules-section" id="modules">
+  <div class="inner">
+    <div class="reveal">
+      <div class="eyebrow">Platform modules</div>
+      <h2 class="section-title">Six modules. One <em>unified</em> console.</h2>
+    </div>
+    <div class="bento reveal">
+
+      <div class="bento-card bc-1">
+        <div class="bento-num">01</div>
+        <div class="bento-icon" style="background:#e3f2fd">
+          <svg fill="none" viewBox="0 0 24 24" stroke="#1565c0" stroke-width="1.8">
+            <rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/>
+            <rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>
+          </svg>
+        </div>
+        <div class="bento-title">Unified Dashboard</div>
+        <p class="bento-desc">Role-adaptive KPI cards, sales trend charts, interactive map visit traces, and a real-time leaderboard for supervisors.</p>
+      </div>
+
+      <div class="bento-card bc-2">
+        <div class="bento-num">02</div>
+        <div class="bento-icon" style="background:#fef3c7">
+          <svg fill="none" viewBox="0 0 24 24" stroke="#d97706" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="3"/>
+          </svg>
+        </div>
+        <div class="bento-title">Store Visits &amp; Itinerary</div>
+        <p class="bento-desc">Dual-audience view: field reps see their route checklist, supervisors see the Reps Routing Progress Control Panel with live progress bars per representative.</p>
+      </div>
+
+      <div class="bento-card bc-3">
+        <div class="bento-num">03</div>
+        <div class="bento-icon" style="background:#ede9fe">
+          <svg fill="none" viewBox="0 0 24 24" stroke="#7c3aed" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+          </svg>
+        </div>
+        <div class="bento-title">Dynamic Inventory Logs</div>
+        <p class="bento-desc">Stock-on-hand snapshots per store with colour-coded low-stock alerts, local currency projections, and instant CSV export with date-stamped filenames.</p>
+        <div class="bento-pills">
+          <span class="bento-pill">SOH</span>
+          <span class="bento-pill">Min Stock Alerts</span>
+          <span class="bento-pill">CSV Export</span>
+        </div>
+      </div>
+
+      <div class="bento-card bc-4">
+        <div class="bento-num">04</div>
+        <div class="bento-icon" style="background:#fce7f3">
+          <svg fill="none" viewBox="0 0 24 24" stroke="#db2777" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
+          </svg>
+        </div>
+        <div class="bento-title">Supply Variance &amp; Orders</div>
+        <p class="bento-desc">Field representatives raise orders by product and quantity. Representatives or supervisors record deliveries and the platform computes the exact variance delta automatically — no spreadsheets, no manual reconciliation required.</p>
+        <div class="bento-pills">
+          <span class="bento-pill">Pending → Partial → Delivered</span>
+          <span class="bento-pill">Auto variance compute</span>
+        </div>
+      </div>
+
+      <div class="bento-card bc-5">
+        <div class="bento-num">05 + 06</div>
+        <div class="bento-icon" style="background:#dbeafe">
+          <svg fill="none" viewBox="0 0 24 24" stroke="#2563eb" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+        </div>
+        <div class="bento-title">Reports Builder + Admin Console</div>
+        <p class="bento-desc">Multi-filter reports with PDF and CSV export. Plus a full admin suite: user and store management, product catalog, weekday route scheduling, supervisor comment loops, and a complete audit log trail with impact severity levels.</p>
+        <div class="bento-pills">
+          <span class="bento-pill">PDF Reports</span>
+          <span class="bento-pill">User Management</span>
+          <span class="bento-pill">Audit Trail</span>
+          <span class="bento-pill">Route Scheduler</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT / REQUEST DEMO ══════════════════════════ -->
+<section class="section-wrap contact-section" id="contact">
+  <div class="inner">
+    <div class="reveal">
+      <div class="eyebrow">Get in touch</div>
+      <h2 class="section-title">Ready to see SafeZell <em>in action?</em></h2>
+    </div>
+    <div class="contact-layout">
+
+      <!-- left: contact info -->
+      <div class="contact-info reveal">
+        <p style="font-size:.9375rem;color:var(--text-secondary);font-weight:300;line-height:1.75;max-width:400px">
+          Whether you manage 5 field representatives or 500, SafeZell scales with your operation. Get in touch to arrange a personalised demo or ask any questions about the platform.
+        </p>
+
+        <a href="https://wa.me/256775323200" target="_blank" rel="noopener" class="contact-channel">
+          <div class="contact-channel-icon" style="background:#e3f2fd">
+            <svg viewBox="0 0 24 24" fill="#1565c0">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+          </div>
+          <div class="contact-channel-body">
+            <div class="contact-channel-name">WhatsApp</div>
+            <div class="contact-channel-detail">+256 775 323 200</div>
+          </div>
+        </a>
+
+        <a href="mailto:safeaiafrica@gmail.com" class="contact-channel">
+          <div class="contact-channel-icon" style="background:#e3f2fd">
+            <svg fill="none" viewBox="0 0 24 24" stroke="#1565c0" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <div class="contact-channel-body">
+            <div class="contact-channel-name">Email</div>
+            <div class="contact-channel-detail">safeaiafrica@gmail.com</div>
+          </div>
+        </a>
+
+        <div style="padding:20px;border-radius:var(--r-lg);background:var(--brand-50);border:0.5px solid var(--brand-100)">
+          <div style="font-weight:600;font-size:.9375rem;color:var(--brand-900);margin-bottom:6px">What to expect</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:8px">
+            <li style="font-size:.8125rem;color:var(--brand-800);display:flex;align-items:flex-start;gap:8px;font-weight:300">
+              <svg width="16" height="16" style="margin-top:2px;flex-shrink:0" fill="none" viewBox="0 0 24 24" stroke="#1e88e5" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Live walkthrough of all six modules tailored to your business
+            </li>
+            <li style="font-size:.8125rem;color:var(--brand-800);display:flex;align-items:flex-start;gap:8px;font-weight:300">
+              <svg width="16" height="16" style="margin-top:2px;flex-shrink:0" fill="none" viewBox="0 0 24 24" stroke="#1e88e5" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Answers to your specific operational and integration questions
+            </li>
+            <li style="font-size:.8125rem;color:var(--brand-800);display:flex;align-items:flex-start;gap:8px;font-weight:300">
+              <svg width="16" height="16" style="margin-top:2px;flex-shrink:0" fill="none" viewBox="0 0 24 24" stroke="#1e88e5" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Pricing and deployment options for your team size and region
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- right: form -->
+      <div class="reveal">
+        <div class="demo-form">
+          <div class="form-title">Request a Demo</div>
+          <div class="form-sub">Fill in your details and we'll be in touch within one business day.</div>
+
+          <div id="demoForm">
+            <div class="form-row">
+              <div class="form-field">
+                <label class="form-label" for="fname">First Name</label>
+                <input class="form-input" id="fname" type="text" placeholder="Jane" required/>
+              </div>
+              <div class="form-field">
+                <label class="form-label" for="lname">Last Name</label>
+                <input class="form-input" id="lname" type="text" placeholder="Nakato" required/>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label class="form-label" for="femail">Work Email</label>
+              <input class="form-input" id="femail" type="email" placeholder="jane@company.com" required/>
+            </div>
+
+            <div class="form-field">
+              <label class="form-label" for="fphone">WhatsApp / Phone (optional)</label>
+              <input class="form-input" id="fphone" type="tel" placeholder="+254 700 000 000"/>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label class="form-label" for="fcompany">Company Name</label>
+                <input class="form-input" id="fcompany" type="text" placeholder="Acme FMCG Ltd" required/>
+              </div>
+              <div class="form-field">
+                <label class="form-label" for="fteam">Team Size</label>
+                <select class="form-select form-input" id="fteam">
+                  <option value="" disabled selected>Select range</option>
+                  <option>1–10 reps</option>
+                  <option>11–50 reps</option>
+                  <option>51–200 reps</option>
+                  <option>200+ reps</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label class="form-label" for="fcountry">Country / Region of Operation</label>
+              <input class="form-input" id="fcountry" type="text" placeholder="e.g. Kenya, Nigeria, South Africa…"/>
+            </div>
+
+            <div class="form-field">
+              <label class="form-label" for="fmessage">What are you looking to solve?</label>
+              <textarea class="form-textarea" id="fmessage" placeholder="Brief description of your current challenges or what you'd like to see in the demo…"></textarea>
+            </div>
+
+            <button class="form-submit" onclick="submitDemo(event)">
+              Send Demo Request
+            </button>
+          </div>
+
+          <div class="form-success" id="formSuccess">
+            <div class="form-success-icon">
+              <svg fill="none" viewBox="0 0 24 24" stroke="#1565c0" stroke-width="2.2" width="28" height="28">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+            </div>
+            <div class="form-success-title">Request sent!</div>
+            <div class="form-success-sub">We'll reach out via email or WhatsApp within one business day to schedule your demo.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA BAND ════════════════════════════════════════ -->
+<div class="cta-band">
+  <div class="cta-band-eyebrow">Ready to deploy</div>
+  <h2 class="cta-band-title">Put SafeZell to work across your field team today.</h2>
+  <p class="cta-band-sub">From a handful of representatives to hundreds of routes — SafeZell scales with your operation, wherever you're based.</p>
+  <div class="cta-band-actions">
+    <a href="#contact" class="btn-white">
+      <svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.86 9.86 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+      </svg>
+      Request a Demo
+    </a>
+    <a href="https://wa.me/256775323200" target="_blank" rel="noopener" class="btn-ghost">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="rgba(255,255,255,.7)">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      Chat on WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ══════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-brand-name">
+        SafeZell
+      </div>
+      <p>FMCG Field Sales Management System. Built for field sales teams worldwide — wherever your routes run.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <ul>
+        <li><a href="#features">Dashboard</a></li>
+        <li><a href="#features">Store Visits</a></li>
+        <li><a href="#features">Inventory</a></li>
+        <li><a href="#features">Variance Reports</a></li>
+        <li><a href="#features">Reports Builder</a></li>
+        <li><a href="#features">Admin Console</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="#roles">Security &amp; Roles</a></li>
+        <li><a href="#modules">Modules</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#contact">Documentation</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:safeaiafrica@gmail.com">safeaiafrica@gmail.com</a></li>
+        <li><a href="https://wa.me/256775323200" target="_blank" rel="noopener">WhatsApp: +256 775 323 200</a></li>
+        <li><a href="#contact">Request a Demo</a></li>
+        <li><a href="#contact">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 SafeZell. All rights reserved.</span>
+    <div class="footer-legal">
+      <a href="#">Terms</a>
+      <a href="#">Privacy</a>
+      <a href="#">Security</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── nav shadow on scroll ──
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+}, { passive: true });
+
+// ── scroll reveal ──
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('vis'); revealObs.unobserve(e.target); }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+// ── role tabs ──
+const roleData = [
+  {
+    title: 'Field Representative Permissions', badge: 'Field Role',
+    rows: [
+      ['GPS Store Check-In', true], ['Submit Visit Report', true],
+      ['Upload Shelf Photos', true], ['Record Daily Sales', true],
+      ['Log Supply Orders', true], ['View Stock Levels', true],
+      ['Review Team Reports', false], ['Manage Users', false],
+      ['Record Deliveries', true], ['Create New Stores (field)', true],
+    ]
+  },
+  {
+    title: 'Supervisor Permissions', badge: 'Management',
+    rows: [
+      ['GPS Check-In', false], ['Submit Visit Report', false],
+      ['View All Team Visits', true], ['Record Deliveries', true],
+      ['Assign Route Schedules', true], ['View All Sales', true],
+      ['Review & Comment Reports', true], ['Manage Users', false],
+      ['View Audit Logs', true], ['Manage Stores (admin panel)', false],
+    ]
+  },
+  {
+    title: 'Admin Permissions', badge: 'Full Access',
+    rows: [
+      ['GPS Store Check-In', true], ['Submit Visit Report', true],
+      ['View All Team Data', true], ['Record Deliveries', true],
+      ['Assign Route Schedules', true], ['Manage Users', true],
+      ['Review &amp; Comment Reports', true], ['Manage Stores &amp; Products', true],
+      ['View Audit Logs', true], ['Delete Records', true],
+    ]
+  }
+];
+
+const accessTitle = document.querySelector('.access-title');
+const accessBadge = document.querySelector('.access-badge');
+const accessRows  = document.getElementById('accessRows');
+
+document.querySelectorAll('.role-item').forEach((item, i) => {
+  item.addEventListener('click', () => {
+    document.querySelectorAll('.role-item').forEach(r => r.classList.remove('active'));
+    item.classList.add('active');
+    const d = roleData[i];
+    accessTitle.textContent = d.title;
+    accessBadge.textContent = d.badge;
+    accessRows.innerHTML = d.rows.map(([label, yes]) => `
+      <div class="access-row">
+        <strong>${label}</strong>
+        <div class="${yes ? 'perm-yes' : 'perm-no'}"></div>
+      </div>`).join('');
+  });
+});
+
+// ── demo form submit ──
+function submitDemo(e) {
+  e.preventDefault();
+  const fname    = document.getElementById('fname').value.trim();
+  const femail   = document.getElementById('femail').value.trim();
+  const fcompany = document.getElementById('fcompany').value.trim();
+
+  if (!fname || !femail || !fcompany) {
+    document.getElementById('fname').reportValidity();
+    return;
+  }
+
+  // Build WhatsApp message with form data
+  const fphone   = document.getElementById('fphone').value.trim();
+  const fteam    = document.getElementById('fteam').value;
+  const fcountry = document.getElementById('fcountry').value.trim();
+  const fmessage = document.getElementById('fmessage').value.trim();
+  const lname    = document.getElementById('lname').value.trim();
+
+  const msg = encodeURIComponent(
+    `*SafeZell Demo Request*\n\n` +
+    `*Name:* ${fname} ${lname}\n` +
+    `*Email:* ${femail}\n` +
+    (fphone    ? `*Phone:* ${fphone}\n` : '') +
+    `*Company:* ${fcompany}\n` +
+    (fteam     ? `*Team Size:* ${fteam}\n` : '') +
+    (fcountry  ? `*Region:* ${fcountry}\n` : '') +
+    (fmessage  ? `\n*Message:*\n${fmessage}` : '')
+  );
+
+  // Open WhatsApp with pre-filled message
+  window.open(`https://wa.me/256775323200?text=${msg}`, '_blank');
+
+  // Also open email client as backup
+  const subject = encodeURIComponent('SafeZell Demo Request');
+  const body    = encodeURIComponent(
+    `Demo Request from ${fname} ${lname}\n\nEmail: ${femail}\nCompany: ${fcompany}\nTeam Size: ${fteam}\nRegion: ${fcountry}\n\n${fmessage}`
+  );
+  setTimeout(() => {
+    window.location.href = `mailto:safeaiafrica@gmail.com?subject=${subject}&body=${body}`;
+  }, 800);
+
+  // Show success state
+  document.getElementById('demoForm').style.display = 'none';
+  const suc = document.getElementById('formSuccess');
+  suc.style.display = 'flex';
+}
+</script>
+<script src="/safeai-nav.js" defer></script>
+</body>
+</html>
+
