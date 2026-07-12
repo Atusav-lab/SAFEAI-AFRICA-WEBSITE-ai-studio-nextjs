@@ -60,32 +60,32 @@ export default function ComingSoon() {
               </div>
 
               {/* Join waitlist form */}
-              <div className="pt-6 max-w-md">
+              <div className="mt-8 sm:mt-10 max-w-md w-full">
                 {submitted ? (
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="p-4 bg-emerald-50 border border-emerald-200 rounded-xl flex items-center gap-3 text-emerald-700"
+                    className="p-4 bg-emerald-50 border border-emerald-200 rounded-xl flex items-center gap-3 text-emerald-700 w-full"
                   >
-                    <CheckCircle2 size={20} />
+                    <CheckCircle2 size={20} className="flex-shrink-0" />
                     <span className="text-sm font-semibold">You're on the list! We'll notify you as soon as we launch.</span>
                   </motion.div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="flex gap-2 bg-white p-1.5 rounded-xl border border-slate-200 shadow-sm">
+                  <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 sm:gap-2 sm:bg-white sm:p-1.5 sm:rounded-xl sm:border sm:border-slate-200 sm:shadow-sm w-full">
                     <input
                       type="email"
                       required
                       placeholder="Enter your email to join the waitlist"
                       value={email}
                       onChange={e => setEmail(e.target.value)}
-                      className="flex-grow bg-transparent px-4 py-2.5 text-sm focus:outline-none placeholder-slate-400 text-slate-800"
+                      className="flex-grow bg-white sm:bg-transparent px-5 py-4 sm:py-2.5 text-base sm:text-sm focus:outline-none placeholder-slate-400 text-slate-800 rounded-xl sm:rounded-none border border-slate-200 sm:border-none shadow-sm sm:shadow-none w-full"
                     />
                     <button
                       type="submit"
-                      className="px-5 py-2.5 bg-[#00499E] hover:bg-[#00387a] text-white font-semibold rounded-lg text-sm flex items-center gap-1.5 transition-all"
+                      className="w-full sm:w-auto justify-center px-6 py-4 sm:py-2.5 bg-[#00499E] hover:bg-[#00387a] text-white font-semibold rounded-xl sm:rounded-lg text-base sm:text-sm flex items-center gap-2 transition-all shadow-md sm:shadow-none"
                     >
                       Notify Me
-                      <ArrowRight size={14} />
+                      <ArrowRight size={18} className="sm:w-4 sm:h-4" />
                     </button>
                   </form>
                 )}
