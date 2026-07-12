@@ -21,7 +21,7 @@ export default function ComingSoon() {
   return (
     <>
       <Header forceScrolled={true} />
-      <main className="pt-20 lg:pt-24 min-h-screen bg-slate-900 text-white flex flex-col justify-between">
+      <main className="pt-28 lg:pt-32 min-h-screen bg-slate-900 text-white flex flex-col justify-between">
         {/* Main hero area */}
         <section className="flex-grow py-8 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col justify-center">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -37,7 +37,7 @@ export default function ComingSoon() {
                   African Talent
                 </span>
               </h1>
-              <p className="text-lg text-slate-300 font-lato leading-relaxed max-w-lg">
+              <p className="text-lg text-slate-200 font-lato leading-relaxed max-w-lg">
                 We are building premium training pipelines, certification programs, and job placement engines designed to empower the next generation of African AI developers, engineers, and product leaders.
               </p>
 
@@ -47,14 +47,14 @@ export default function ComingSoon() {
                   <GraduationCap className="text-cyan-400 mt-1 flex-shrink-0" size={20} />
                   <div>
                     <h3 className="font-bold text-white text-base">Advanced AI Training</h3>
-                    <p className="text-slate-300 text-sm font-lato">Hands-on curriculum centering computer vision, NLP, and genomics analytics.</p>
+                    <p className="text-slate-200 text-sm font-lato">Hands-on curriculum centering computer vision, NLP, and genomics analytics.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Briefcase className="text-cyan-400 mt-1 flex-shrink-0" size={20} />
                   <div>
                     <h3 className="font-bold text-white text-base">Elite Job Matching</h3>
-                    <p className="text-slate-300 text-sm font-lato">Direct pipelines connecting top-tier talent to international teams and tech groups.</p>
+                    <p className="text-slate-200 text-sm font-lato">Direct pipelines connecting top-tier talent to international teams and tech groups.</p>
                   </div>
                 </div>
               </div>
@@ -100,20 +100,20 @@ export default function ComingSoon() {
                   <GraduationCap size={32} className="text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-2">SAFE Academy</h3>
-                <p className="text-slate-300 text-sm font-lato mb-6 leading-relaxed">
+                <p className="text-slate-200 text-sm font-lato mb-6 leading-relaxed">
                   Join a community of thousands learning machine learning, data engineering, and tech leadership across Africa.
                 </p>
                 <div className="space-y-2.5">
                   <div className="flex items-center justify-between p-3 bg-slate-950/60 rounded-xl text-xs border border-slate-700">
-                    <span className="text-slate-300 font-medium">Curriculum Blueprint</span>
+                    <span className="text-slate-200 font-medium">Curriculum Blueprint</span>
                     <span className="text-cyan-400 font-semibold uppercase">100% Ready</span>
                   </div>
                   <div className="flex items-center justify-between p-3 bg-slate-950/60 rounded-xl text-xs border border-slate-700">
-                    <span className="text-slate-300 font-medium">Partner Pipelines</span>
+                    <span className="text-slate-200 font-medium">Partner Pipelines</span>
                     <span className="text-cyan-400 font-semibold uppercase font-mono">10+ Secured</span>
                   </div>
                   <div className="flex items-center justify-between p-3 bg-slate-950/60 rounded-xl text-xs border border-slate-700">
-                    <span className="text-slate-300 font-medium">LMS Platform</span>
+                    <span className="text-slate-200 font-medium">LMS Platform</span>
                     <span className="text-amber-400 font-semibold uppercase">Beta Testing</span>
                   </div>
                 </div>

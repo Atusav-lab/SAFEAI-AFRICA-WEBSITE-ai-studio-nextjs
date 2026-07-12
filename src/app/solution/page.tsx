@@ -156,7 +156,7 @@ export default function Solution() {
   return (
     <>
       <Header forceScrolled={true} />
-      <main className="pt-20 lg:pt-24 min-h-screen bg-slate-50 text-slate-800">
+      <main className="pt-28 lg:pt-32 min-h-screen bg-slate-50 text-slate-800">
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-gradient-to-r from-[#00499E] to-[#0075ba] text-white py-20 lg:py-24">
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]" />
