@@ -20,7 +20,7 @@ export const navLinks = [
     label: 'Products & Services',
     href: '/solution',
     children: [
-      { label: 'All Products & Services', href: '/solution', highlight: true },
+      { label: 'All Products', href: '/solution', highlight: true },
       { label: 'SAFESeq (Genomics)', href: 'https://safeseq.safeaiafrica.com', external: true },
       { label: 'SAFEKemia (Chemistry AI Tutor)', href: 'https://safekemia.safeaiafrica.com', external: true },
       { label: 'SafeZell - Field Sales', href: '/safezell' },
