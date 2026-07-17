@@ -228,7 +228,7 @@ function WhatWeDoSection() {
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full w-20 h-20 flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300">
                 <Play size={32} fill="white" className="text-white ml-1" />
               </button>
-              <p className="absolute bottom-6 left-0 right-0 text-white text-sm font-medium px-4">SAFE AI Africa Introduction</p>
+              <p className="absolute bottom-6 left-0 right-0 text-white text-sm font-medium px-4">AMR lens Africa in action</p>
             </>
           ) : (
             <iframe
