@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { Menu, X, ChevronDown, ExternalLink, ArrowRight, Phone, Mail } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -53,6 +53,7 @@ export default function Header({ forceScrolled = false }: HeaderProps) {
     'About Us': false,
     'Products & Services': false,
   })
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
     if (forceScrolled) return
@@ -74,6 +75,17 @@ export default function Header({ forceScrolled = false }: HeaderProps) {
     document.addEventListener('click', handleClickOutside)
     return () => document.removeEventListener('click', handleClickOutside)
   }, [activeMenu])
+
+  const openMenu = (label: string) => {
+    if (closeTimer.current) clearTimeout(closeTimer.current)
+    setActiveMenu(label)
+  }
+
+  const scheduleClose = () => {
+    closeTimer.current = setTimeout(() => {
+      setActiveMenu(null)
+    }, 150)
+  }
 
   const toggleMobileSubmenu = (label: string, e: React.MouseEvent) => {
     e.preventDefault()
@@ -132,8 +144,8 @@ export default function Header({ forceScrolled = false }: HeaderProps) {
                 <div
                   key={link.label}
                   className="relative nav-item-container"
-                  onMouseEnter={() => setActiveMenu(link.label)}
-                  onMouseLeave={() => setActiveMenu(null)}
+                  onMouseEnter={() => openMenu(link.label)}
+                  onMouseLeave={scheduleClose}
                 >
                   <a
                     href={link.href}
@@ -151,23 +163,29 @@ export default function Header({ forceScrolled = false }: HeaderProps) {
 
                   {/* Dropdown Menu */}
                   {link.children && activeMenu === link.label && (
-                    <div className="absolute top-full left-0 mt-1 w-72 bg-white rounded-xl shadow-2xl border border-gray-100 py-2 z-50 animate-fade-in">
-                      {link.children.map(child => (
-                        <a
-                          key={child.label}
-                          href={child.href}
-                          target={child.external ? '_blank' : undefined}
-                          rel={child.external ? 'noopener noreferrer' : undefined}
-                          className={`flex items-center justify-between px-4 py-2.5 text-sm transition-colors ${
-                            child.highlight 
-                              ? 'text-[#00499E] font-bold bg-blue-50/70 hover:bg-blue-100/75' 
-                              : 'text-gray-700 hover:text-[#00499E] hover:bg-blue-50/50'
-                          }`}
-                        >
-                          <span className="truncate">{child.label}</span>
-                          {child.external && <ExternalLink size={12} className="text-gray-400 flex-shrink-0" />}
-                        </a>
-                      ))}
+                    <div 
+                      className="absolute top-full left-0 pt-2 w-72 z-50 animate-fade-in"
+                      onMouseEnter={() => openMenu(link.label)}
+                      onMouseLeave={scheduleClose}
+                    >
+                      <div className="bg-white rounded-xl shadow-2xl border border-gray-100 py-2">
+                        {link.children.map(child => (
+                          <a
+                            key={child.label}
+                            href={child.href}
+                            target={child.external ? '_blank' : undefined}
+                            rel={child.external ? 'noopener noreferrer' : undefined}
+                            className={`flex items-center justify-between px-4 py-2.5 text-sm transition-colors ${
+                              child.highlight 
+                                ? 'text-[#00499E] font-bold bg-blue-50/70 hover:bg-blue-100/75' 
+                                : 'text-gray-700 hover:text-[#00499E] hover:bg-blue-50/50'
+                            }`}
+                          >
+                            <span className="truncate">{child.label}</span>
+                            {child.external && <ExternalLink size={12} className="text-gray-400 flex-shrink-0" />}
+                          </a>
+                        ))}
+                      </div>
                     </div>
                   )}
                 </div>
