@@ -250,7 +250,7 @@ function WhatWeDoSection() {
 const products = [
   {
     icon: Dna, title: 'SAFESeq', subtitle: 'AI-Powered Genomic Infrastructure for Africa',
-    desc: 'Africa\'s first unified genomic analysis platform — free, browser-based, and sovereign. 30+ professional tools (CRISPR, AMR detection, 3D protein folding, phylogeny) in one tab, interpreted by AI. No installation. No code.',
+    desc: 'Africa\'s first unified genomic analysis platform, free, browser-based, and sovereign. 30+ professional tools (CRISPR, AMR detection, 3D protein folding, phylogeny) in one tab, interpreted by AI. No installation. No code.',
     href: 'https://safeseq.safeaiafrica.com', external: true,
     color: 'from-blue-500 to-cyan-500',
     img: '/SAFEAI_ASSETS/safeseq.webp'
