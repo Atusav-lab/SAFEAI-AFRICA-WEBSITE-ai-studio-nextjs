@@ -320,21 +320,22 @@ function ProductsSection() {
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
           {products.map((product, i) => (
             <motion.div key={product.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.07 }}>
-              <TiltCard>
+              transition={{ delay: i * 0.07 }}
+              className="h-full">
+              <TiltCard className="h-full">
                 <a href={product.href}
                   target={product.external ? '_blank' : undefined}
                   rel={product.external ? 'noopener noreferrer' : undefined}
                   id={`product-${product.title.toLowerCase().replace(/\s/g, '-')}`}
-                  className="block group h-full bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                  className="flex flex-col h-full group bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                   {/* Product image with 3D overlay */}
-                  <div className="relative h-36 overflow-hidden">
+                  <div className="relative h-36 flex-shrink-0 overflow-hidden">
                     <Image
                       src={product.img}
                       alt={product.title}
@@ -349,10 +350,10 @@ function ProductsSection() {
                       </div>
                     </div>
                   </div>
-                  <div className="p-5">
+                  <div className="p-5 flex flex-col flex-grow">
                     <h3 className="font-bold text-gray-900 mb-0.5 group-hover:text-[#0061B2] transition-colors">{product.title}</h3>
-                    <p className="text-xs text-[#0061B2] font-medium mb-3">{product.subtitle}</p>
-                    <p className="text-sm text-gray-600 leading-relaxed">{product.desc}</p>
+                    <p className="text-xs text-[#0061B2] font-medium mb-3 line-clamp-1">{product.subtitle}</p>
+                    <p className="text-sm text-gray-600 leading-relaxed line-clamp-3 flex-grow">{product.desc}</p>
                     <div className="mt-4 flex items-center gap-1 text-[#0061B2] text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
                       Learn more <ArrowRight size={14} />
                     </div>
