@@ -98,8 +98,7 @@ export default function Header({ forceScrolled = false }: HeaderProps) {
 
   const handleParentClick = (link: typeof navLinks[0], e: React.MouseEvent) => {
     if (link.children) {
-      e.preventDefault()
-      e.stopPropagation()
+      // Allow navigation on click for top-level links
       setActiveMenu(activeMenu === link.label ? null : link.label)
     }
   }
