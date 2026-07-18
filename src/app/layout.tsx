@@ -45,7 +45,15 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-    googleBot: { "max-image-preview": "large" },
+    googleBot: { "max-image-preview": "large", index: true, follow: true },
+    // Bingbot specific optimizations
+    // "max-snippet": -1, "max-image-preview": "large", "max-video-preview": -1
+  },
+  verification: {
+    // Replace this string with the actual code from Bing Webmaster Tools -> Verify Your Site -> HTML Meta Tag
+    other: {
+      "msvalidate.01": ["YOUR_BING_VERIFICATION_CODE_HERE"],
+    },
   },
 };
 
