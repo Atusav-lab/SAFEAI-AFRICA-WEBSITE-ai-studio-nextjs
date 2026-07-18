@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   verification: {
     // Replace this string with the actual code from Bing Webmaster Tools -> Verify Your Site -> HTML Meta Tag
     other: {
-      "msvalidate.01": ["YOUR_BING_VERIFICATION_CODE_HERE"],
+      "msvalidate.01": ["B49C9C0C1063E594923D2F1AAA7F8E7E"],
     },
   },
 };
