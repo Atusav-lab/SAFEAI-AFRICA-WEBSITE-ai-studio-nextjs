@@ -210,7 +210,7 @@ function AnnouncementSection() {
             <div className="relative h-[420px] lg:h-full min-h-[420px] bg-white">
               <Image
                 src="/SAFEAI_ASSETS/biomic-announcement.jpg"
-                alt="SAFESeq selected among the Top 15 startups in the BIOMIC Accelerator Program"
+                alt="SAFE AI-AFRICA selected among the Top 15 startups in the BIOMIC Accelerator Program"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-contain p-4"
@@ -223,13 +223,14 @@ function AnnouncementSection() {
                 Big News
               </div>
               <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4 leading-snug">
-                SAFESeq Named a Top 15 Startup in the BIOMIC Accelerator Program
+                SAFE AI-AFRICA Named a Top 15 Startup in the BIOMIC Accelerator Program
               </h2>
               <p className="text-blue-100 leading-relaxed mb-4">
+                <span className="font-semibold text-white">SAFE AI-AFRICA</span> — makers of{' '}
                 <a href="https://safeseq.safeaiafrica.com" target="_blank" rel="noopener noreferrer" className="text-[#00E5FF] font-semibold hover:underline">
                   SAFESeq
-                </a>{' '}
-                — the flagship platform from SAFE AI-AFRICA — has been selected among the{' '}
+                </a>
+                , its flagship platform — has been selected among the{' '}
                 <span className="font-semibold text-white">Top 15 startups</span> in the{' '}
                 <span className="font-semibold text-white">BIOMIC Accelerator Program</span>, out of a highly
                 competitive pool of biomedical, biotech, and health innovations from across Uganda.
@@ -588,9 +589,9 @@ function CertSection() {
 const blogPosts = [
   {
     img: '/SAFEAI_ASSETS/biomic-announcement.jpg',
-    alt: 'SAFESeq selected among the Top 15 startups in the BIOMIC Accelerator Program',
-    title: 'SAFESeq Named a Top 15 Startup in the BIOMIC Accelerator Program',
-    excerpt: 'SAFESeq, the flagship platform from SAFE AI-AFRICA, has been selected among the Top 15 startups in the BIOMIC Accelerator Program, out of a highly competitive pool of biomedical, biotech, and health innovations from across Uganda.',
+    alt: 'SAFE AI-AFRICA selected among the Top 15 startups in the BIOMIC Accelerator Program',
+    title: 'SAFE AI-AFRICA Named a Top 15 Startup in the BIOMIC Accelerator Program',
+    excerpt: 'SAFE AI-AFRICA, makers of the flagship platform SAFESeq, has been selected among the Top 15 startups in the BIOMIC Accelerator Program, out of a highly competitive pool of biomedical, biotech, and health innovations from across Uganda.',
     author: 'Admin',
     date: 'July 26, 2026',
     category: 'Company News',

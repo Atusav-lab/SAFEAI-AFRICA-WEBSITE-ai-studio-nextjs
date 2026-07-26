@@ -10,8 +10,8 @@ import Footer from '@/components/Footer'
 const blogs = [
   {
     id: 0,
-    title: 'SAFESeq Named a Top 15 Startup in the BIOMIC Accelerator Program',
-    desc: 'SAFESeq, the flagship platform from SAFE AI-AFRICA, has been selected among the Top 15 startups in the BIOMIC Accelerator Program, out of a highly competitive pool of biomedical, biotech, and health innovations from across Uganda.',
+    title: 'SAFE AI-AFRICA Named a Top 15 Startup in the BIOMIC Accelerator Program',
+    desc: 'SAFE AI-AFRICA, makers of the flagship platform SAFESeq, has been selected among the Top 15 startups in the BIOMIC Accelerator Program, out of a highly competitive pool of biomedical, biotech, and health innovations from across Uganda.',
     image: '/SAFEAI_ASSETS/biomic-announcement.jpg',
     imgPosition: 'object-bottom',
     date: 'July 26, 2026',

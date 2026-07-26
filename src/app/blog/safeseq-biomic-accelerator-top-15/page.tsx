@@ -8,13 +8,13 @@ const LINKEDIN_POST_URL =
   'https://www.linkedin.com/posts/hindsight-ventures_biomic-healthcareinnovation-biomedicalinnovation-activity-7486312955354140673-eu2H?utm_source=share&utm_medium=member_desktop&rcm=ACoAADtRYv8Bfiy715m5Cx57teanjLUezG-4yGo'
 
 export const metadata = {
-  title: 'SAFESeq Named a Top 15 Startup in the BIOMIC Accelerator Program | SAFE AI-AFRICA',
+  title: 'SAFE AI-AFRICA Named a Top 15 Startup in the BIOMIC Accelerator Program | SAFE AI-AFRICA',
   description:
-    "SAFESeq, the flagship platform from SAFE AI-AFRICA, has been selected among the Top 15 startups in the BIOMIC Accelerator Program, out of a highly competitive pool of biomedical, biotech, and health innovations from across Uganda.",
+    "SAFE AI-AFRICA, makers of the flagship platform SAFESeq, has been selected among the Top 15 startups in the BIOMIC Accelerator Program, out of a highly competitive pool of biomedical, biotech, and health innovations from across Uganda.",
   openGraph: {
-    title: 'SAFESeq Named a Top 15 Startup in the BIOMIC Accelerator Program',
+    title: 'SAFE AI-AFRICA Named a Top 15 Startup in the BIOMIC Accelerator Program',
     description:
-      "SAFESeq, the flagship platform from SAFE AI-AFRICA, has been selected among the Top 15 startups in the BIOMIC Accelerator Program.",
+      "SAFE AI-AFRICA, makers of the flagship platform SAFESeq, has been selected among the Top 15 startups in the BIOMIC Accelerator Program.",
     images: ['/SAFEAI_ASSETS/biomic-announcement.jpg'],
   },
 }
@@ -32,7 +32,7 @@ export default function SafeSeqBiomicAnnouncementPost() {
               Company News
             </span>
             <h1 className="text-3xl lg:text-5xl font-extrabold tracking-tight mb-4 leading-tight">
-              SAFESeq Named a Top 15 Startup in the BIOMIC Accelerator Program
+              SAFE AI-AFRICA Named a Top 15 Startup in the BIOMIC Accelerator Program
             </h1>
             <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-blue-100 font-medium">
               <span className="flex items-center gap-1.5"><Calendar size={14} /> July 26, 2026</span>
@@ -51,7 +51,7 @@ export default function SafeSeqBiomicAnnouncementPost() {
           <div className="relative aspect-video w-full rounded-2xl overflow-hidden shadow-lg mb-10 bg-slate-100">
             <Image
               src="/SAFEAI_ASSETS/biomic-announcement.jpg"
-              alt="SAFESeq selected among the Top 15 startups in the BIOMIC Accelerator Program"
+              alt="SAFE AI-AFRICA selected among the Top 15 startups in the BIOMIC Accelerator Program"
               fill
               sizes="(min-width: 1024px) 896px, 100vw"
               className="object-cover object-bottom"
@@ -63,10 +63,11 @@ export default function SafeSeqBiomicAnnouncementPost() {
             <p>
               Out of a highly competitive pool of biomedical, biotech, and health innovations from across
               Uganda, our team made the cut — and we could not be prouder.{' '}
+              <strong className="text-slate-800 font-semibold">SAFE AI-AFRICA</strong>, makers of{' '}
               <a href="https://safeseq.safeaiafrica.com" target="_blank" rel="noopener noreferrer" className="text-[#00499E] font-semibold hover:underline">
                 SAFESeq
-              </a>{' '}
-              has been selected among the <strong className="text-slate-800 font-semibold">Top 15 startups</strong> in the{' '}
+              </a>
+              , has been selected among the <strong className="text-slate-800 font-semibold">Top 15 startups</strong> in the{' '}
               <strong className="text-slate-800 font-semibold">BIOMIC Accelerator Program</strong>.
             </p>
 
@@ -129,7 +130,7 @@ export default function SafeSeqBiomicAnnouncementPost() {
                   </h4>
                   <p className="text-sm text-slate-500 line-clamp-2">
                     Meet the Top 15 startups selected for the BIOMIC Accelerator Program — congratulations to
-                    SAFESeq by SAFE AI-AFRICA and the rest of the cohort driving biomedical innovation in Uganda.
+                    SAFE AI-AFRICA, makers of SAFESeq, and the rest of the cohort driving biomedical innovation in Uganda.
                   </p>
                 </div>
                 <ExternalLink size={16} className="text-slate-300 group-hover:text-[#00499E] transition-colors flex-shrink-0 mt-1" />

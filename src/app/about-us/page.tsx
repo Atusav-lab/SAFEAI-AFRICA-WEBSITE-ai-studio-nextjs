@@ -74,7 +74,7 @@ export default function AboutUs() {
                 </div>
                 <h3 className="text-xl font-bold text-[#0b1b4d] mb-4">Our Mission</h3>
                 <p className="text-gray-600 leading-relaxed text-sm">
-                  To leverage Artificial Intelligence to solve Africa's most pressing challenges, empowering communities and organizations to achieve sustainable development and improved quality of life.
+                  To design and deploy advanced artificial intelligence solutions tailored specifically for African markets, solving complex healthcare, agricultural, educational, and business issues.
                 </p>
               </div>
 
@@ -85,7 +85,7 @@ export default function AboutUs() {
                 </div>
                 <h3 className="text-xl font-bold text-[#0b1b4d] mb-4">Our Vision</h3>
                 <p className="text-gray-600 leading-relaxed text-sm">
-                  To be Africa's leading AI innovation hub, driving transformative change through ethical and inclusive artificial intelligence solutions that benefit all Africans.
+                  To become Africa's premier technology enterprise, driving digital sovereignty and industrial growth through locally-sourced data and highly ethical AI systems.
                 </p>
               </div>
 
