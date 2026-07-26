@@ -2,11 +2,24 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { Search, Calendar, User, Clock, ArrowRight } from 'lucide-react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
 const blogs = [
+  {
+    id: 0,
+    title: 'SAFESeq Named a Top 15 Startup in the BIOMIC Accelerator Program',
+    desc: 'SAFESeq, the flagship platform from SAFE AI-AFRICA, has been selected among the Top 15 startups in the BIOMIC Accelerator Program, out of a highly competitive pool of biomedical, biotech, and health innovations from across Uganda.',
+    image: '/SAFEAI_ASSETS/biomic-announcement.jpg',
+    imgPosition: 'object-bottom',
+    date: 'July 26, 2026',
+    author: 'Admin',
+    category: 'Company News',
+    readTime: '4 min read',
+    href: '/blog/safeseq-biomic-accelerator-top-15',
+  },
   {
     id: 1,
     title: '"Horizon1000": Gates & OpenAI\'s $50M AI Mission',
@@ -39,7 +52,7 @@ const blogs = [
   },
 ]
 
-const categories = ['All', 'Healthcare', 'Agriculture', 'Education']
+const categories = ['All', 'Company News', 'Healthcare', 'Agriculture', 'Education']
 
 export default function Blog() {
   const [search, setSearch] = useState('')
@@ -107,59 +120,65 @@ export default function Blog() {
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
           {filteredBlogs.length > 0 ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredBlogs.map(blog => (
-                <article
-                  key={blog.id}
-                  className="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-md transition-shadow flex flex-col h-full"
-                >
-                  {/* Article Image */}
-                  <div className="relative aspect-video w-full overflow-hidden bg-slate-100">
-                    <Image
-                      src={blog.image}
-                      alt={blog.title}
-                      fill
-                      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                      className="object-cover hover:scale-105 transition-transform duration-500"
-                    />
-                    <span className="absolute top-4 left-4 bg-[#00499E] text-white text-xs font-semibold px-2.5 py-1 rounded-full uppercase tracking-wider">
-                      {blog.category}
-                    </span>
-                  </div>
+              {filteredBlogs.map(blog => {
+                const Wrapper = blog.href ? Link : 'article'
+                const wrapperProps = blog.href ? { href: blog.href } : {}
 
-                  {/* Content */}
-                  <div className="p-6 flex flex-col flex-grow">
-                    {/* Metadata */}
-                    <div className="flex items-center gap-4 text-xs text-slate-400 mb-4 font-medium">
-                      <span className="flex items-center gap-1">
-                        <Calendar size={13} />
-                        {blog.date}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <User size={13} />
-                        {blog.author}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <Clock size={13} />
-                        {blog.readTime}
+                return (
+                  <Wrapper
+                    key={blog.id}
+                    {...(wrapperProps as any)}
+                    className="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-md transition-shadow flex flex-col h-full group"
+                  >
+                    {/* Article Image */}
+                    <div className="relative aspect-video w-full overflow-hidden bg-slate-100">
+                      <Image
+                        src={blog.image}
+                        alt={blog.title}
+                        fill
+                        sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                        className={`object-cover ${blog.imgPosition ?? 'object-center'} group-hover:scale-105 transition-transform duration-500`}
+                      />
+                      <span className="absolute top-4 left-4 bg-[#00499E] text-white text-xs font-semibold px-2.5 py-1 rounded-full uppercase tracking-wider">
+                        {blog.category}
                       </span>
                     </div>
 
-                    <h2 className="text-xl font-bold text-[#0b1b4d] mb-3 leading-snug hover:text-[#00499E] transition-colors">
-                      {blog.title}
-                    </h2>
-                    <p className="text-slate-500 text-sm leading-relaxed mb-6 font-lato flex-grow">
-                      {blog.desc}
-                    </p>
+                    {/* Content */}
+                    <div className="p-6 flex flex-col flex-grow">
+                      {/* Metadata */}
+                      <div className="flex items-center gap-4 text-xs text-slate-400 mb-4 font-medium">
+                        <span className="flex items-center gap-1">
+                          <Calendar size={13} />
+                          {blog.date}
+                        </span>
+                        <span className="flex items-center gap-1">
+                          <User size={13} />
+                          {blog.author}
+                        </span>
+                        <span className="flex items-center gap-1">
+                          <Clock size={13} />
+                          {blog.readTime}
+                        </span>
+                      </div>
 
-                    <div className="border-t border-slate-100 pt-4 mt-auto">
-                      <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#00499E] hover:gap-2.5 transition-all">
-                        Read Full Article
-                        <ArrowRight size={14} />
-                      </span>
+                      <h2 className="text-xl font-bold text-[#0b1b4d] mb-3 leading-snug group-hover:text-[#00499E] transition-colors">
+                        {blog.title}
+                      </h2>
+                      <p className="text-slate-500 text-sm leading-relaxed mb-6 font-lato flex-grow">
+                        {blog.desc}
+                      </p>
+
+                      <div className="border-t border-slate-100 pt-4 mt-auto">
+                        <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#00499E] group-hover:gap-2.5 transition-all">
+                          Read Full Article
+                          <ArrowRight size={14} />
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                </article>
-              ))}
+                  </Wrapper>
+                )
+              })}
             </div>
           ) : (
             <div className="text-center py-20 bg-white rounded-2xl border border-slate-100 shadow-sm">

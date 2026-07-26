@@ -192,6 +192,78 @@ function HeroSection() {
 }
 
 /* ============================================================
+   BIOMIC ANNOUNCEMENT SECTION
+============================================================ */
+function AnnouncementSection() {
+  return (
+    <section id="biomic-announcement" className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <TiltCard>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="grid lg:grid-cols-2 gap-0 items-center bg-gradient-to-br from-[#0b1b4d] to-[#082da3] rounded-3xl overflow-hidden shadow-2xl relative">
+            <div className="absolute top-0 right-0 w-72 h-72 bg-[#00E5FF]/10 rounded-full blur-3xl" />
+
+            {/* Image */}
+            <div className="relative h-[420px] lg:h-full min-h-[420px] bg-white">
+              <Image
+                src="/SAFEAI_ASSETS/biomic-announcement.jpg"
+                alt="SAFESeq selected among the Top 15 startups in the BIOMIC Accelerator Program"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-contain p-4"
+              />
+            </div>
+
+            {/* Text */}
+            <div className="relative p-8 lg:p-12">
+              <div className="inline-flex items-center gap-2 bg-[#00E5FF]/10 text-[#00E5FF] text-sm font-medium px-4 py-2 rounded-full mb-5">
+                Big News
+              </div>
+              <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4 leading-snug">
+                SAFESeq Named a Top 15 Startup in the BIOMIC Accelerator Program
+              </h2>
+              <p className="text-blue-100 leading-relaxed mb-4">
+                <a href="https://safeseq.safeaiafrica.com" target="_blank" rel="noopener noreferrer" className="text-[#00E5FF] font-semibold hover:underline">
+                  SAFESeq
+                </a>{' '}
+                — the flagship platform from SAFE AI-AFRICA — has been selected among the{' '}
+                <span className="font-semibold text-white">Top 15 startups</span> in the{' '}
+                <span className="font-semibold text-white">BIOMIC Accelerator Program</span>, out of a highly
+                competitive pool of biomedical, biotech, and health innovations from across Uganda.
+              </p>
+              <p className="text-blue-100 leading-relaxed mb-4">
+                SAFESeq is the first platform of its kind to unify 30+ professional-grade bioinformatics
+                tools — gene prediction, CRISPR design, protein structure prediction, AMR resistance screening,
+                molecular docking, phylogenetics, and more — into a single browser tab. No installs, no code.
+                It's also the first Africa-hosted genomics platform to expose its tools via the Model Context
+                Protocol (MCP), letting AI agents like Claude and ChatGPT query it directly, with every result
+                interpreted in plain language by an AI assistant tuned to the local pathogen landscape and
+                sovereign deployment infrastructure by design.
+              </p>
+              <p className="text-blue-100 leading-relaxed mb-8">
+                BIOMIC is coordinated by The Lung Institute, Makerere University, funded by the Science,
+                Technology and Innovation Secretariat of Uganda — Office of the President (STI-OP), and
+                implemented in partnership with Hindsight Ventures to accelerate commercialization of
+                breakthrough biomedical, biotechnology, and health innovations in Uganda. This selection gives
+                SAFE AI-AFRICA mentorship, networks, and resources — including compute and other technology
+                credits — to take SAFESeq from a live product to national genomic infrastructure.
+              </p>
+              <a href="https://safeseq.safeaiafrica.com" target="_blank" rel="noopener noreferrer" id="biomic-safeseq-btn"
+                className="bg-white text-[#0b1b4d] font-semibold px-6 py-3 rounded-xl inline-flex items-center gap-2 hover:bg-[#00E5FF] hover:text-white transition-all duration-300 shadow-lg">
+                Explore SAFESeq <ArrowRight size={16} />
+              </a>
+            </div>
+          </motion.div>
+        </TiltCard>
+      </div>
+    </section>
+  )
+}
+
+/* ============================================================
    WHAT WE DO (video section)
 ============================================================ */
 function WhatWeDoSection() {
@@ -515,6 +587,18 @@ function CertSection() {
 ============================================================ */
 const blogPosts = [
   {
+    img: '/SAFEAI_ASSETS/biomic-announcement.jpg',
+    alt: 'SAFESeq selected among the Top 15 startups in the BIOMIC Accelerator Program',
+    title: 'SAFESeq Named a Top 15 Startup in the BIOMIC Accelerator Program',
+    excerpt: 'SAFESeq, the flagship platform from SAFE AI-AFRICA, has been selected among the Top 15 startups in the BIOMIC Accelerator Program, out of a highly competitive pool of biomedical, biotech, and health innovations from across Uganda.',
+    author: 'Admin',
+    date: 'July 26, 2026',
+    category: 'Company News',
+    catColor: 'bg-cyan-100 text-cyan-700',
+    href: '/blog/safeseq-biomic-accelerator-top-15',
+    imgPosition: 'object-bottom',
+  },
+  {
     img: '/SAFEAI_ASSETS/blog-healthcare.webp',
     alt: 'AI Healthcare',
     title: '"Horizon1000": Gates & OpenAI\'s $50M AI Mission',
@@ -568,7 +652,7 @@ function BlogSection() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}>
               <TiltCard className="h-full">
-                <a href="/blog"
+                <a href={post.href ?? '/blog'}
                   className="block group h-full bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                   {/* Image */}
                   <div className="relative h-52 overflow-hidden">
@@ -577,7 +661,7 @@ function BlogSection() {
                       alt={post.alt}
                       fill
                       sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                      className="object-cover group-hover:scale-110 transition-transform duration-500"
+                      className={`object-cover ${post.imgPosition ?? 'object-center'} group-hover:scale-110 transition-transform duration-500`}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                     <span className={`absolute top-4 left-4 text-xs font-semibold px-3 py-1 rounded-full ${post.catColor}`}>
@@ -666,6 +750,7 @@ export default function Home() {
       <Header />
       <main>
         <HeroSection />
+        <AnnouncementSection />
         <WhatWeDoSection />
         <ProductsSection />
         <ProcessSection />
