@@ -9,6 +9,18 @@ import Footer from '@/components/Footer'
 
 const items = [
   {
+    title: "Minister of STI-OP's Maiden Visit to Makerere Lung Institute",
+    desc: 'HON. ENG. Jonard Asiimwe, Minister of Science, Technology and Innovation (STI-OP), pays his maiden visit to the Makerere Lung Institute, courtesy of the BIOMIC Accelerator Program.',
+    src: '/SAFEAI_ASSETS/biomic-lung-institute-safeseq.jpg',
+    date: 'BIOMIC Accelerator Program, 2026',
+  },
+  {
+    title: 'SAFESeq Presentation at the BIOMIC Cohort Showcase',
+    desc: "SAFESeq, SAFE AI-AFRICA's flagship genomics platform, presented live during the minister's maiden visit, courtesy of the BIOMIC Accelerator Program.",
+    src: '/SAFEAI_ASSETS/safeseq-presentation-biomic-minister-visit.jpg',
+    date: 'BIOMIC Accelerator Program, 2026',
+  },
+  {
     title: 'Ideathon Success',
     desc: 'Uplifting regional innovation and collaborative design challenges centered on localized African challenges.',
     src: '/SAFEAI_ASSETS/img-20260203-144857.webp',
