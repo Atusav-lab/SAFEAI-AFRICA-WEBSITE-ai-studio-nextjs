@@ -3,7 +3,14 @@
  * Used by metadata builders, JSON-LD schema, breadcrumbs and sitemap.
  */
 
-export const SITE_URL = 'https://safeaiafrica.com'
+/**
+ * Canonical host. Must match the host Vercel actually serves, which is the www
+ * domain: Vercel redirects the apex to www at the edge. Every canonical tag,
+ * sitemap entry, Open Graph URL and JSON-LD @id is built from this, so pointing
+ * it at the apex would make every page declare a canonical that immediately
+ * redirects somewhere else.
+ */
+export const SITE_URL = 'https://www.safeaiafrica.com'
 
 export const SITE_NAME = 'SAFE AI-AFRICA'
 
