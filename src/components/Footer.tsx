@@ -5,6 +5,7 @@ import Image from 'next/image'
 import {
   Facebook, Instagram, Twitter, Linkedin, Youtube, ArrowRight, MapPin, Phone, Mail
 } from 'lucide-react'
+import CookieSettingsLink from './CookieSettingsLink'
 
 export default function Footer() {
   const [email, setEmail] = useState('')
@@ -19,10 +20,21 @@ export default function Footer() {
 
   const resources = [
     { label: 'About Us', href: '/about-us' },
+    { label: 'Our Company', href: '/company' },
+    { label: 'Leadership Team', href: '/leadership-team' },
     { label: 'Solutions', href: '/solution' },
+    { label: 'Case Studies', href: '/case-studies' },
     { label: 'Our Blogs', href: '/blog' },
-    { label: 'Job Portal', href: '/coming-soon' },
+    { label: 'Media Gallery', href: '/our-gallery' },
+    { label: 'FAQ', href: '/faq' },
+    { label: 'Training & Careers', href: '/coming-soon' },
     { label: 'Contact Us', href: '/contact-us' },
+  ]
+
+  const legalLinks = [
+    { label: 'Privacy Policy', href: '/privacy-policy' },
+    { label: 'Terms of Service', href: '/terms-of-service' },
+    { label: 'Cookie Policy', href: '/privacy-policy#cookies' },
   ]
 
   const solutions = [
@@ -47,7 +59,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <a href="/" className="flex items-center gap-3 mb-5">
               <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0 border-2 border-[#00E5FF]/40">
-                <Image src="/SAFEAI_ASSETS/safeaiafrica-logo.png" alt="SAFE AI-AFRICA" fill sizes="48px" className="object-contain" />
+                <Image src="/SAFEAI_ASSETS/safeaiafrica-logo.png" alt="SAFE AI-AFRICA logo" fill sizes="48px" className="object-contain" />
               </div>
               <span className="font-bold text-lg">SAFE AI-AFRICA</span>
             </a>
@@ -140,11 +152,15 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-blue-300 text-sm">© {new Date().getFullYear()} SAFE AI-AFRICA. All Rights Reserved.</p>
-          <div className="flex gap-6">
-            {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map(t => (
-              <a key={t} href="#" className="text-blue-300 text-sm hover:text-[#17c7f8] transition-colors">{t}</a>
+          <nav aria-label="Legal" className="flex flex-wrap justify-center items-center gap-6">
+            {legalLinks.map(({ label, href }) => (
+              <a key={label} href={href} className="text-blue-300 text-sm hover:text-[#17c7f8] transition-colors">
+                {label}
+              </a>
             ))}
-          </div>
+            {/* Consent must be as easy to withdraw as it is to give. */}
+            <CookieSettingsLink className="text-blue-300 text-sm hover:text-[#17c7f8] transition-colors underline-offset-4 hover:underline" />
+          </nav>
         </div>
       </div>
     </footer>

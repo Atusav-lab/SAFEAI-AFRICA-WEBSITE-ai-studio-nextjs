@@ -1,37 +1,65 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Calendar, User, Clock, ArrowLeft, ArrowRight, Linkedin, ExternalLink } from 'lucide-react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import JsonLd from '@/components/JsonLd'
+import RelatedLinks from '@/components/RelatedLinks'
+import { articleSchema } from '@/lib/schema'
+import { buildMetadata } from '@/lib/seo'
 
 const LINKEDIN_POST_URL =
   'https://www.linkedin.com/posts/hindsight-ventures_biomic-healthcareinnovation-biomedicalinnovation-activity-7486312955354140673-eu2H?utm_source=share&utm_medium=member_desktop&rcm=ACoAADtRYv8Bfiy715m5Cx57teanjLUezG-4yGo'
 
-export const metadata = {
-  title: 'SAFE AI-AFRICA Named a Top 15 Startup in the BIOMIC Accelerator Program | SAFE AI-AFRICA',
+const POST = {
+  path: '/blog/safeseq-biomic-accelerator-top-15',
+  title: 'SAFE AI-AFRICA Named a Top 15 Startup in the BIOMIC Accelerator Program',
   description:
-    "SAFE AI-AFRICA, makers of the flagship platform SAFESeq, has been selected among the Top 15 startups in the BIOMIC Accelerator Program, out of a highly competitive pool of biomedical, biotech, and health innovations from across Uganda.",
-  openGraph: {
-    title: 'SAFE AI-AFRICA Named a Top 15 Startup in the BIOMIC Accelerator Program',
-    description:
-      "SAFE AI-AFRICA, makers of the flagship platform SAFESeq, has been selected among the Top 15 startups in the BIOMIC Accelerator Program.",
-    images: ['/SAFEAI_ASSETS/biomic-announcement.jpg'],
-  },
+    'SAFESeq, our unified AI genomics platform, has been selected among the Top 15 startups in Uganda’s BIOMIC Accelerator Program, run by The Lung Institute at Makerere University with STI-OP and Hindsight Ventures.',
+  image: '/SAFEAI_ASSETS/biomic-announcement.jpg',
+  datePublished: '2026-07-26',
 }
+
+export const metadata: Metadata = buildMetadata({
+  title: POST.title,
+  description: POST.description,
+  path: POST.path,
+  image: POST.image,
+  imageAlt: 'SAFE AI-AFRICA selected among the Top 15 startups in the BIOMIC Accelerator Program',
+  openGraphType: 'article',
+  publishedTime: POST.datePublished,
+  keywords: ['BIOMIC Accelerator', 'SAFESeq', 'genomics Uganda', 'biotech startup Africa'],
+})
 
 export default function SafeSeqBiomicAnnouncementPost() {
   return (
     <>
       <Header forceScrolled={true} />
+      <JsonLd
+        schema={articleSchema({
+          headline: POST.title,
+          description: POST.description,
+          path: POST.path,
+          image: POST.image,
+          datePublished: POST.datePublished,
+        })}
+      />
       <main className="pt-20 lg:pt-24 min-h-screen bg-slate-50">
         {/* Banner */}
         <section className="relative overflow-hidden bg-gradient-to-r from-[#00499E] to-[#0075ba] text-white py-16 lg:py-20">
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]" />
           <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <Breadcrumbs
+              variant="dark"
+              className="mb-6 justify-center [&>ol]:justify-center"
+              items={[{ name: 'Blog', href: '/blog' }, { name: 'SAFESeq in the BIOMIC Accelerator' }]}
+            />
             <span className="inline-block bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider mb-5">
               Company News
             </span>
-            <h1 className="text-3xl lg:text-5xl font-extrabold tracking-tight mb-4 leading-tight">
+            <h1 className="text-3xl lg:text-5xl font-extrabold tracking-tight mb-4 leading-tight text-white">
               SAFE AI-AFRICA Named a Top 15 Startup in the BIOMIC Accelerator Program
             </h1>
             <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-blue-100 font-medium">
@@ -152,7 +180,40 @@ export default function SafeSeqBiomicAnnouncementPost() {
               Explore SAFESeq <ArrowRight size={16} />
             </a>
           </div>
+
+          {/* Contextual links out of the article */}
+          <aside className="mt-10 rounded-2xl border border-slate-200 bg-white p-6">
+            <h2 className="text-lg font-bold text-[#0b1b4d] mb-3">Related reading</h2>
+            <ul className="space-y-2 text-sm font-lato">
+              <li>
+                <Link href="/case-studies" className="text-[#00499E] font-semibold hover:underline">
+                  Case studies
+                </Link>{' '}
+                — how SAFESeq, AMR Lens and SafeZell are built and deployed.
+              </li>
+              <li>
+                <Link href="/solution" className="text-[#00499E] font-semibold hover:underline">
+                  Products &amp; services
+                </Link>{' '}
+                — the full SAFE AI-AFRICA platform portfolio.
+              </li>
+              <li>
+                <Link href="/our-gallery" className="text-[#00499E] font-semibold hover:underline">
+                  Media gallery
+                </Link>{' '}
+                — photos from the BIOMIC cohort showcase.
+              </li>
+              <li>
+                <Link href="/contact-us" className="text-[#00499E] font-semibold hover:underline">
+                  Contact us
+                </Link>{' '}
+                — partner with us on genomics infrastructure.
+              </li>
+            </ul>
+          </aside>
         </article>
+
+        <RelatedLinks route="/blog" />
       </main>
       <Footer />
     </>
