@@ -13,7 +13,7 @@ export interface Testimonial {
   author: string
   role?: string
   organization: string
-  /** 1–5, only when the reviewer actually gave a rating. */
+  /** 1 to 5, only when the reviewer actually gave a rating. */
   rating?: number
   /** Where the testimonial came from, e.g. "Project handover, 2025". */
   source?: string

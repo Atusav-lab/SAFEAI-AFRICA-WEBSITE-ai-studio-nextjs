@@ -600,7 +600,7 @@ function CertSection() {
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0b1b4d]/80 to-transparent flex items-end p-6">
-                  <p className="text-white font-semibold">Our Dedicated Team – Building Africa's AI Future</p>
+                  <p className="text-white font-semibold">Our dedicated team, building Africa's AI future</p>
                 </div>
               </div>
             </TiltCard>

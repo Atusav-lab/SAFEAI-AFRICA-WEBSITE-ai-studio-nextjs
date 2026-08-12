@@ -29,7 +29,7 @@ export const BUSINESS = {
   foundingDate: '2023',
   /** Published response-time promise, reused across CTAs, forms and schema. */
   responseTimeHours: 24,
-  responseTimePromise: 'We reply to every message within 24 hours, Monday to Saturday.',
+  responseTimePromise: 'We reply to every message within 24 hours, Monday to Sunday.',
   openingHours: [
     { days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '08:00', closes: '18:00' },
     { days: ['Saturday'], opens: '09:00', closes: '14:00' },

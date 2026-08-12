@@ -600,9 +600,9 @@ export default function SafeZellPage() {
                           <select className="sz-select font-[inherit] text-[.875rem] w-full px-3.5 py-2.5 bg-white border border-[rgba(0,0,0,.14)] rounded-xl text-[#1a1a1a] outline-none focus:border-[#42a5f5] focus:shadow-[0_0_0_3px_rgba(66,165,245,.12)] transition-all"
                             value={formState.fteam} onChange={e => setFormState(s => ({ ...s, fteam: e.target.value }))}>
                             <option value="" disabled>Select range</option>
-                            <option>1–10 reps</option>
-                            <option>11–50 reps</option>
-                            <option>51–200 reps</option>
+                            <option>1 to 10 reps</option>
+                            <option>11 to 50 reps</option>
+                            <option>51 to 200 reps</option>
                             <option>200+ reps</option>
                           </select>
                         </div>

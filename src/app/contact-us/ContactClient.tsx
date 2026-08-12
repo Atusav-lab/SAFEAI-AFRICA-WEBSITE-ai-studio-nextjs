@@ -170,12 +170,15 @@ export default function ContactUs() {
                     <Clock size={20} aria-hidden="true" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-[#0b1b4d]">Working Hours</h3>
+                    <h3 className="font-bold text-[#0b1b4d]">Office Hours</h3>
                     <ul className="text-sm text-slate-500 font-lato mt-1 space-y-0.5">
                       <li>Monday to Friday: 8am to 6pm (EAT)</li>
                       <li>Saturday: 9am to 2pm (EAT)</li>
-                      <li>Sunday and public holidays: closed</li>
+                      <li>Sunday: closed for visits</li>
                     </ul>
+                    <p className="text-sm text-slate-500 font-lato mt-2">
+                      Messages are answered every day of the week, Sundays and public holidays included.
+                    </p>
                   </div>
                 </div>
               </div>
