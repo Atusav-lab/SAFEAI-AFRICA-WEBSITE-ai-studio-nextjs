@@ -10,6 +10,7 @@ import {
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import ConsentGate from '@/components/ConsentGate'
 import JsonLd from '@/components/JsonLd'
 import RelatedLinks from '@/components/RelatedLinks'
 import ResponseTimePromise from '@/components/ResponseTimePromise'
@@ -347,17 +348,25 @@ export default function ContactUs() {
               </a>
             </div>
 
-            <div className="rounded-3xl overflow-hidden border border-slate-200 shadow-sm">
-              <iframe
-                src={MAPS.embedUrl}
-                title={`Map showing SAFE AI-AFRICA in ${BUSINESS.addressLocality}, ${BUSINESS.addressCountryName}`}
-                width="100%"
-                height="420"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                allowFullScreen
-                style={{ border: 0, display: 'block' }}
-              />
+            <div className="rounded-3xl overflow-hidden border border-slate-200 shadow-sm min-h-[420px]">
+              <ConsentGate
+                category="functional"
+                provider="Google Maps"
+                label="Our office map"
+                privacyUrl="https://policies.google.com/privacy"
+                className="min-h-[420px]"
+              >
+                <iframe
+                  src={MAPS.embedUrl}
+                  title={`Map showing SAFE AI-AFRICA in ${BUSINESS.addressLocality}, ${BUSINESS.addressCountryName}`}
+                  width="100%"
+                  height="420"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                  style={{ border: 0, display: 'block' }}
+                />
+              </ConsentGate>
             </div>
           </div>
         </section>

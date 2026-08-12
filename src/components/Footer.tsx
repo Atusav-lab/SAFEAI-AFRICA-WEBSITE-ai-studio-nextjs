@@ -5,6 +5,7 @@ import Image from 'next/image'
 import {
   Facebook, Instagram, Twitter, Linkedin, Youtube, ArrowRight, MapPin, Phone, Mail
 } from 'lucide-react'
+import CookieSettingsLink from './CookieSettingsLink'
 
 export default function Footer() {
   const [email, setEmail] = useState('')
@@ -151,12 +152,14 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-blue-300 text-sm">© {new Date().getFullYear()} SAFE AI-AFRICA. All Rights Reserved.</p>
-          <nav aria-label="Legal" className="flex flex-wrap justify-center gap-6">
+          <nav aria-label="Legal" className="flex flex-wrap justify-center items-center gap-6">
             {legalLinks.map(({ label, href }) => (
               <a key={label} href={href} className="text-blue-300 text-sm hover:text-[#17c7f8] transition-colors">
                 {label}
               </a>
             ))}
+            {/* Consent must be as easy to withdraw as it is to give. */}
+            <CookieSettingsLink className="text-blue-300 text-sm hover:text-[#17c7f8] transition-colors underline-offset-4 hover:underline" />
           </nav>
         </div>
       </div>

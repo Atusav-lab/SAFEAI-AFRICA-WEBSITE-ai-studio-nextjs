@@ -3,7 +3,14 @@ import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import CookieSettingsLink from '@/components/CookieSettingsLink'
 import RelatedLinks from '@/components/RelatedLinks'
+import {
+  CATEGORIES,
+  CONSENT_COOKIE,
+  CONSENT_MAX_AGE_DAYS,
+  COOKIE_INVENTORY,
+} from '@/lib/cookies'
 import { buildMetadata } from '@/lib/seo'
 import { BUSINESS } from '@/lib/site'
 
@@ -22,7 +29,7 @@ const TOC = [
   { id: 'what-we-collect', label: 'What we collect' },
   { id: 'how-we-use', label: 'How we use your data' },
   { id: 'legal-basis', label: 'Legal basis' },
-  { id: 'cookies', label: 'Cookies and similar technologies' },
+  { id: 'cookies', label: 'Cookies and your choices' },
   { id: 'third-parties', label: 'Third-party services' },
   { id: 'sharing', label: 'When we share data' },
   { id: 'retention', label: 'How long we keep data' },
@@ -170,29 +177,117 @@ export default function PrivacyPolicyPage() {
               </ul>
             </Section>
 
-            <Section id="cookies" title="5. Cookies and similar technologies">
+            <Section id="cookies" title="5. Cookies and your choices">
               <p>
-                This website does not set advertising or cross-site tracking cookies, and we do not run
-                third-party advertising networks on it.
+                A cookie is a small file a website stores in your browser. We also use local storage,
+                which works in a similar way. This section is our cookie policy — it applies alongside
+                the rest of this privacy policy.
               </p>
               <p>
-                Cookies or local storage may be set by the platform that serves the site for strictly
-                necessary purposes such as load balancing, security and remembering your preferences.
-                Embedded third-party content — a YouTube video you choose to play, an embedded map, or the
-                3D scene on our home page — may set cookies or local storage from those providers once it
-                loads. Videos are embedded through YouTube&rsquo;s no-cookie domain, which does not set
-                tracking cookies unless you start playback.
+                <strong className="text-slate-800">
+                  We do not set advertising or cross-site tracking cookies, and we do not run advertising
+                  networks on this site.
+                </strong>{' '}
+                Beyond the strictly necessary cookies below, nothing is stored on your device and no
+                third-party content is loaded until you agree to it. When you first visit, a banner asks
+                for that choice; you can accept everything, reject everything non-essential, or choose
+                category by category, and you can change your mind at any time.
+              </p>
+
+              {/* Categories */}
+              <h3 className="text-lg font-bold text-[#0b1b4d] pt-4">Categories we use</h3>
+              <ul className="space-y-3">
+                {CATEGORIES.map(category => (
+                  <li key={category.id} className="border border-slate-100 bg-slate-50 rounded-2xl p-5">
+                    <p className="font-bold text-[#0b1b4d]">
+                      {category.name}
+                      {category.required && (
+                        <span className="ml-2 align-middle text-[11px] font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 border border-emerald-100 rounded-full px-2.5 py-1">
+                          Always on
+                        </span>
+                      )}
+                    </p>
+                    <p className="text-sm mt-2 leading-relaxed">{category.detail}</p>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Inventory */}
+              <h3 className="text-lg font-bold text-[#0b1b4d] pt-4">Cookies set on this site</h3>
+              <div className="overflow-x-auto -mx-2 px-2">
+                <table className="w-full min-w-[640px] text-sm border-collapse">
+                  <caption className="sr-only">
+                    Cookies and similar technologies used on safeaiafrica.com
+                  </caption>
+                  <thead>
+                    <tr className="text-left">
+                      {['Name', 'Provider', 'Category', 'Purpose', 'Duration'].map(heading => (
+                        <th
+                          key={heading}
+                          scope="col"
+                          className="border-b-2 border-slate-200 py-3 pr-4 text-xs font-extrabold uppercase tracking-wider text-[#0061B2]"
+                        >
+                          {heading}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {COOKIE_INVENTORY.map(cookie => (
+                      <tr key={`${cookie.provider}-${cookie.name}`} className="align-top">
+                        <td className="border-b border-slate-100 py-3 pr-4 font-mono text-xs text-slate-700 break-words">
+                          {cookie.name}
+                        </td>
+                        <td className="border-b border-slate-100 py-3 pr-4 text-slate-600">{cookie.provider}</td>
+                        <td className="border-b border-slate-100 py-3 pr-4 text-slate-600 capitalize">
+                          {cookie.category === 'functional' ? 'Embedded content' : cookie.category}
+                        </td>
+                        <td className="border-b border-slate-100 py-3 pr-4 text-slate-600">{cookie.purpose}</td>
+                        <td className="border-b border-slate-100 py-3 pr-4 text-slate-600 whitespace-nowrap">
+                          {cookie.duration}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-slate-400">
+                Third-party cookie names are set by those providers and can change without notice. We
+                review this table when we add or remove an embedded service.
+              </p>
+
+              {/* Control */}
+              <h3 className="text-lg font-bold text-[#0b1b4d] pt-4">Changing your choice</h3>
+              <p>
+                Your preference is stored in a first-party cookie named{' '}
+                <code className="font-mono text-xs bg-slate-100 border border-slate-200 rounded px-1.5 py-0.5">
+                  {CONSENT_COOKIE}
+                </code>{' '}
+                for {CONSENT_MAX_AGE_DAYS} days, after which we ask again. It records only which
+                categories you allowed and when — it does not identify you.
               </p>
               <p>
-                You can block or delete cookies in your browser settings at any time. Blocking strictly
-                necessary cookies may stop parts of the site working correctly.
+                You can reopen the panel and change or withdraw your consent at any time, using the button
+                below or the <em>Cookie settings</em> link in the footer of every page:
+              </p>
+              <p>
+                <CookieSettingsLink
+                  label="Manage cookie preferences"
+                  className="inline-flex items-center gap-2 btn-gradient text-white font-semibold px-6 py-3 rounded-xl shadow-sm hover:shadow-lg transition-all"
+                />
+              </p>
+              <p>
+                You can also block or delete cookies in your browser settings. Blocking strictly necessary
+                cookies may stop parts of the site working correctly, and clearing your cookies removes the
+                record of your choice, so the banner will appear again.
               </p>
             </Section>
 
             <Section id="third-parties" title="6. Third-party services">
               <p>
                 Some parts of the site rely on third parties, who will receive your IP address and basic
-                request data when that content loads:
+                request data when that content loads. Embedded maps, videos and the interactive 3D scene
+                are held back until you allow the embedded-content category described in section 5:
               </p>
               <ul className="list-disc pl-5 space-y-2">
                 <li>Google Fonts — web font delivery.</li>

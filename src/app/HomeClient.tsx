@@ -9,6 +9,7 @@ import {
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import ConsentGate from '@/components/ConsentGate'
 import RelatedLinks from '@/components/RelatedLinks'
 import ResponseTimePromise from '@/components/ResponseTimePromise'
 import Testimonials from '@/components/Testimonials'
@@ -191,10 +192,19 @@ function HeroSection() {
             transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
             className="relative lg:pl-4">
             <div className="relative w-full h-[400px] sm:h-[450px] md:h-[550px] lg:h-[650px] xl:h-[700px] rounded-2xl overflow-hidden shadow-2xl bg-transparent group border border-blue-100/20">
-              <SplineScene
-                scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-                className="absolute inset-0 w-full h-full"
-              />
+              <ConsentGate
+                category="functional"
+                provider="Spline"
+                label="Our interactive 3D scene"
+                privacyUrl="https://spline.design/privacy"
+                tone="brand"
+                className="rounded-2xl"
+              >
+                <SplineScene
+                  scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+                  className="absolute inset-0 w-full h-full"
+                />
+              </ConsentGate>
             </div>
             {/* Ambient glows behind the video */}
             <div className="absolute -inset-1 bg-gradient-to-r from-[#0061B2] to-[#00E5FF] rounded-2xl blur opacity-15 group-hover:opacity-25 transition duration-500 -z-10" />
@@ -304,10 +314,14 @@ function WhatWeDoSection() {
           onClick={() => setPlaying(true)}>
           {!playing ? (
             <>
-              <img
-                src="https://i.ytimg.com/vi/OoL6qDec7m0/hqdefault.jpg"
+              {/* Self-hosted poster: a YouTube-hosted thumbnail would contact
+                  Google before the visitor has agreed to embedded content. */}
+              <Image
+                src="/SAFEAI_ASSETS/amr-lens-africa.webp"
                 alt="Play the AMR Lens Africa demonstration video"
-                className="w-full h-full object-cover opacity-85 group-hover:scale-105 transition-transform duration-500"
+                fill
+                sizes="(min-width: 640px) 384px, 100vw"
+                className="object-cover opacity-85 group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               <button id="play-video-btn"
@@ -318,12 +332,20 @@ function WhatWeDoSection() {
               <p className="absolute bottom-6 left-0 right-0 text-white text-sm font-medium px-4">AMR lens Africa in action</p>
             </>
           ) : (
-            <iframe
-              src="https://www.youtube-nocookie.com/embed/OoL6qDec7m0?autoplay=1"
-              title="SAFE AI Africa"
-              allow="autoplay; fullscreen"
-              className="w-full h-full border-0"
-            />
+            <ConsentGate
+              category="functional"
+              provider="YouTube"
+              label="This demonstration video"
+              privacyUrl="https://policies.google.com/privacy"
+              tone="brand"
+            >
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/OoL6qDec7m0?autoplay=1"
+                title="AMR Lens Africa in action — SAFE AI-AFRICA"
+                allow="autoplay; fullscreen"
+                className="w-full h-full border-0"
+              />
+            </ConsentGate>
           )}
         </motion.div>
       </div>

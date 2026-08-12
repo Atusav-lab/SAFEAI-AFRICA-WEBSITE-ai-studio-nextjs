@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import React from "react";
 import "./globals.css";
+import CookieConsent from "@/components/CookieConsent";
 import JsonLd from "@/components/JsonLd";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { organizationSchema } from "@/lib/schema";
@@ -120,6 +121,7 @@ export default function RootLayout({
         {children}
         <FloatingWhatsApp />
         <StickyMobileCTA />
+        <CookieConsent />
       </body>
     </html>
   );

@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import ConsentGate from '@/components/ConsentGate'
 import RelatedLinks from '@/components/RelatedLinks'
 import Footer from '@/components/Footer'
 
@@ -526,8 +527,10 @@ export default function AMRLensPage() {
                   onClick={() => setVideoOpen(true)}
                   style={{ position: 'relative', width: '100%', aspectRatio: '9/16', cursor: 'pointer' }}
                 >
+                  {/* Self-hosted poster: a YouTube-hosted thumbnail would contact
+                      Google before the visitor has agreed to embedded content. */}
                   <img
-                    src="https://i.ytimg.com/vi/OoL6qDec7m0/hqdefault.jpg"
+                    src="/SAFEAI_ASSETS/amr-lens-africa.jpg"
                     alt="AMR Lens Africa workflow demonstration — measuring zones of inhibition"
                     width={480}
                     height={854}
@@ -542,13 +545,21 @@ export default function AMRLensPage() {
                   </button>
                 </div>
               ) : (
-                <iframe
-                  src="https://www.youtube.com/embed/OoL6qDec7m0?autoplay=1&rel=0"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
-                />
+                <ConsentGate
+                  category="functional"
+                  provider="YouTube"
+                  label="This workflow video"
+                  privacyUrl="https://policies.google.com/privacy"
+                  tone="brand"
+                >
+                  <iframe
+                    src="https://www.youtube-nocookie.com/embed/OoL6qDec7m0?autoplay=1&rel=0"
+                    title="AMR Lens Africa workflow demonstration"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
+                  />
+                </ConsentGate>
               )}
             </div>
             <p className="text-slate-400 mt-4 text-sm">Watch the tool in action: Precision inhibition zone measurement & AI clinical stewardship.</p>

@@ -93,6 +93,26 @@ Site-wide data (contact details, address, opening hours, response-time promise) 
 `src/lib/site.ts` and feeds the Organization / LocalBusiness JSON-LD in `src/lib/schema.ts`.
 The default social share image is generated at `/og-image` (`src/app/og-image/route.tsx`).
 
+## 🍪 Cookie consent
+
+Consent is handled in-house — no third-party CMP.
+
+- `src/lib/cookies.ts` — categories, the published cookie inventory, and read/write
+  helpers for the `saa_cookie_consent` first-party cookie (180 days).
+- `src/components/CookieConsent.tsx` — banner and preferences panel, mounted once in
+  the root layout. "Accept all" and "Reject non-essential" are equally prominent.
+- `src/components/ConsentGate.tsx` — wraps every third-party embed. Nothing from
+  Google Maps, YouTube or Spline loads until the visitor allows the *embedded content*
+  category, so the banner is enforcement, not decoration.
+- `src/components/CookieSettingsLink.tsx` — reopens the panel; in the footer of every
+  page and in the cookie section of the privacy policy.
+- `src/hooks/useConsent.ts` — subscribe a component to the current choice.
+
+Adding a new third-party embed? Wrap it in `ConsentGate` and add its cookies to
+`COOKIE_INVENTORY` — that array is what the privacy page publishes. Adding analytics?
+Load it only when `useConsent().allows('analytics')` is true, and bump
+`CONSENT_VERSION` so returning visitors are asked again.
+
 ## ✉️ Contact form delivery
 
 The contact form posts to `/api/contact`. To have submissions actually reach the team,
