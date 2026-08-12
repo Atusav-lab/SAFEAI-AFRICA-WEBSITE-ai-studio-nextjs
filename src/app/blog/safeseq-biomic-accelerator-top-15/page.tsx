@@ -90,7 +90,7 @@ export default function SafeSeqBiomicAnnouncementPost() {
           <div className="space-y-5 text-slate-600 leading-relaxed font-lato">
             <p>
               Out of a highly competitive pool of biomedical, biotech, and health innovations from across
-              Uganda, our team made the cut — and we could not be prouder.{' '}
+              Uganda, our team made the cut, and we could not be prouder.{' '}
               <strong className="text-slate-800 font-semibold">SAFE AI-AFRICA</strong>, makers of{' '}
               <a href="https://safeseq.safeaiafrica.com" target="_blank" rel="noopener noreferrer" className="text-[#00499E] font-semibold hover:underline">
                 SAFESeq
@@ -102,8 +102,8 @@ export default function SafeSeqBiomicAnnouncementPost() {
             <h2 className="text-[#0b1b4d] font-bold text-2xl pt-4">What makes SAFESeq different</h2>
             <p>
               SAFESeq is the first platform of its kind to unify 30+ professional-grade bioinformatics
-              tools — gene prediction, CRISPR design, protein structure prediction, AMR resistance
-              screening, molecular docking, phylogenetics, and more — into a single browser tab. No
+              tools (gene prediction, CRISPR design, protein structure prediction, AMR resistance
+              screening, molecular docking, phylogenetics and more) into a single browser tab. No
               installs, no code.
             </p>
             <p>
@@ -117,13 +117,13 @@ export default function SafeSeqBiomicAnnouncementPost() {
             <h2 className="text-[#0b1b4d] font-bold text-2xl pt-4">About the BIOMIC Accelerator Program</h2>
             <p>
               BIOMIC is coordinated by The Lung Institute, Makerere University, funded by the Science,
-              Technology and Innovation Secretariat of Uganda — Office of the President (STI-OP), and
+              Technology and Innovation Secretariat of Uganda, Office of the President (STI-OP), and
               implemented in partnership with Hindsight Ventures. The program is designed to accelerate the
               commercialization of breakthrough biomedical, biotechnology, and health innovations in Uganda.
             </p>
             <p>
-              Being selected gives SAFE AI-AFRICA mentorship, networks, and resources — including compute
-              and other technology credits — to take SAFESeq from a live product to national genomic
+              Being selected gives SAFE AI-AFRICA mentorship, networks and resources, including compute
+              and other technology credits, to take SAFESeq from a live product to national genomic
               infrastructure.
             </p>
           </div>
@@ -141,7 +141,7 @@ export default function SafeSeqBiomicAnnouncementPost() {
               <div className="relative aspect-video w-full overflow-hidden bg-slate-100">
                 <Image
                   src="/SAFEAI_ASSETS/biomic-announcement.jpg"
-                  alt="BIOMIC Accelerator Program — Top 15 startups announcement on LinkedIn"
+                  alt="BIOMIC Accelerator Program Top 15 startups announcement on LinkedIn"
                   fill
                   sizes="(min-width: 1024px) 896px, 100vw"
                   className="object-cover object-bottom group-hover:scale-105 transition-transform duration-500"
@@ -157,7 +157,7 @@ export default function SafeSeqBiomicAnnouncementPost() {
                     Hindsight Ventures on LinkedIn: #BIOMIC #HealthcareInnovation #BiomedicalInnovation
                   </h4>
                   <p className="text-sm text-slate-500 line-clamp-2">
-                    Meet the Top 15 startups selected for the BIOMIC Accelerator Program — congratulations to
+                    Meet the Top 15 startups selected for the BIOMIC Accelerator Program. Congratulations to
                     SAFE AI-AFRICA, makers of SAFESeq, and the rest of the cohort driving biomedical innovation in Uganda.
                   </p>
                 </div>
@@ -189,25 +189,25 @@ export default function SafeSeqBiomicAnnouncementPost() {
                 <Link href="/case-studies" className="text-[#00499E] font-semibold hover:underline">
                   Case studies
                 </Link>{' '}
-                — how SAFESeq, AMR Lens and SafeZell are built and deployed.
+                , on how SAFESeq, AMR Lens and SafeZell are built and deployed.
               </li>
               <li>
                 <Link href="/solution" className="text-[#00499E] font-semibold hover:underline">
                   Products &amp; services
                 </Link>{' '}
-                — the full SAFE AI-AFRICA platform portfolio.
+                , the full SAFE AI-AFRICA platform portfolio.
               </li>
               <li>
                 <Link href="/our-gallery" className="text-[#00499E] font-semibold hover:underline">
                   Media gallery
                 </Link>{' '}
-                — photos from the BIOMIC cohort showcase.
+                , with photos from the BIOMIC cohort showcase.
               </li>
               <li>
                 <Link href="/contact-us" className="text-[#00499E] font-semibold hover:underline">
                   Contact us
                 </Link>{' '}
-                — partner with us on genomics infrastructure.
+                , to talk about genomics infrastructure.
               </li>
             </ul>
           </aside>

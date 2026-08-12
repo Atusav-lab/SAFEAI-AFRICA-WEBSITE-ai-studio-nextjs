@@ -12,7 +12,7 @@ const LAST_UPDATED = '12 August 2026'
 export const metadata: Metadata = buildMetadata({
   title: 'Terms of Service',
   description:
-    'The terms governing use of safeaiafrica.com and SAFE AI-AFRICA services: acceptable use, intellectual property, third-party links, disclaimers, liability and governing law.',
+    'The terms for using safeaiafrica.com and our services: acceptable use, intellectual property, links to other sites, disclaimers, liability and governing law.',
   path: '/terms-of-service',
   keywords: ['SAFE AI-AFRICA terms of service', 'website terms Uganda'],
 })
@@ -46,76 +46,76 @@ export default function TermsOfServicePage() {
           <div className="bg-white border border-slate-100 rounded-3xl p-8 lg:p-10 shadow-sm space-y-10">
             <Section id="acceptance" title="1. Acceptance of these terms">
               <p>
-                By accessing safeaiafrica.com you agree to these terms. If you do not agree with them,
-                please do not use the site. These terms cover this website only; each of our product
-                platforms and every client engagement is governed by its own agreement, which prevails over
-                these terms in the event of a conflict.
+                By using safeaiafrica.com you agree to these terms. If you do not agree with them, please
+                do not use the site. These terms cover this website only. Each of our product platforms and
+                every client project has its own agreement, and where the two disagree, that agreement
+                wins.
               </p>
             </Section>
 
             <Section id="use" title="2. Acceptable use">
               <p>You agree not to:</p>
               <ul className="list-disc pl-5 space-y-2">
-                <li>use the site in a way that breaks any applicable law or regulation;</li>
-                <li>attempt to gain unauthorised access to any part of the site, its servers or connected systems;</li>
-                <li>interfere with the availability of the site, including through automated scraping that degrades service;</li>
-                <li>submit false, misleading, abusive or unlawful content through our forms;</li>
-                <li>copy, republish or resell site content beyond what section 3 permits.</li>
+                <li>use the site in a way that breaks the law;</li>
+                <li>try to get into any part of the site, its servers or connected systems without permission;</li>
+                <li>disrupt the site for other people, including by scraping it hard enough to slow it down;</li>
+                <li>send false, misleading, abusive or unlawful content through our forms;</li>
+                <li>copy, republish or resell what is on the site beyond what section 3 allows.</li>
               </ul>
             </Section>
 
             <Section id="ip" title="3. Intellectual property">
               <p>
-                All content on this site — text, graphics, logos, product names, images, design and software
-                — belongs to SAFE AI-AFRICA or its licensors and is protected by copyright and trade mark
-                law. You may view, download and print pages for your own reference or to evaluate working
-                with us. Any other reproduction, distribution or commercial use requires our written
-                permission. Where you quote from the site, please attribute it and link back to the page.
+                Everything on this site belongs to SAFE AI-AFRICA or the people who licensed it to us:
+                text, graphics, logos, product names, images, design and software. It is protected by
+                copyright and trade mark law. You are welcome to view, download and print pages for your
+                own reference or to weigh up working with us. Anything beyond that, such as republishing or
+                commercial use, needs our written permission. If you quote us, please credit us and link
+                back to the page.
               </p>
             </Section>
 
             <Section id="content" title="4. Accuracy of content">
               <p>
-                We keep this site as accurate and current as we reasonably can, but the content is provided
-                for general information. Product capabilities, roadmaps and programme details change. Nothing
-                on this site is professional, clinical, legal or financial advice, and our health-related
-                products support qualified professionals rather than replacing their judgement or a
-                clinical decision.
+                We keep this site as accurate and current as we reasonably can, but treat what is here as
+                general information. Product features, roadmaps and programme details change over time.
+                Nothing on this site is professional, clinical, legal or financial advice. Our health
+                products are built to support qualified professionals, never to replace their judgement or
+                a clinical decision.
               </p>
             </Section>
 
             <Section id="third-party" title="5. Third-party links and platforms">
               <p>
-                The site links to our product platforms on separate subdomains and to third-party sites we
-                do not control. We are not responsible for the content, availability or privacy practices of
-                third-party sites, and a link is not an endorsement.
+                We link to our own product platforms on their own subdomains, and to sites run by other
+                people. We cannot control what those other sites contain, whether they stay online, or how
+                they treat your privacy, and a link from us is not an endorsement.
               </p>
             </Section>
 
             <Section id="inquiries" title="6. Inquiries, demos and proposals">
               <p>
-                Submitting a form on this site starts a conversation; it does not create a contract. Prices,
-                timelines and scope quoted informally are indicative until confirmed in a written proposal
-                signed by both parties. {BUSINESS.responseTimePromise}
+                Sending us a form starts a conversation, it does not create a contract. Any price,
+                timeline or scope we mention informally is a guide until both of us sign a written
+                proposal. {BUSINESS.responseTimePromise}
               </p>
             </Section>
 
             <Section id="availability" title="7. Availability">
               <p>
-                We aim to keep the site available at all times but do not guarantee uninterrupted access. We
-                may suspend, withdraw or change any part of the site without notice, including for
-                maintenance or security.
+                We aim to keep the site up at all times, but we cannot promise it will never go down. We
+                may suspend, withdraw or change any part of it without notice, for maintenance, security or
+                any other good reason.
               </p>
             </Section>
 
             <Section id="liability" title="8. Disclaimers and limitation of liability">
               <p>
-                This website is provided &ldquo;as is&rdquo; without warranties of any kind, whether express
-                or implied, to the fullest extent permitted by law. To the extent permitted by law, SAFE
-                AI-AFRICA is not liable for indirect or consequential loss, loss of profit, loss of data or
-                business interruption arising from your use of this website. Nothing in these terms excludes
-                liability that cannot be excluded by law, including liability for death or personal injury
-                caused by negligence or for fraud.
+                This website comes &ldquo;as is&rdquo;, without warranties of any kind, express or
+                implied, as far as the law allows. Again as far as the law allows, we are not liable for
+                indirect or knock-on losses, lost profit, lost data or business interruption arising from
+                your use of this website. Nothing here removes liability that cannot legally be removed,
+                including liability for death or personal injury caused by negligence, or for fraud.
               </p>
             </Section>
 
@@ -131,23 +131,23 @@ export default function TermsOfServicePage() {
 
             <Section id="changes" title="10. Changes to these terms">
               <p>
-                We may update these terms from time to time. The revision date at the top of this page
-                reflects the current version, and continued use of the site after an update means you accept
-                the revised terms.
+                We may update these terms from time to time. The date at the top of this page tells you
+                which version is current, and carrying on using the site after an update means you accept
+                the new terms.
               </p>
             </Section>
 
             <Section id="law" title="11. Governing law">
               <p>
-                These terms are governed by the laws of the Republic of {BUSINESS.addressCountryName}, and the
-                courts of {BUSINESS.addressCountryName} have exclusive jurisdiction over any dispute arising
-                from them, unless a separate signed agreement with us states otherwise.
+                These terms are governed by the laws of the Republic of {BUSINESS.addressCountryName}, and
+                the courts of {BUSINESS.addressCountryName} handle any dispute that comes out of them,
+                unless a separate signed agreement with us says otherwise.
               </p>
             </Section>
 
             <Section id="contact" title="12. Contact">
               <p>
-                Questions about these terms can be sent to{' '}
+                If anything here is unclear, write to us at{' '}
                 <a href={`mailto:${BUSINESS.email}`} className="text-[#00499E] font-semibold hover:underline">
                   {BUSINESS.email}
                 </a>{' '}

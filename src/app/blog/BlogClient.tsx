@@ -152,7 +152,7 @@ export default function Blog() {
                     <div className="relative aspect-video w-full overflow-hidden bg-slate-100">
                       <Image
                         src={blog.image}
-                        alt={`${blog.title} — ${blog.category} article by SAFE AI-AFRICA`}
+                        alt={`${blog.title}. A ${blog.category.toLowerCase()} article by SAFE AI-AFRICA`}
                         fill
                         sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                         className={`object-cover ${blog.imgPosition ?? 'object-center'} group-hover:scale-105 transition-transform duration-500`}

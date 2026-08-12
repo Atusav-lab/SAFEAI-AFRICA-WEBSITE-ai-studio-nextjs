@@ -3,8 +3,8 @@
  *
  * Every claim here is drawn from what the platform actually does or from a
  * verifiable third-party programme. Where an outcome has not been independently
- * measured we describe the capability delivered rather than inventing a metric —
- * unverifiable statistics are the fastest way to lose both trust and rankings.
+ * measured, we describe what was delivered rather than inventing a number.
+ * Unverifiable statistics are the fastest way to lose both trust and rankings.
  */
 
 export interface CaseStudy {
@@ -31,7 +31,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     product: 'SAFESeq',
     sector: 'Genomics & public health',
     summary:
-      'Africa’s first unified, AI-assisted genomic analysis platform — 30+ professional bioinformatics tools, no installation, no code, hosted on African-controlled infrastructure.',
+      'Africa’s first unified, AI-assisted genomic analysis platform. Over 30 professional bioinformatics tools, no installation, no code, hosted on African-controlled infrastructure.',
     challenge:
       'Analysing a single DNA sequence normally means stitching together five or more disconnected, foreign-hosted tools, each with its own install, file format and learning curve. For African researchers, students and public-health labs that means slow turnaround, high skill barriers, and sequence data leaving the continent.',
     approach: [
@@ -41,7 +41,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       'Deployed on African-controlled cloud infrastructure so sequence data stays under local governance by design.',
     ],
     outcome: [
-      'Live, free and browser-based — researchers run a full workflow without installing anything.',
+      'Live, free and browser-based, so researchers run a full workflow without installing anything.',
       'Selected among the Top 15 startups in Uganda’s BIOMIC Accelerator Program, run by The Lung Institute at Makerere University with STI-OP and Hindsight Ventures.',
       'The first Africa-hosted genomics platform to make its tools natively callable by AI agents via MCP.',
     ],
@@ -59,7 +59,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     summary:
       'Computer-vision measurement of inhibition zones with transparent AI reasoning, mapped to CLSI/EUCAST breakpoints and WHO AWaRe classes, feeding a regional resistance picture.',
     challenge:
-      'Disc-diffusion results are read by eye and by ruler, which introduces variability between technicians and laboratories. Interpretation against CLSI/EUCAST breakpoints is manual, and resistance data rarely leaves the lab in a form anyone can aggregate — so clinicians prescribe without a current regional resistance picture.',
+      'Disc-diffusion results are read by eye and measured with a ruler, so they vary between technicians and between laboratories. Reading them against CLSI and EUCAST breakpoints is manual work. Resistance data rarely leaves the lab in a form anyone can pool, which leaves clinicians prescribing without a current regional picture.',
     approach: [
       'Built precision computer-vision measurement of zones of inhibition from a standard plate photograph.',
       'Layered a "Senior Microbiologist AI" that shows its reasoning rather than returning an unexplained verdict.',

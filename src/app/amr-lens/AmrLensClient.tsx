@@ -531,7 +531,7 @@ export default function AMRLensPage() {
                       Google before the visitor has agreed to embedded content. */}
                   <img
                     src="/SAFEAI_ASSETS/amr-lens-africa.jpg"
-                    alt="AMR Lens Africa workflow demonstration — measuring zones of inhibition"
+                    alt="AMR Lens Africa workflow demonstration, measuring zones of inhibition"
                     width={480}
                     height={854}
                     loading="eager"

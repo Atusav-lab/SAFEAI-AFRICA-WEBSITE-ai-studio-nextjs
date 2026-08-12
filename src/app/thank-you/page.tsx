@@ -8,29 +8,29 @@ import RelatedLinks from '@/components/RelatedLinks'
 import { buildMetadata } from '@/lib/seo'
 import { BUSINESS } from '@/lib/site'
 
-// Conversion confirmation pages should never appear in search results — they are
-// only meaningful straight after a form submission, and they are the page you
-// point analytics/ads conversion goals at.
+// Conversion confirmation pages should never appear in search results. They only
+// make sense straight after a form submission, and this is the page you point
+// analytics and ad conversion goals at.
 export const metadata: Metadata = buildMetadata({
-  title: 'Thank You — Your Inquiry Has Been Received',
+  title: 'Thank You, Your Message Has Reached Us',
   description:
-    'Thanks for contacting SAFE AI-AFRICA. Your inquiry has been received and our team will respond within 24 hours.',
+    'Thanks for getting in touch with SAFE AI-AFRICA. We have your message and someone from our team will reply within 24 hours.',
   path: '/thank-you',
   noIndex: true,
 })
 
 const NEXT_STEPS = [
   {
-    title: 'We read it, today',
-    body: 'Your message goes straight to our team in Kampala. Inquiries that arrive during working hours are usually read within a couple of hours.',
+    title: 'We read it today',
+    body: 'Your message goes straight to our team in Kampala. If it arrives during working hours, someone has usually read it within a couple of hours.',
   },
   {
     title: 'You get a real reply within 24 hours',
-    body: 'Not an autoresponder — a person who has looked at what you asked for, with a first view on whether and how we can help.',
+    body: 'Not an autoresponder. A person who has read what you asked for, with a first view on whether we can help and how.',
   },
   {
     title: 'We book a free discovery call',
-    body: 'If it looks like a fit, we set up a short call to scope the problem, your data and your constraints, then send a written proposal.',
+    body: 'If it looks like a fit, we set up a short call to talk through the problem, the data you have and what you are working with. A written proposal follows.',
   },
 ]
 
@@ -51,10 +51,10 @@ export default function ThankYouPage() {
               <CheckCircle2 size={34} aria-hidden="true" />
             </div>
             <h1 className="text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 text-white">
-              Thank you — your inquiry has been received
+              Thank you, your message has reached us
             </h1>
             <p className="text-lg text-blue-100 max-w-2xl font-lato mb-6">
-              We have your message. {BUSINESS.responseTimePromise}
+              It is with our team now. {BUSINESS.responseTimePromise}
             </p>
             <p className="inline-flex items-center gap-2 text-sm font-semibold bg-white/10 border border-white/20 rounded-full px-4 py-2">
               <Clock size={15} aria-hidden="true" />
@@ -120,8 +120,8 @@ export default function ThankYouPage() {
           </div>
 
           <p className="text-sm text-slate-500 font-lato mt-6">
-            Our reply may land in your spam or promotions folder — if you have not heard from us within
-            24 hours, please check there or message us on WhatsApp.
+            Our reply sometimes lands in spam or the promotions tab. If you have not heard from us
+            within 24 hours, have a look there or message us on WhatsApp.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-3">

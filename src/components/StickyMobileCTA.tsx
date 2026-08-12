@@ -6,8 +6,8 @@ import { ArrowRight, MessageCircle, Phone } from 'lucide-react'
 import { BUSINESS } from '@/lib/site'
 
 /**
- * Fixed bottom action bar for mobile visitors — the primary conversion path is
- * always one tap away, no matter how far down the page they are.
+ * Fixed bottom action bar for mobile visitors, so the primary conversion path is
+ * always one tap away no matter how far down the page they are.
  * Hidden on md+ where the header CTA and page CTAs are visible instead.
  */
 export default function StickyMobileCTA() {

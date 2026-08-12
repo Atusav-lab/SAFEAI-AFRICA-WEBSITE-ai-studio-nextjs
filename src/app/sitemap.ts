@@ -4,7 +4,7 @@ import { SITE_URL } from '@/lib/site'
 /**
  * Generates /sitemap.xml.
  *
- * Only canonical, indexable URLs on this host are listed — Search Console
+ * Only canonical, indexable URLs on this host are listed. Search Console
  * ignores (and reports) URLs from other domains, so the product subdomains
  * publish their own sitemaps rather than being listed here. /search and
  * /thank-you are excluded because they are noindex.

@@ -3,9 +3,9 @@ import ContactClient from './ContactClient'
 import { buildMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Contact Us — Book a Demo in Kampala, Uganda',
+  title: 'Contact Us: Book a Demo in Kampala, Uganda',
   description:
-    'Talk to SAFE AI-AFRICA about a demo, partnership or custom AI project. Call, WhatsApp or email our Kampala team — every inquiry gets a reply within 24 hours.',
+    'Talk to SAFE AI-AFRICA about a demo, a partnership or a custom AI project. Call, WhatsApp or email our Kampala team. Every message gets a reply within 24 hours.',
   path: '/contact-us',
   imageAlt: 'Contact SAFE AI-AFRICA in Kampala, Uganda',
   keywords: [

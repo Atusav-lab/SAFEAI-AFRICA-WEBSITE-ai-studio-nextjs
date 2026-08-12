@@ -250,19 +250,19 @@ function AnnouncementSection() {
                 SAFE AI-AFRICA Named a Top 15 Startup in the BIOMIC Accelerator Program
               </h2>
               <p className="text-blue-100 leading-relaxed mb-4">
-                <span className="font-semibold text-white">SAFE AI-AFRICA</span> — makers of{' '}
+                <span className="font-semibold text-white">SAFE AI-AFRICA</span>, makers of{' '}
                 <a href="https://safeseq.safeaiafrica.com" target="_blank" rel="noopener noreferrer" className="text-[#00E5FF] font-semibold hover:underline">
                   SAFESeq
                 </a>
-                , its flagship platform — has been selected among the{' '}
+                , its flagship platform, has been selected among the{' '}
                 <span className="font-semibold text-white">Top 15 startups</span> in the{' '}
                 <span className="font-semibold text-white">BIOMIC Accelerator Program</span>, out of a highly
                 competitive pool of biomedical, biotech, and health innovations from across Uganda.
               </p>
               <p className="text-blue-100 leading-relaxed mb-4">
                 SAFESeq is the first platform of its kind to unify 30+ professional-grade bioinformatics
-                tools — gene prediction, CRISPR design, protein structure prediction, AMR resistance screening,
-                molecular docking, phylogenetics, and more — into a single browser tab. No installs, no code.
+                tools (gene prediction, CRISPR design, protein structure prediction, AMR resistance screening,
+                molecular docking, phylogenetics and more) into a single browser tab. No installs, no code.
                 It's also the first Africa-hosted genomics platform to expose its tools via the Model Context
                 Protocol (MCP), letting AI agents like Claude and ChatGPT query it directly, with every result
                 interpreted in plain language by an AI assistant tuned to the local pathogen landscape and
@@ -270,11 +270,11 @@ function AnnouncementSection() {
               </p>
               <p className="text-blue-100 leading-relaxed mb-8">
                 BIOMIC is coordinated by The Lung Institute, Makerere University, funded by the Science,
-                Technology and Innovation Secretariat of Uganda — Office of the President (STI-OP), and
+                Technology and Innovation Secretariat of Uganda, Office of the President (STI-OP), and
                 implemented in partnership with Hindsight Ventures to accelerate commercialization of
                 breakthrough biomedical, biotechnology, and health innovations in Uganda. This selection gives
-                SAFE AI-AFRICA mentorship, networks, and resources — including compute and other technology
-                credits — to take SAFESeq from a live product to national genomic infrastructure.
+                SAFE AI-AFRICA mentorship, networks and resources, including compute and other technology
+                credits, to take SAFESeq from a live product to national genomic infrastructure.
               </p>
               <a href="https://safeseq.safeaiafrica.com" target="_blank" rel="noopener noreferrer" id="biomic-safeseq-btn"
                 className="bg-white text-[#0b1b4d] font-semibold px-6 py-3 rounded-xl inline-flex items-center gap-2 hover:bg-[#00E5FF] hover:text-white transition-all duration-300 shadow-lg">
@@ -341,7 +341,7 @@ function WhatWeDoSection() {
             >
               <iframe
                 src="https://www.youtube-nocookie.com/embed/OoL6qDec7m0?autoplay=1"
-                title="AMR Lens Africa in action — SAFE AI-AFRICA"
+                title="AMR Lens Africa in action, by SAFE AI-AFRICA"
                 allow="autoplay; fullscreen"
                 className="w-full h-full border-0"
               />
@@ -447,7 +447,7 @@ function ProductsSection() {
                   <div className="relative h-36 flex-shrink-0 overflow-hidden">
                     <Image
                       src={product.img}
-                      alt={`${product.title} — ${product.subtitle}`}
+                      alt={`${product.title}, ${product.subtitle}`}
                       fill
                       sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                       className="object-cover group-hover:scale-110 transition-transform duration-500"

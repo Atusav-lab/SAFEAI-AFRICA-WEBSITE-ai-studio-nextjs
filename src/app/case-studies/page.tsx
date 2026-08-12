@@ -14,9 +14,9 @@ import { buildMetadata } from '@/lib/seo'
 import { SITE_NAME, absoluteUrl } from '@/lib/site'
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Case Studies — AI Projects Delivered in Africa',
+  title: 'Case Studies: AI Projects Delivered in Africa',
   description:
-    'Detailed case studies from SAFE AI-AFRICA: unified genomics with SAFESeq, AI antimicrobial stewardship with AMR Lens, field sales with SafeZell, food-safety compliance, education and maternal health.',
+    'How we built SAFESeq for genomics, AMR Lens for antimicrobial stewardship, SafeZell for field sales, and our platforms for food safety, education and maternal health.',
   path: '/case-studies',
   image: '/SAFEAI_ASSETS/safeseq1.png',
   imageAlt: 'SAFE AI-AFRICA case studies across genomics, health, agriculture and enterprise',
@@ -38,7 +38,7 @@ function caseStudyListSchema() {
     itemListElement: CASE_STUDIES.map((study, index) => ({
       '@type': 'ListItem',
       position: index + 1,
-      name: `${study.product} — ${study.title}`,
+      name: `${study.product}: ${study.title}`,
       description: study.summary,
       url: `${absoluteUrl('/case-studies')}#${study.slug}`,
     })),
@@ -61,9 +61,9 @@ export default function CaseStudiesPage() {
               Case Studies: AI Built for Real African Workflows
             </h1>
             <p className="text-lg text-blue-100 max-w-2xl font-lato mb-6">
-              Six detailed build stories — the problem we found, the decisions we made, and what the
-              finished system does today across genomics, clinical microbiology, distribution,
-              food safety, education and maternal health.
+              Six build stories in detail: the problem we found, the decisions we made along the way,
+              and what each finished system does today. They span genomics, clinical microbiology,
+              distribution, food safety, education and maternal health.
             </p>
             <div className="flex flex-wrap items-center gap-3">
               <Link
@@ -83,7 +83,7 @@ export default function CaseStudiesPage() {
           </div>
         </section>
 
-        {/* Jump list — internal anchors */}
+        {/* Jump list of internal anchors */}
         <nav aria-label="Case studies" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <ul className="flex flex-wrap gap-2">
             {CASE_STUDIES.map(study => (
@@ -223,8 +223,8 @@ export default function CaseStudiesPage() {
           <div className="relative max-w-3xl mx-auto px-4 text-center text-white">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-white">Have a problem that looks like one of these?</h2>
             <p className="text-blue-100 font-lato mb-8">
-              Tell us what you are trying to solve and we will tell you honestly whether AI is the right
-              tool for it — and what it would take to build.
+              Tell us what you are trying to solve. We will tell you honestly whether AI is the right
+              tool for the job, and what it would take to build.
             </p>
             <div className="flex flex-wrap justify-center items-center gap-3">
               <Link

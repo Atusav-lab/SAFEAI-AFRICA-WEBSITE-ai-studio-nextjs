@@ -145,7 +145,7 @@ export interface FaqItem {
   answer: string
 }
 
-/** FAQPage markup — only use it where the same Q&A is visible on the page. */
+/** FAQPage markup. Only use it where the same questions are visible on the page. */
 export function faqSchema(items: FaqItem[]) {
   return {
     '@context': 'https://schema.org',

@@ -15,7 +15,7 @@ interface Props {
  */
 export default function Testimonials({
   heading = 'What our clients and partners say',
-  subheading = 'Named testimonials from organisations we have delivered for, alongside independent recognition of our work.',
+  subheading = 'Testimonials from organisations we have delivered for, alongside independent recognition of our work.',
   className = '',
 }: Props) {
   return (
@@ -77,7 +77,7 @@ export default function Testimonials({
               <Link href="/contact-us" className="text-[#00499E] font-semibold hover:underline">
                 Send us your review
               </Link>{' '}
-              — we only publish testimonials from named, verifiable clients.
+              . We only publish testimonials from named clients we have actually worked with.
             </p>
           </div>
 

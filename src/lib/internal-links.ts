@@ -72,7 +72,7 @@ export const PAGES: Record<string, PageNode> = {
   '/contact-us': {
     href: '/contact-us',
     title: 'Contact Us',
-    description: 'Book a demo or start a project — we reply within 24 hours.',
+    description: 'Book a demo or start a project. We reply within 24 hours.',
   },
   '/coming-soon': {
     href: '/coming-soon',

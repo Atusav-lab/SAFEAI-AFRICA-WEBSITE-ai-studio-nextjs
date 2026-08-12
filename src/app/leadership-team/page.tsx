@@ -3,7 +3,7 @@ import LeadershipTeamClient from './LeadershipTeamClient'
 import { buildMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Leadership Team — Founders & Directors',
+  title: 'Leadership Team: Founders and Directors',
   description:
     'Meet the founders, directors and researchers leading SAFE AI-AFRICA: biotechnologists, engineers, clinicians and bioinformaticians building responsible AI in Africa.',
   path: '/leadership-team',

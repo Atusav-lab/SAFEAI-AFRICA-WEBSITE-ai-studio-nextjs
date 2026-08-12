@@ -20,7 +20,7 @@ import {
  *
  * Nothing optional loads before a choice is made: third-party embeds are
  * wrapped in `ConsentGate`, which stays closed until the visitor allows the
- * matching category. Declining is exactly as easy as accepting — a single
+ * matching category. Declining is exactly as easy as accepting: a single
  * click, on the same level as "Accept all".
  */
 export default function CookieConsent() {
@@ -107,8 +107,8 @@ export default function CookieConsent() {
                     We use cookies
                   </h2>
                   <p id="cookie-banner-text" className="text-sm text-slate-600 font-lato leading-relaxed mt-1">
-                    Strictly necessary cookies keep this site working. We only load embedded maps, videos
-                    and analytics if you allow them. Read our{' '}
+                    A few cookies are needed to keep this site working. Everything else, like our office
+                    map, product videos and page counts, only loads if you say yes. Read our{' '}
                     <Link href="/privacy-policy#cookies" className="text-[#00499E] font-semibold hover:underline">
                       cookie policy
                     </Link>
@@ -175,8 +175,8 @@ export default function CookieConsent() {
                     Cookie preferences
                   </h2>
                   <p className="text-sm text-slate-500 font-lato mt-1">
-                    Choose what may load on this site. You can change this at any time from the cookie
-                    settings link in the footer.
+                    Choose what you are happy for us to load. You can change your mind at any time using
+                    the cookie settings link at the bottom of every page.
                   </p>
                 </div>
                 <button
@@ -261,7 +261,7 @@ export default function CookieConsent() {
               </div>
 
               <p className="text-xs text-slate-400 font-lato mt-4">
-                Full details of every cookie are listed in our{' '}
+                Every cookie we use is listed in our{' '}
                 <Link href="/privacy-policy#cookies" className="text-[#00499E] hover:underline">
                   privacy and cookie policy
                 </Link>

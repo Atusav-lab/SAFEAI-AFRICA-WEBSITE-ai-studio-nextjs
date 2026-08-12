@@ -41,8 +41,9 @@ const TONES = {
 
 /**
  * Blocks third-party embeds until the visitor allows the matching cookie
- * category. Without this the consent banner would be decorative: the embeds
- * would already have set their cookies by the time anyone clicked "reject".
+ * category. Without this the consent banner would be decorative, because the
+ * embeds would already have set their cookies by the time anyone clicked
+ * "reject".
  *
  * The placeholder lets the visitor load this one embed directly, which grants
  * the category rather than nagging them back to the banner.
@@ -78,8 +79,8 @@ export default function ConsentGate({
         <Cookie size={20} aria-hidden="true" />
       </span>
       <p className={`text-sm font-lato max-w-sm leading-relaxed ${styles.text}`}>
-        <strong className={`font-semibold ${styles.strong}`}>{label}</strong> is loaded from {provider},
-        which may set its own cookies. Allow embedded content to view it here.
+        <strong className={`font-semibold ${styles.strong}`}>{label}</strong> comes from {provider}, who
+        may set their own cookies. Say yes to embedded content and it will load right here.
       </p>
       <div className="flex flex-wrap justify-center gap-2">
         <button

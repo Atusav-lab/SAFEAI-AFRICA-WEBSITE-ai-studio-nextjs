@@ -32,9 +32,9 @@ export default function NotFound() {
               We could not find that page
             </h1>
             <p className="text-gray-600 font-lato leading-relaxed mb-8">
-              The page may have been moved, renamed or removed. Everything else is still here — pick up
-              from one of the links below, search the site, or ask us directly and we will point you to
-              the right place.
+              The page may have moved, been renamed or been removed. Everything else is still here. Pick
+              up from one of the links below, search the site, or just ask us and we will point you to the
+              right place.
             </p>
 
             <div className="flex flex-wrap justify-center gap-3">

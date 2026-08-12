@@ -3,7 +3,7 @@ import ComingSoonClient from './ComingSoonClient'
 import { buildMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = buildMetadata({
-  title: 'AI Training & Careers — SAFE Academy Waitlist',
+  title: 'AI Training and Careers: SAFE Academy Waitlist',
   description:
     'SAFE Academy is launching soon: hands-on AI training in computer vision, NLP and genomics analytics, certification pathways and job placement for African talent. Join the waitlist.',
   path: '/coming-soon',

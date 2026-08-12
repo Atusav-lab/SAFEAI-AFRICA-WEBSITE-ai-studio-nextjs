@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description:
-    "SAFE AI-AFRICA builds responsible AI for African healthcare, genomics, agriculture, education and business — SAFESeq, SAFEKemia, SAFElytics, AMR Lens and more. Kampala, Uganda.",
+    "SAFE AI-AFRICA builds responsible AI for African healthcare, genomics, agriculture, education and business, including SAFESeq, SAFEKemia, SAFElytics and AMR Lens. Based in Kampala, Uganda.",
   applicationName: SITE_NAME,
   authors: [{ name: SITE_NAME, url: SITE_URL }],
   publisher: SITE_NAME,
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
         url: absoluteUrl(DEFAULT_OG_IMAGE),
         width: 1200,
         height: 630,
-        alt: "SAFE AI-AFRICA — responsible artificial intelligence for Africa",
+        alt: "SAFE AI-AFRICA, responsible artificial intelligence for Africa",
       },
     ],
   },

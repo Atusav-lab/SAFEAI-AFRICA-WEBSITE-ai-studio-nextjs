@@ -29,7 +29,7 @@ export const BUSINESS = {
   foundingDate: '2023',
   /** Published response-time promise, reused across CTAs, forms and schema. */
   responseTimeHours: 24,
-  responseTimePromise: 'We reply to every inquiry within 24 hours (Mon–Sat).',
+  responseTimePromise: 'We reply to every message within 24 hours, Monday to Saturday.',
   openingHours: [
     { days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '08:00', closes: '18:00' },
     { days: ['Saturday'], opens: '09:00', closes: '14:00' },
@@ -62,7 +62,7 @@ export const PRODUCT_SITES = [
   'https://safeuzazi.safeaiafrica.com',
 ]
 
-/** Absolute URL helper — schema.org and OG tags require absolute URLs. */
+/** Absolute URL helper, because schema.org and OG tags need absolute URLs. */
 export function absoluteUrl(path = '/'): string {
   if (path.startsWith('http')) return path
   return `${SITE_URL}${path.startsWith('/') ? path : `/${path}`}`

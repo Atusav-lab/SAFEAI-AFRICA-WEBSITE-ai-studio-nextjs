@@ -13,9 +13,9 @@ import { buildMetadata } from '@/lib/seo'
 import { BUSINESS } from '@/lib/site'
 
 export const metadata: Metadata = buildMetadata({
-  title: 'FAQ — Answers on Pricing, Timelines & Data Ownership',
+  title: 'FAQ: Pricing, Timelines and Data Ownership',
   description:
-    'Frequently asked questions about working with SAFE AI-AFRICA: how projects start, what they cost, how long they take, who owns the data and IP, deployment options and support.',
+    'Answers to the questions clients ask us most: how projects start, what they cost, how long they take, who owns the data and the code, where systems can run, and what support looks like.',
   path: '/faq',
   imageAlt: 'Frequently asked questions about SAFE AI-AFRICA',
   keywords: [
@@ -34,7 +34,7 @@ export default function FaqPage() {
       <JsonLd schema={faqSchema(ALL_FAQS)} />
 
       <main className="pt-20 lg:pt-24 min-h-screen bg-slate-50 text-slate-800">
-        {/* Hero — CTA and response-time promise sit above the fold */}
+        {/* Hero: CTA and response-time promise sit above the fold */}
         <section className="relative overflow-hidden bg-gradient-to-r from-[#00499E] to-[#0075ba] text-white py-14 lg:py-20">
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]" />
           <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,8 +43,8 @@ export default function FaqPage() {
               Frequently Asked Questions
             </h1>
             <p className="text-lg text-blue-100 max-w-2xl font-lato mb-6">
-              Everything clients ask before starting an AI project with us — scope, cost, timelines,
-              data ownership, deployment and support.
+              The questions clients ask us before starting a project: scope, cost, timelines, who owns
+              the data, where it runs and what happens after launch.
             </p>
             <div className="flex flex-wrap items-center gap-3">
               <Link
@@ -98,7 +98,8 @@ export default function FaqPage() {
           <div className="bg-white border border-slate-100 rounded-3xl p-8 shadow-sm text-center">
             <h2 className="text-2xl font-bold text-[#0b1b4d] mb-2">Still have a question?</h2>
             <p className="text-slate-500 font-lato mb-6 max-w-xl mx-auto">
-              Tell us what you are trying to build or fix. {BUSINESS.responseTimePromise}
+              Tell us what you are trying to build or fix and we will give you a straight answer.{' '}
+              {BUSINESS.responseTimePromise}
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               <Link

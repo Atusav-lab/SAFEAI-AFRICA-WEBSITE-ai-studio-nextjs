@@ -4,7 +4,7 @@ import { DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL, absoluteUrl } from './site'
 export interface PageSeo {
   /** Page-specific title, without the brand suffix. */
   title: string
-  /** Unique meta description — aim for 140–160 characters. */
+  /** Unique meta description, ideally 140 to 160 characters. */
   description: string
   /** Route path, e.g. "/about-us". Used for the canonical URL. */
   path: string

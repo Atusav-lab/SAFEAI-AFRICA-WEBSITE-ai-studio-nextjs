@@ -3,9 +3,9 @@ import SolutionClient from './SolutionClient'
 import { buildMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Products & Services — AI Platforms for Africa',
+  title: 'Products and Services: AI Platforms for Africa',
   description:
-    'Ten production AI platforms — SAFESeq genomics, SAFEKemia chemistry tutor, SAFElytics no-code ML, SafeZell field sales, AMR Lens and more — plus AI training and bespoke development.',
+    'Ten AI platforms in production, including SAFESeq for genomics, SAFEKemia for chemistry teaching, SAFElytics for no-code machine learning, SafeZell for field sales and AMR Lens. We also run training and build custom systems.',
   path: '/solution',
   image: '/SAFEAI_ASSETS/safeseq1.png',
   imageAlt: 'SAFESeq, the SAFE AI-AFRICA genomics analysis platform',

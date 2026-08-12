@@ -6,7 +6,7 @@ import { NextResponse } from 'next/server'
  * Delivery: set CONTACT_WEBHOOK_URL to an endpoint that reaches the team
  * (Formspree, Zapier/Make hook, Slack/Teams incoming webhook, or your own mail
  * service). Without it the submission is validated and written to the server log
- * only — the form still works, but nothing is emailed, so configure the webhook
+ * only. The form still works, but nothing is emailed, so configure the webhook
  * before relying on inbound inquiries.
  */
 
@@ -91,7 +91,7 @@ export async function POST(request: Request) {
       )
     }
   } else {
-    console.warn('[contact] CONTACT_WEBHOOK_URL is not set — inquiry logged only:', inquiry)
+    console.warn('[contact] CONTACT_WEBHOOK_URL is not set, inquiry logged only:', inquiry)
   }
 
   return NextResponse.json({ ok: true })

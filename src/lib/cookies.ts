@@ -4,7 +4,7 @@
  *
  * The visitor's choice is kept in a first-party cookie so it survives across
  * sessions and devices sharing the browser profile. Nothing beyond the strictly
- * necessary category loads until consent is given — see `ConsentGate`.
+ * necessary category loads until consent is given. See `ConsentGate`.
  */
 
 export const CONSENT_COOKIE = 'saa_cookie_consent'
@@ -22,7 +22,7 @@ export type ConsentCategory = 'necessary' | OptionalCategory
 
 export interface ConsentState {
   version: number
-  /** Always true — the site cannot run without these. */
+  /** Always true, because the site cannot run without these. */
   necessary: true
   /** Embedded third-party content: maps, videos, the 3D hero scene. */
   functional: boolean
@@ -58,24 +58,24 @@ export const CATEGORIES: CategoryInfo[] = [
   {
     id: 'necessary',
     name: 'Strictly necessary',
-    summary: 'Required for the site to work. Always on.',
+    summary: 'Needed for the site to work. Always on.',
     detail:
-      'These keep the site secure and available and remember the cookie choice you make here. They do not track you across other websites, and the site cannot function without them.',
+      'These keep the site secure and available, and they remember the cookie choice you make here so we do not ask you again on every page. They do not follow you around other websites, and the site cannot run without them.',
     required: true,
   },
   {
     id: 'functional',
     name: 'Embedded content',
-    summary: 'Loads maps, videos and interactive demos from third parties.',
+    summary: 'Loads maps, videos and interactive demos from other companies.',
     detail:
-      'Our office map, product demonstration videos and the interactive 3D scene are served by Google, YouTube and Spline. Those providers can set their own cookies once their content loads, so we do not load any of it until you allow this category. Everything else on the page still works if you decline.',
+      'Our office map comes from Google, our product videos from YouTube, and the moving 3D scene on the home page from Spline. Once that content loads, those companies can set their own cookies. So we hold it back until you say yes. If you would rather not, the rest of the page works exactly as normal.',
   },
   {
     id: 'analytics',
     name: 'Analytics',
-    summary: 'Helps us understand which pages are useful.',
+    summary: 'Helps us see which pages are actually useful.',
     detail:
-      'Aggregated measurement of page visits so we can improve the site. We do not currently run any analytics tool on this website; if we add one it will only load when this category is allowed.',
+      'Counts of how many people visit each page, so we know what to improve. We do not run any analytics tool on this website at the moment. If we add one, it will only load for visitors who have allowed this category.',
   },
 ]
 
@@ -87,13 +87,13 @@ export interface CookieRecord {
   duration: string
 }
 
-/** Published cookie inventory. Keep this accurate — it is a legal disclosure. */
+/** Published cookie inventory. Keep this accurate, it is a legal disclosure. */
 export const COOKIE_INVENTORY: CookieRecord[] = [
   {
     name: CONSENT_COOKIE,
     provider: 'SAFE AI-AFRICA (first party)',
     category: 'necessary',
-    purpose: 'Stores the cookie preferences you set on this banner so we do not ask again on every visit.',
+    purpose: 'Remembers the cookie choice you made, so we do not ask again on every visit.',
     duration: `${CONSENT_MAX_AGE_DAYS} days`,
   },
   {
@@ -101,7 +101,7 @@ export const COOKIE_INVENTORY: CookieRecord[] = [
     provider: 'Our hosting provider (first party)',
     category: 'necessary',
     purpose:
-      'Session integrity, load balancing and protection against abuse. Set only where the platform serving the page requires them.',
+      'Keep your session working, spread traffic across servers and block abuse. Set only where the platform serving the page needs them.',
     duration: 'Session, or up to 12 months',
   },
   {
@@ -109,7 +109,7 @@ export const COOKIE_INVENTORY: CookieRecord[] = [
     provider: 'Google Maps',
     category: 'functional',
     purpose:
-      'Set by Google when the embedded office map on our contact page loads, to remember map preferences and enforce Google’s own consent state.',
+      'Set by Google when the office map on our contact page loads. They remember your map settings and Google’s own consent state.',
     duration: 'Up to 24 months',
   },
   {
@@ -117,7 +117,7 @@ export const COOKIE_INVENTORY: CookieRecord[] = [
     provider: 'YouTube (youtube-nocookie.com)',
     category: 'functional',
     purpose:
-      'Set by YouTube when you play an embedded product video, to remember playback preferences and estimate bandwidth. We use the no-cookie domain, so these are only set once playback starts.',
+      'Set by YouTube when you play one of our product videos. They remember playback settings and estimate your connection speed. We use YouTube’s no-cookie domain, so nothing is set until you press play.',
     duration: 'Session to 24 months',
   },
   {
@@ -125,7 +125,7 @@ export const COOKIE_INVENTORY: CookieRecord[] = [
     provider: 'Spline',
     category: 'functional',
     purpose:
-      'Used by the interactive 3D scene on our home page to cache scene assets for faster loading.',
+      'Used by the 3D scene on our home page to keep a local copy of the artwork so it loads faster next time.',
     duration: 'Until you clear browser storage',
   },
 ]
@@ -142,7 +142,7 @@ export function readConsent(): ConsentState | null {
 
   try {
     const parsed = JSON.parse(decodeURIComponent(match.slice(CONSENT_COOKIE.length + 1))) as ConsentState
-    // A version bump means the disclosure changed materially — ask again.
+    // A version bump means the disclosure changed materially, so ask again.
     if (parsed.version !== CONSENT_VERSION) return null
     return {
       ...DENY_ALL,

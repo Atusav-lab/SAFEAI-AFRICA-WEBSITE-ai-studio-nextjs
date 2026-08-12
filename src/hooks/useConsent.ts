@@ -21,7 +21,7 @@ interface UseConsent {
  * Subscribes a component to the visitor's cookie choice.
  *
  * Consent lives in a cookie read on the client, so `ready` stays false for the
- * first paint — server and client render the same "not decided" state and
+ * first paint, so server and client render the same "not decided" state and
  * hydration matches.
  */
 export function useConsent(): UseConsent {

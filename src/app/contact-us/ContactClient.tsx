@@ -46,7 +46,7 @@ export default function ContactUs() {
       }
 
       setForm(EMPTY_FORM)
-      // Dedicated confirmation page — also the conversion goal for analytics/ads.
+      // Dedicated confirmation page, and the conversion goal for analytics and ads.
       router.push('/thank-you')
     } catch {
       setStatus('error')
@@ -60,7 +60,7 @@ export default function ContactUs() {
       <JsonLd schema={faqSchema(CONTACT_FAQS)} />
 
       <main className="pt-20 lg:pt-24 min-h-screen bg-slate-50 text-slate-800">
-        {/* Banner — contact actions and the response-time promise sit above the fold */}
+        {/* Banner: contact actions and the response-time promise sit above the fold */}
         <section className="relative overflow-hidden bg-gradient-to-r from-[#00499E] to-[#0075ba] text-white py-14 lg:py-16">
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]" />
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -107,8 +107,8 @@ export default function ContactUs() {
                 <span className="text-xs font-semibold uppercase tracking-widest text-[#00499E] mb-2 block">Connect</span>
                 <h2 className="text-3xl font-bold text-[#0b1b4d]">Get in Touch</h2>
                 <p className="text-slate-500 font-lato mt-2 leading-relaxed">
-                  Reach out through any of these channels or use the form to send us a message directly.
-                  Our support and partnership teams are ready to assist.
+                  Use any of these channels, or send us a message with the form. Our support and
+                  partnership teams are ready to help.
                 </p>
               </div>
 
@@ -172,9 +172,9 @@ export default function ContactUs() {
                   <div>
                     <h3 className="font-bold text-[#0b1b4d]">Working Hours</h3>
                     <ul className="text-sm text-slate-500 font-lato mt-1 space-y-0.5">
-                      <li>Monday – Friday: 8:00 – 18:00 (EAT)</li>
-                      <li>Saturday: 9:00 – 14:00 (EAT)</li>
-                      <li>Sunday &amp; public holidays: closed</li>
+                      <li>Monday to Friday: 8am to 6pm (EAT)</li>
+                      <li>Saturday: 9am to 2pm (EAT)</li>
+                      <li>Sunday and public holidays: closed</li>
                     </ul>
                   </div>
                 </div>
@@ -289,7 +289,7 @@ export default function ContactUs() {
                   />
                 </div>
 
-                {/* Honeypot — hidden from people, tempting to bots */}
+                {/* Honeypot: hidden from people, tempting to bots */}
                 <div className="hidden" aria-hidden="true">
                   <label htmlFor="company">Company (leave blank)</label>
                   <input
@@ -334,8 +334,8 @@ export default function ContactUs() {
                   Our office in {BUSINESS.addressLocality}
                 </h2>
                 <p className="text-slate-500 font-lato mt-2 max-w-2xl">
-                  We are based in {BUSINESS.addressLocality}, {BUSINESS.addressCountryName}, and meet clients
-                  by appointment. Message us before visiting so we can confirm a time.
+                  We are based in {BUSINESS.addressLocality}, {BUSINESS.addressCountryName}, and we meet
+                  clients by appointment. Message us before you visit so we can confirm a time.
                 </p>
               </div>
               <a

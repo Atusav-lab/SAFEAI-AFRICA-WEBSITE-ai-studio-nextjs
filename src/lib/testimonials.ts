@@ -4,7 +4,7 @@
  * Only add entries here that were actually given to SAFE AI-AFRICA, with the
  * person and organisation named and permission to publish. Invented or
  * anonymous "reviews" are a search-ranking and trust liability, and review
- * markup for self-serving reviews is against Google's structured-data policy —
+ * markup for self-serving reviews is against Google's structured-data policy,
  * which is why this data renders as visible social proof only.
  */
 
@@ -30,7 +30,7 @@ export const TESTIMONIALS: Testimonial[] = [
 ]
 
 /**
- * Third-party recognition — verifiable programmes, selections and certifications
+ * Third-party recognition: verifiable programmes, selections and certifications
  * rather than self-reported claims.
  */
 export interface Recognition {

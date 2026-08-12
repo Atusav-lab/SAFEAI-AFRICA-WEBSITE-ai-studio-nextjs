@@ -3,7 +3,7 @@ import BlogClient from './BlogClient'
 import { buildMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Blog — AI News & Insights from Africa',
+  title: 'Blog: AI News and Insights from Africa',
   description:
     'Company announcements and analysis on artificial intelligence across Africa: genomics, healthcare deployments, precision agriculture, and digital skills programmes.',
   path: '/blog',

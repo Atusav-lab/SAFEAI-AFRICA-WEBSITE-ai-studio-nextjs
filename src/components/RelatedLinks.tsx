@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react'
 import { relatedPages } from '@/lib/internal-links'
 
 interface Props {
-  /** Current route — used to look up its related pages. */
+  /** Current route, used to look up its related pages. */
   route: string
   title?: string
   subtitle?: string

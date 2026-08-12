@@ -60,7 +60,7 @@ const products = [
     title: 'Invoice Master Pro',
     category: 'Fintech & Enterprise',
     subtitle: 'Fintech • Enterprise • AI Advisor • Inventory • Procurement',
-    desc: 'Meet your Smart AI Advisor — a next-generation business management platform. Simply ask questions in plain language and get instant insights on taxes, profits, and stock levels. Invoice Master Pro lets you effortlessly handle unlimited quotations, invoices, products, and procurement, all backed by real-time syncing.',
+    desc: 'Meet your Smart AI Advisor, a next-generation business management platform. Simply ask questions in plain language and get instant insights on taxes, profits, and stock levels. Invoice Master Pro lets you effortlessly handle unlimited quotations, invoices, products, and procurement, all backed by real-time syncing.',
     image: '/SAFEAI_ASSETS/invoice-master.webp',
     link: 'https://invoicemasterpro.safeaiafrica.com',
     external: true,
@@ -110,7 +110,7 @@ const products = [
     title: 'SAFEUZAZI AI',
     category: 'Healthcare',
     subtitle: 'Maternal Health • Pregnancy • Family Planning • AI • Africa',
-    desc: 'SafeUzazi AI offers week-by-week baby growth tracking, an AI-powered symptom checker for early pregnancy problems, and personalized family planning guidance — all rooted in local wisdom and African community values. Includes Sisters Aoede, a compassionate AI assistant.',
+    desc: 'SafeUzazi AI offers week-by-week baby growth tracking, an AI-powered symptom checker for early pregnancy problems, and personalized family planning guidance, all rooted in local wisdom and African community values. Includes Sisters Aoede, a compassionate AI assistant.',
     image: '/SAFEAI_ASSETS/safeuzazi-ai-simple-care-for-african-women-google-chrome-16-apr-26-18-13-46-2.png',
     link: 'https://safeuzazi.safeaiafrica.com',
     external: true,
@@ -238,7 +238,7 @@ export default function Solution() {
                 <div className="relative aspect-[16/10] w-full bg-slate-100 overflow-hidden">
                   <Image
                     src={p.image}
-                    alt={`${p.title} — ${p.subtitle}`}
+                    alt={`${p.title}, ${p.subtitle}`}
                     fill
                     sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                     className="object-cover group-hover:scale-101 transition-transform duration-500"
@@ -329,8 +329,8 @@ export default function Solution() {
           <div className="relative max-w-3xl mx-auto px-4 text-center text-white">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-white">Not sure which platform fits?</h2>
             <p className="text-blue-100 font-lato mb-8">
-              Describe your workflow and we will point you to the right product — or tell you if a bespoke
-              build makes more sense.
+              Describe your workflow and we will point you to the right product, or tell you honestly if
+              a custom build makes more sense.
             </p>
             <div className="flex flex-wrap justify-center items-center gap-3">
               <Link

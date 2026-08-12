@@ -90,7 +90,7 @@ export default function OurGallery() {
                 >
                   <Image
                     src={item.src}
-                    alt={`${item.title} — ${item.date}`}
+                    alt={`${item.title}, ${item.date}`}
                     fill
                     sizes="(min-width: 768px) 50vw, 100vw"
                     className="object-cover group-hover:scale-[1.03] transition-transform duration-500"

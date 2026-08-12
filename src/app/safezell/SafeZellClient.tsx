@@ -181,7 +181,7 @@ export default function SafeZellPage() {
             </h1>
 
             <p className="sz-hero-sub mt-5 text-base leading-[1.75] text-[#5a5a5a] max-w-[460px] font-light">
-              SafeZell connects field representatives, supervisors, and warehouse teams in one closed-loop operations platform — built for FMCG companies running field sales teams anywhere in the world.
+              SafeZell connects field representatives, supervisors, and warehouse teams in one closed-loop operations platform, built for FMCG companies running field sales teams anywhere in the world.
             </p>
 
             <div className="sz-hero-actions mt-9 flex gap-3 flex-wrap">
@@ -266,7 +266,7 @@ export default function SafeZellPage() {
                     ))}
                   </div>
                   <div className="bg-[#1a2b1b] rounded-[9px] p-3 flex-1 flex flex-col gap-2">
-                    <div className="text-[.58rem] text-[rgba(255,255,255,.38)] uppercase tracking-[.04em]">Sales Trend — This Week</div>
+                    <div className="text-[.58rem] text-[rgba(255,255,255,.38)] uppercase tracking-[.04em]">Sales Trend, This Week</div>
                     <div className="flex items-end gap-[5px] h-[72px]">
                       {[['30%','dim'],['55%',''],['42%','dim'],['70%',''],['60%',''],['38%','dim'],['90%','']].map(([h, dim], i) => (
                         <div key={i} className={`sz-chart-bar${dim ? ' dim' : ''} flex-1 rounded-t-[3px] relative overflow-hidden bg-[rgba(255,255,255,.06)]`} style={{ height: h }} />
@@ -344,7 +344,7 @@ export default function SafeZellPage() {
                 {
                   icon: <path strokeLinecap="round" strokeLinejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />,
                   title: 'Variance Reconciliation', tag: 'Orders · Deliveries · Delta',
-                  desc: 'Orders enter the warehouse queue as Pending. Representatives or supervisors record deliveries and the system computes the exact delta — partial, over, or under — with no manual work.'
+                  desc: 'Orders enter the warehouse queue as Pending. Representatives or supervisors record deliveries and the system computes the exact delta, whether partial, over or under, with no manual work.'
                 },
                 {
                   icon: <><path strokeLinecap="round" strokeLinejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" /><circle cx="12" cy="13" r="3" /></>,
@@ -354,7 +354,7 @@ export default function SafeZellPage() {
                 {
                   icon: <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />,
                   title: 'Compliance Audits', tag: 'FIFO · OOS · Planogram',
-                  desc: 'Planogram checks, expiry verification, FIFO adherence, pricing compliance, and OOS flagging — all captured in a single structured form per visit, reviewable by supervisors.'
+                  desc: 'Planogram checks, expiry verification, FIFO adherence, pricing compliance and OOS flagging, all captured in a single structured form per visit, reviewable by supervisors.'
                 },
                 {
                   icon: <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />,
@@ -389,9 +389,9 @@ export default function SafeZellPage() {
 
             <RevealDiv className="sz-steps-line mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 relative">
               {[
-                { num: '01', title: 'Route Assignment', desc: "Supervisors schedule weekday routes — assigning each representative an ordered list of stores. The system filters to only the outlets that representative manages." },
+                { num: '01', title: 'Route Assignment', desc: "Supervisors schedule weekday routes, assigning each representative an ordered list of stores. The system filters to only the outlets that representative manages." },
                 { num: '02', title: 'GPS Check-In & Audit', desc: "The representative arrives, the browser confirms their position, and the compliance form unlocks. SOH, OOS items, shelf share, and photos are all captured in one flow." },
-                { num: '03', title: 'Sales & Orders', desc: "Daily sales are entered with automatic currency computation. If stock is low, the representative raises a warehouse order — logged as Pending and queued for dispatch." },
+                { num: '03', title: 'Sales & Orders', desc: "Daily sales are entered with automatic currency computation. If stock is low, the representative raises a warehouse order, which is logged as Pending and queued for dispatch." },
                 { num: '04', title: 'Supervisor Review', desc: "Every submission surfaces in the supervisor dashboard. Reports are approved or flagged. Variance is reconciled. Audit logs capture every action with impact severity levels." },
               ].map((step) => (
                 <div key={step.num} className="px-6 relative z-10">
@@ -478,7 +478,7 @@ export default function SafeZellPage() {
                 { num: '01', bg: '#e3f2fd', stroke: '#1565c0', title: 'Unified Dashboard', desc: 'Role-adaptive KPI cards, sales trend charts, interactive map visit traces, and a real-time leaderboard for supervisors.', pills: [], icon: <><rect x="3" y="3" width="7" height="7" rx="1.5" /><rect x="14" y="3" width="7" height="7" rx="1.5" /><rect x="3" y="14" width="7" height="7" rx="1.5" /><rect x="14" y="14" width="7" height="7" rx="1.5" /></> },
                 { num: '02', bg: '#fef3c7', stroke: '#d97706', title: 'Store Visits & Itinerary', desc: 'Dual-audience view: field reps see their route checklist, supervisors see the Reps Routing Progress Control Panel with live progress bars per representative.', pills: [], icon: <><path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><circle cx="12" cy="11" r="3" /></> },
                 { num: '03', bg: '#ede9fe', stroke: '#7c3aed', title: 'Dynamic Inventory Logs', desc: 'Stock-on-hand snapshots per store with colour-coded low-stock alerts, local currency projections, and instant CSV export with date-stamped filenames.', pills: ['SOH', 'Min Stock Alerts', 'CSV Export'], icon: <path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /> },
-                { num: '04', bg: '#fce7f3', stroke: '#db2777', title: 'Supply Variance & Orders', desc: 'Field representatives raise orders by product and quantity. Representatives or supervisors record deliveries and the platform computes the exact variance delta automatically — no spreadsheets, no manual reconciliation required.', pills: ['Pending → Partial → Delivered', 'Auto variance compute'], icon: <path strokeLinecap="round" strokeLinejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /> },
+                { num: '04', bg: '#fce7f3', stroke: '#db2777', title: 'Supply Variance & Orders', desc: 'Field representatives raise orders by product and quantity. Representatives or supervisors record deliveries and the platform computes the exact variance delta automatically, with no spreadsheets, no manual reconciliation required.', pills: ['Pending → Partial → Delivered', 'Auto variance compute'], icon: <path strokeLinecap="round" strokeLinejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /> },
                 { num: '05 + 06', bg: '#dbeafe', stroke: '#2563eb', title: 'Reports Builder + Admin Console', desc: 'Multi-filter reports with PDF and CSV export. Plus a full admin suite: user and store management, product catalog, weekday route scheduling, supervisor comment loops, and a complete audit log trail with impact severity levels.', pills: ['PDF Reports', 'User Management', 'Audit Trail', 'Route Scheduler'], icon: <path strokeLinecap="round" strokeLinejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /> },
               ].map((mod) => (
                 <div key={mod.num} className="bg-white rounded-2xl px-[26px] py-7 border border-[rgba(0,0,0,.08)] hover:-translate-y-[3px] hover:shadow-[0_12px_32px_rgba(0,0,0,.10),0_4px_8px_rgba(0,0,0,.05)] transition-all duration-200">
@@ -647,7 +647,7 @@ export default function SafeZellPage() {
             Put SafeZell to work across your field team today.
           </h2>
           <p className="text-[.9375rem] text-[rgba(255,255,255,.45)] max-w-[400px] mx-auto mb-9 font-light leading-[1.7]">
-            From a handful of representatives to hundreds of routes — SafeZell scales with your operation, wherever you're based.
+            From a handful of representatives to hundreds of routes, SafeZell scales with your operation wherever you're based.
           </p>
           <div className="flex gap-3 justify-center flex-wrap">
             <a href="#contact"
