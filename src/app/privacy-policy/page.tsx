@@ -14,7 +14,9 @@ import {
 import { buildMetadata } from '@/lib/seo'
 import { BUSINESS } from '@/lib/site'
 
-const LAST_UPDATED = '12 August 2026'
+/** Published version of this policy. Bump both when the policy changes materially. */
+const POLICY_VERSION = '1.0'
+const EFFECTIVE_DATE = '12 August 2026'
 
 export const metadata: Metadata = buildMetadata({
   title: 'Privacy Policy',
@@ -70,7 +72,10 @@ export default function PrivacyPolicyPage() {
             <Breadcrumbs variant="dark" className="mb-6" items={[{ name: 'Privacy Policy' }]} />
             <h1 className="text-4xl lg:text-5xl font-extrabold tracking-tight mb-3 text-white">Privacy Policy</h1>
             <p className="text-blue-100 font-lato">
-              How we collect, use and protect personal data on safeaiafrica.com. Last updated: {LAST_UPDATED}.
+              How we collect, use and protect personal data on safeaiafrica.com.
+            </p>
+            <p className="text-sm text-blue-200 font-lato mt-3">
+              Version {POLICY_VERSION} · In effect from {EFFECTIVE_DATE} · Last updated {EFFECTIVE_DATE}
             </p>
           </div>
         </section>
@@ -381,9 +386,15 @@ export default function PrivacyPolicyPage() {
 
             <Section id="changes" title="14. Changes to this policy">
               <p>
-                We may update this policy as our services or the law change. The revision date at the top of
-                the page always reflects the current version, and material changes will be highlighted on
-                this page.
+                This is version {POLICY_VERSION} of our privacy policy, in effect from {EFFECTIVE_DATE}. It
+                is the complete and current statement of how we handle personal data on this website, and it
+                replaces any earlier version.
+              </p>
+              <p>
+                We may update it as our services or the law change. The version number and effective date at
+                the top of this page always identify the current text, material changes will be summarised
+                here, and where a change affects how we use data you have already given us, we will tell you
+                directly.
               </p>
             </Section>
 
