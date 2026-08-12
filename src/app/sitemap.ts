@@ -1,129 +1,47 @@
 import { MetadataRoute } from 'next'
+import { SITE_URL } from '@/lib/site'
+
+/**
+ * Generates /sitemap.xml.
+ *
+ * Only canonical, indexable URLs on this host are listed — Search Console
+ * ignores (and reports) URLs from other domains, so the product subdomains
+ * publish their own sitemaps rather than being listed here. /search and
+ * /thank-you are excluded because they are noindex.
+ */
+
+interface Entry {
+  path: string
+  changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency']
+  priority: number
+}
+
+const ENTRIES: Entry[] = [
+  { path: '/', changeFrequency: 'weekly', priority: 1 },
+  { path: '/solution', changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/case-studies', changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/contact-us', changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/about-us', changeFrequency: 'monthly', priority: 0.8 },
+  { path: '/amr-lens', changeFrequency: 'monthly', priority: 0.8 },
+  { path: '/safezell', changeFrequency: 'monthly', priority: 0.8 },
+  { path: '/faq', changeFrequency: 'monthly', priority: 0.8 },
+  { path: '/company', changeFrequency: 'monthly', priority: 0.7 },
+  { path: '/leadership-team', changeFrequency: 'monthly', priority: 0.7 },
+  { path: '/blog', changeFrequency: 'weekly', priority: 0.7 },
+  { path: '/blog/safeseq-biomic-accelerator-top-15', changeFrequency: 'yearly', priority: 0.6 },
+  { path: '/our-gallery', changeFrequency: 'monthly', priority: 0.6 },
+  { path: '/coming-soon', changeFrequency: 'monthly', priority: 0.4 },
+  { path: '/privacy-policy', changeFrequency: 'yearly', priority: 0.3 },
+  { path: '/terms-of-service', changeFrequency: 'yearly', priority: 0.3 },
+]
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://safeaiafrica.com'
+  const lastModified = new Date()
 
-  return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/about-us`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/solution`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/amr-lens`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/safezell`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/leadership-team`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/company`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/our-gallery`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/blog`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/contact-us`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.5,
-    },
-    {
-      url: `${baseUrl}/coming-soon`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-    // Subdomain Links
-    {
-      url: 'https://safeseq.safeaiafrica.com',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://safekemia.safeaiafrica.com',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://invoicemasterpro.safeaiafrica.com',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://safelytics.safeaiafrica.com',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://safefoodmanager.safeaiafrica.com',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://safeuzazi.safeaiafrica.com',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://saviouratuheire.safeaiafrica.com',
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.5,
-    },
-    {
-      url: 'https://anthonykamukama.safeaiafrica.com',
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.5,
-    },
-    {
-      url: 'https://coachtdee.safeaiafrica.com',
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.5,
-    },
-  ]
+  return ENTRIES.map(entry => ({
+    url: entry.path === '/' ? SITE_URL : `${SITE_URL}${entry.path}`,
+    lastModified,
+    changeFrequency: entry.changeFrequency,
+    priority: entry.priority,
+  }))
 }

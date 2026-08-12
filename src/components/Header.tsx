@@ -14,6 +14,8 @@ export const navLinks = [
       { label: 'Our Company', href: '/company' },
       { label: 'Our Leadership Team', href: '/leadership-team' },
       { label: 'Our Gallery', href: '/our-gallery' },
+      { label: 'Case Studies', href: '/case-studies' },
+      { label: 'FAQ', href: '/faq' },
     ],
   },
   {
@@ -21,6 +23,7 @@ export const navLinks = [
     href: '/solution',
     children: [
       { label: 'All Products', href: '/solution', highlight: true },
+      { label: 'Case Studies', href: '/case-studies' },
       { label: 'SAFESeq (Genomics)', href: 'https://safeseq.safeaiafrica.com', external: true },
       { label: 'SAFEKemia (Chemistry AI Tutor)', href: 'https://safekemia.safeaiafrica.com', external: true },
       { label: 'SafeZell - Field Sales', href: '/safezell' },
@@ -125,7 +128,7 @@ export default function Header({ forceScrolled = false }: HeaderProps) {
               <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden flex-shrink-0 border border-white/20">
                 <Image
                   src="/SAFEAI_ASSETS/safeaiafrica-logo.png"
-                  alt="SAFE AI-AFRICA"
+                  alt="SAFE AI-AFRICA logo"
                   fill
                   sizes="40px"
                   priority
@@ -235,7 +238,7 @@ export default function Header({ forceScrolled = false }: HeaderProps) {
                   <div className="relative w-9 h-9 rounded-full overflow-hidden flex-shrink-0 border border-[#00499E]/15">
                     <Image
                       src="/SAFEAI_ASSETS/safeaiafrica-logo.png"
-                      alt="SAFE AI-AFRICA"
+                      alt="SAFE AI-AFRICA logo"
                       fill
                       sizes="36px"
                       className="object-contain"
