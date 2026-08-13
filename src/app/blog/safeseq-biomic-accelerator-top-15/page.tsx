@@ -15,9 +15,9 @@ const LINKEDIN_POST_URL =
 
 const POST = {
   path: '/blog/safeseq-biomic-accelerator-top-15',
-  title: 'SAFE AI-AFRICA Named a Top 15 Startup in the BIOMIC Accelerator Program',
+  title: "SAFESeq Named Top 15 in Uganda's BIOMIC Accelerator",
   description:
-    'SAFESeq, our unified AI genomics platform, has been selected among the Top 15 startups in Uganda’s BIOMIC Accelerator Program, run by The Lung Institute at Makerere University with STI-OP and Hindsight Ventures.',
+    "SAFESeq, our unified AI genomics platform, was selected among the Top 15 startups in Uganda's BIOMIC Accelerator Program, run by Makerere University.",
   image: '/SAFEAI_ASSETS/biomic-announcement.jpg',
   datePublished: '2026-07-26',
 }

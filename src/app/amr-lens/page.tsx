@@ -5,7 +5,7 @@ import { buildMetadata } from '@/lib/seo'
 export const metadata: Metadata = buildMetadata({
   title: 'AMR Lens Africa: AI Antimicrobial Stewardship',
   description:
-    'AMR Lens Africa measures zones of inhibition with computer vision, maps results to CLSI/EUCAST breakpoints and WHO AWaRe classes, and feeds a pan-African resistance surveillance network.',
+    'AMR Lens Africa measures zones of inhibition with computer vision and maps results to CLSI/EUCAST breakpoints and WHO AWaRe classes for stewardship.',
   path: '/amr-lens',
   image: '/SAFEAI_ASSETS/amr-lens-africa.jpg',
   imageAlt: 'AMR Lens Africa antimicrobial resistance scanning application',

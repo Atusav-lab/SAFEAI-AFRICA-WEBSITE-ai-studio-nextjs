@@ -158,7 +158,7 @@ export default function AboutUs() {
               ].map((item, i) => (
                 <div key={i} className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-md transition-all">
                   <CheckCircle2 className="text-[#00E5FF] mb-4" size={24} />
-                  <h4 className="text-lg font-bold text-[#0b1b4d] mb-2">{item.title}</h4>
+                  <h3 className="text-lg font-bold text-[#0b1b4d] mb-2">{item.title}</h3>
                   <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
                 </div>
               ))}

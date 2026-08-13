@@ -15,7 +15,7 @@ import { BUSINESS } from '@/lib/site'
 export const metadata: Metadata = buildMetadata({
   title: 'FAQ: Pricing, Timelines and Data Ownership',
   description:
-    'Answers to the questions clients ask us most: how projects start, what they cost, how long they take, who owns the data and the code, where systems can run, and what support looks like.',
+    'Answers to the questions clients ask most: how projects start, what they cost, how long they take, who owns the data, and what support looks like.',
   path: '/faq',
   imageAlt: 'Frequently asked questions about SAFE AI-AFRICA',
   keywords: [

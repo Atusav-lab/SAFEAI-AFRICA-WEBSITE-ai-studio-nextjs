@@ -21,7 +21,7 @@ const EFFECTIVE_DATE = '12 August 2026'
 export const metadata: Metadata = buildMetadata({
   title: 'Privacy Policy',
   description:
-    'How SAFE AI-AFRICA collects, uses, stores and protects personal data on safeaiafrica.com, including cookies, third-party services, how long we keep things and your rights over your data.',
+    'How SAFE AI-AFRICA collects, uses and protects personal data on this website, including cookies, third-party services and your rights over your data.',
   path: '/privacy-policy',
   keywords: ['SAFE AI-AFRICA privacy policy', 'data protection Uganda', 'cookie policy'],
 })

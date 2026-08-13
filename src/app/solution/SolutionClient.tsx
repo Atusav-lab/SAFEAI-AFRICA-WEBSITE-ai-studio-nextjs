@@ -227,6 +227,10 @@ export default function Solution() {
 
         {/* Products Grid */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#00499E] mb-2 block">Platforms</span>
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#0b1b4d]">Our AI Platforms</h2>
+          </div>
           <div className="grid md:grid-cols-2 gap-10">
             {filteredProducts.map(p => (
               <div

@@ -50,14 +50,14 @@ export default function ComingSoon() {
                 <div className="flex items-start gap-3">
                   <GraduationCap className="text-[#0061B2] mt-1 flex-shrink-0" size={20} />
                   <div>
-                    <h3 className="font-bold text-[#0b1b4d] text-base">Advanced AI Training</h3>
+                    <p className="font-bold text-[#0b1b4d] text-base">Advanced AI Training</p>
                     <p className="text-slate-600 text-sm font-lato">Hands-on curriculum centering computer vision, NLP, and genomics analytics.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Briefcase className="text-[#0061B2] mt-1 flex-shrink-0" size={20} />
                   <div>
-                    <h3 className="font-bold text-[#0b1b4d] text-base">Elite Job Matching</h3>
+                    <p className="font-bold text-[#0b1b4d] text-base">Elite Job Matching</p>
                     <p className="text-slate-600 text-sm font-lato">Direct pipelines connecting top-tier talent to international teams and tech groups.</p>
                   </div>
                 </div>
@@ -112,7 +112,7 @@ export default function ComingSoon() {
                 <div className="w-16 h-16 bg-[#00499E] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-md shadow-blue-900/20">
                   <GraduationCap size={32} className="text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-[#0b1b4d] mb-2">SAFE Academy</h3>
+                <p className="text-xl font-bold text-[#0b1b4d] mb-2">SAFE Academy</p>
                 <p className="text-slate-600 text-sm font-lato mb-6 leading-relaxed">
                   Join a community of thousands learning machine learning, data engineering, and tech leadership across Africa.
                 </p>

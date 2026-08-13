@@ -5,7 +5,7 @@ import { buildMetadata } from '@/lib/seo'
 export const metadata: Metadata = buildMetadata({
   title: 'Products and Services: AI Platforms for Africa',
   description:
-    'Ten AI platforms in production, including SAFESeq for genomics, SAFEKemia for chemistry teaching, SAFElytics for no-code machine learning, SafeZell for field sales and AMR Lens. We also run training and build custom systems.',
+    'Ten AI platforms in production, including SAFESeq for genomics, SAFEKemia for chemistry teaching, SAFElytics for no-code ML and SafeZell for field sales.',
   path: '/solution',
   image: '/SAFEAI_ASSETS/safeseq1.png',
   imageAlt: 'SAFESeq, the SAFE AI-AFRICA genomics analysis platform',

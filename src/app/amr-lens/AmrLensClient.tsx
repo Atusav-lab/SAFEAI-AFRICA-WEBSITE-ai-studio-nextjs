@@ -286,7 +286,7 @@ export default function AMRLensPage() {
           font-weight: 600;
         }
 
-        .developed-by h3 {
+        .developed-by-name {
           color: var(--amr-accent-green);
           font-size: 1.4rem;
           font-weight: 800;
@@ -510,7 +510,7 @@ export default function AMRLensPage() {
 
             <div className="developed-by">
               <p>Developed By</p>
-              <h3>SAFE AI-AFRICA</h3>
+              <p className="developed-by-name">SAFE AI-AFRICA</p>
               <Link href="/">safeaiafrica.com</Link>
             </div>
           </div>
