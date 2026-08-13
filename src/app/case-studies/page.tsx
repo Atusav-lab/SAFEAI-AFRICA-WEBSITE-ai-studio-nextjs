@@ -109,7 +109,7 @@ export default function CaseStudiesPage() {
             >
               <div className="grid lg:grid-cols-2 gap-0">
                 {/* Visual */}
-                <div className={`relative min-h-[260px] lg:min-h-full bg-slate-100 ${idx % 2 ? 'lg:order-2' : ''}`}>
+                <div className={`relative min-h-[260px] lg:self-start lg:h-[420px] bg-slate-100 ${idx % 2 ? 'lg:order-2' : ''}`}>
                   <Image
                     src={study.image}
                     alt={study.imageAlt}
