@@ -5,7 +5,7 @@ import { buildMetadata } from '@/lib/seo'
 export const metadata: Metadata = buildMetadata({
   title: 'AI Training and Careers: SAFE Academy Waitlist',
   description:
-    'SAFE Academy is launching soon: hands-on AI training in computer vision, NLP and genomics analytics, certification pathways and job placement for African talent. Join the waitlist.',
+    'SAFE Academy is launching soon: hands-on AI training in computer vision, NLP and genomics analytics, plus certification and job placement. Join the waitlist.',
   path: '/coming-soon',
   imageAlt: 'SAFE Academy AI training and careers, launching soon',
   keywords: [

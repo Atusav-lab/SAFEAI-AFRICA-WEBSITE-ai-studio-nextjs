@@ -184,7 +184,7 @@ function SearchContent() {
                 className="p-5 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-blue-100 transition-all flex flex-col justify-between"
               >
                 <div>
-                  <h4 className="font-bold text-sm text-[#0b1b4d]">{item.title}</h4>
+                  <h3 className="font-bold text-sm text-[#0b1b4d]">{item.title}</h3>
                   <p className="text-xs text-slate-400 font-lato mt-1 line-clamp-2">{item.desc}</p>
                 </div>
                 <div className="flex items-center gap-1 text-[11px] font-bold text-[#00499E] mt-4 uppercase tracking-wider">

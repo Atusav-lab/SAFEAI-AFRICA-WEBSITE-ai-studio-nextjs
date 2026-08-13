@@ -78,6 +78,10 @@ export default function Company() {
 
         {/* Vision & Mission */}
         <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#00499E] mb-2 block">Purpose</span>
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#0b1b4d]">Vision &amp; Mission</h2>
+          </div>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 flex flex-col justify-between">
               <div>

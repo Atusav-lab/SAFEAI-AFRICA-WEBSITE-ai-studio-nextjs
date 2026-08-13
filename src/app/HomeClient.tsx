@@ -298,7 +298,7 @@ function WhatWeDoSection() {
     <section id="what-we-do" className="py-20 section-bg">
       <div className="max-w-4xl mx-auto px-4 text-center">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-          <h4 className="text-sm font-semibold uppercase tracking-widest text-[#0061B2] mb-2">What We Do</h4>
+          <span className="text-sm font-semibold uppercase tracking-widest text-[#0061B2] mb-2 block">What We Do</span>
           <h2 className="text-3xl lg:text-4xl font-bold text-[#0b1b4d] mb-4">
             Discover Our <span className="gradient-text">AI Solutions</span>
           </h2>
@@ -420,7 +420,7 @@ function ProductsSection() {
     <section id="products" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
-          <h4 className="text-sm font-semibold uppercase tracking-widest text-[#0061B2] mb-2">Our Portfolio</h4>
+          <span className="text-sm font-semibold uppercase tracking-widest text-[#0061B2] mb-2 block">Our Portfolio</span>
           <h2 className="text-3xl lg:text-4xl font-bold text-[#0b1b4d] mb-4">
             Products & <span className="gradient-text">Services</span>
           </h2>
@@ -493,7 +493,7 @@ function ProcessSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-            <h4 className="text-sm font-semibold uppercase tracking-widest text-[#0061B2] mb-2">Our Process</h4>
+            <span className="text-sm font-semibold uppercase tracking-widest text-[#0061B2] mb-2 block">Our Process</span>
             <h2 className="text-3xl lg:text-4xl font-bold text-[#0b1b4d] mb-6">
               Work <span className="gradient-text">Routine</span>
             </h2>
@@ -537,7 +537,7 @@ function CertSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
-          <h4 className="text-sm font-semibold uppercase tracking-widest text-[#0061B2] mb-2">Credentials</h4>
+          <span className="text-sm font-semibold uppercase tracking-widest text-[#0061B2] mb-2 block">Credentials</span>
           <h2 className="text-3xl lg:text-4xl font-bold text-[#0b1b4d] mb-4">
             Trust & <span className="gradient-text">Certification</span>
           </h2>
@@ -664,7 +664,7 @@ function BlogSection() {
     <section id="blog" className="py-20 section-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
-          <h4 className="text-sm font-semibold uppercase tracking-widest text-[#0061B2] mb-2">Blog</h4>
+          <span className="text-sm font-semibold uppercase tracking-widest text-[#0061B2] mb-2 block">Blog</span>
           <h2 className="text-3xl lg:text-4xl font-bold text-[#0b1b4d] mb-4">
             Our Latest <span className="gradient-text">News & Updates</span>
           </h2>

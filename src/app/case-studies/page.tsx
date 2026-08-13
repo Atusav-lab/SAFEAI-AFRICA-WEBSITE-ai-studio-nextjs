@@ -16,7 +16,7 @@ import { SITE_NAME, absoluteUrl } from '@/lib/site'
 export const metadata: Metadata = buildMetadata({
   title: 'Case Studies: AI Projects Delivered in Africa',
   description:
-    'How we built SAFESeq for genomics, AMR Lens for antimicrobial stewardship, SafeZell for field sales, and our platforms for food safety, education and maternal health.',
+    'How we built SAFESeq for genomics, AMR Lens for antimicrobial stewardship and SafeZell for field sales, plus platforms for food safety and education.',
   path: '/case-studies',
   image: '/SAFEAI_ASSETS/safeseq1.png',
   imageAlt: 'SAFE AI-AFRICA case studies across genomics, health, agriculture and enterprise',
@@ -109,7 +109,7 @@ export default function CaseStudiesPage() {
             >
               <div className="grid lg:grid-cols-2 gap-0">
                 {/* Visual */}
-                <div className={`relative min-h-[260px] lg:min-h-full bg-slate-100 ${idx % 2 ? 'lg:order-2' : ''}`}>
+                <div className={`relative min-h-[260px] lg:self-start lg:h-[420px] bg-slate-100 ${idx % 2 ? 'lg:order-2' : ''}`}>
                   <Image
                     src={study.image}
                     alt={study.imageAlt}

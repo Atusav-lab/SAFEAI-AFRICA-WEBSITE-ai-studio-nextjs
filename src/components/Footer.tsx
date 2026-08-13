@@ -78,7 +78,7 @@ export default function Footer() {
 
           {/* Resources */}
           <div>
-            <h4 className="font-semibold text-white mb-5 text-sm uppercase tracking-widest">Resources</h4>
+            <h3 className="font-semibold text-white mb-5 text-sm uppercase tracking-widest">Resources</h3>
             <ul className="space-y-3">
               {resources.map(({ label, href }) => (
                 <li key={label}>
@@ -93,7 +93,7 @@ export default function Footer() {
 
           {/* Solutions */}
           <div>
-            <h4 className="font-semibold text-white mb-5 text-sm uppercase tracking-widest">Solutions</h4>
+            <h3 className="font-semibold text-white mb-5 text-sm uppercase tracking-widest">Solutions</h3>
             <ul className="space-y-3">
               {solutions.map(({ label, href, external }) => (
                 <li key={label}>
@@ -110,7 +110,7 @@ export default function Footer() {
 
           {/* Newsletter & Contact */}
           <div>
-            <h4 className="font-semibold text-white mb-5 text-sm uppercase tracking-widest">Stay Updated</h4>
+            <h3 className="font-semibold text-white mb-5 text-sm uppercase tracking-widest">Stay Updated</h3>
             <p className="text-blue-200 text-sm mb-4">Our latest news, articles, and resources, sent to your inbox weekly.</p>
             <form className="flex flex-col gap-2 mb-6" onSubmit={e => { e.preventDefault(); setEmail('') }}>
               <input
