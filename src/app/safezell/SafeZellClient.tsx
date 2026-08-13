@@ -111,7 +111,7 @@ export default function SafeZellPage() {
       `Demo Request from ${fname} ${lname}\n\nEmail: ${femail}\nCompany: ${fcompany}\nTeam Size: ${fteam}\nRegion: ${fcountry}\n\n${fmessage}`
     )
     setTimeout(() => {
-      window.location.href = `mailto:safeaiafrica@gmail.com?subject=${subject}&body=${body}`
+      window.location.href = `mailto:info@safeaiafrica.com?subject=${subject}&body=${body}`
     }, 800)
 
     setFormSubmitted(true)
@@ -533,7 +533,7 @@ export default function SafeZellPage() {
                   </div>
                 </a>
 
-                <a href="mailto:safeaiafrica@gmail.com"
+                <a href="mailto:info@safeaiafrica.com"
                   className="inline-flex items-center gap-2.5 px-5 py-3.5 rounded-2xl border border-[rgba(0,0,0,.08)] bg-[#f7f8f6] text-[#0f1a10] no-underline hover:border-[#42a5f5] hover:bg-[#e3f2fd] hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,.08)] transition-all duration-150">
                   <div className="w-10 h-10 rounded-[10px] bg-[#e3f2fd] flex items-center justify-center flex-shrink-0">
                     <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#1565c0" strokeWidth="1.8">
@@ -542,7 +542,7 @@ export default function SafeZellPage() {
                   </div>
                   <div>
                     <div className="font-semibold text-[.9375rem]">Email</div>
-                    <div className="text-[.8125rem] text-[#5a5a5a] font-light mt-0.5">safeaiafrica@gmail.com</div>
+                    <div className="text-[.8125rem] text-[#5a5a5a] font-light mt-0.5">info@safeaiafrica.com</div>
                   </div>
                 </a>
 
