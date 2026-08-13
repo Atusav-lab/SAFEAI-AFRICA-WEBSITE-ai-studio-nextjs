@@ -21,7 +21,7 @@ export const DEFAULT_OG_IMAGE = '/og-image'
 
 export const BUSINESS = {
   legalName: 'SAFE AI-AFRICA',
-  email: 'safeaiafrica@gmail.com',
+  email: 'info@safeaiafrica.com',
   phone: '+256775323200',
   phoneDisplay: '+256 775 323 200',
   altPhone: '+256756985966',
