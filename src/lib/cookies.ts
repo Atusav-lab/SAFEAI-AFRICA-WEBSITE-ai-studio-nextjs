@@ -68,7 +68,7 @@ export const CATEGORIES: CategoryInfo[] = [
     name: 'Embedded content',
     summary: 'Loads maps, videos and interactive demos from other companies.',
     detail:
-      'Our office map comes from Google, our product videos from YouTube, and the moving 3D scene on the home page from Spline. Once that content loads, those companies can set their own cookies. So we hold it back until you say yes. If you would rather not, the rest of the page works exactly as normal.',
+      'Our office map comes from Google and our product videos from YouTube. Once that content loads, those companies can set their own cookies, so we hold it back until you say yes. If you would rather not, the rest of the page works exactly as normal. The moving 3D scene on the home page comes from Spline and loads automatically, since it does not track you across other websites, it just keeps a local copy of the artwork in your browser so it loads faster next time.',
   },
   {
     id: 'analytics',
@@ -125,7 +125,7 @@ export const COOKIE_INVENTORY: CookieRecord[] = [
     provider: 'Spline',
     category: 'functional',
     purpose:
-      'Used by the 3D scene on our home page to keep a local copy of the artwork so it loads faster next time.',
+      'Set automatically by the 3D scene on our home page to keep a local copy of the artwork so it loads faster next time. It does not track you across other websites.',
     duration: 'Until you clear browser storage',
   },
 ]
