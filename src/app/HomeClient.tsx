@@ -192,19 +192,10 @@ function HeroSection() {
             transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
             className="relative lg:pl-4">
             <div className="relative w-full h-[400px] sm:h-[450px] md:h-[550px] lg:h-[650px] xl:h-[700px] rounded-2xl overflow-hidden shadow-2xl bg-transparent group border border-blue-100/20">
-              <ConsentGate
-                category="functional"
-                provider="Spline"
-                label="Our interactive 3D scene"
-                privacyUrl="https://spline.design/privacy"
-                tone="brand"
-                className="rounded-2xl"
-              >
-                <SplineScene
-                  scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-                  className="absolute inset-0 w-full h-full"
-                />
-              </ConsentGate>
+              <SplineScene
+                scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+                className="absolute inset-0 w-full h-full"
+              />
             </div>
             {/* Ambient glows behind the video */}
             <div className="absolute -inset-1 bg-gradient-to-r from-[#0061B2] to-[#00E5FF] rounded-2xl blur opacity-15 group-hover:opacity-25 transition duration-500 -z-10" />
