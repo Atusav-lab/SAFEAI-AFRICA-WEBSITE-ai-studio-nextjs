@@ -341,6 +341,7 @@ export default function AMRLensPage() {
         .video-container {
           max-width: 380px;
           width: 100%;
+          aspect-ratio: 9 / 16;
           margin: 0 auto;
           position: relative;
           border-radius: 24px;
